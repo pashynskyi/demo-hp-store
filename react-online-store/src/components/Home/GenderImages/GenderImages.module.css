@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+}
+
+.genderBox {
+    width: 380px;
+}
+
+.genderBox img {
+    width: 100%;
+    height: auto;
+}

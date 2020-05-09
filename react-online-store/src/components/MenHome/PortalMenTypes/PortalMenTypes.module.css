@@ -1,0 +1,12 @@
+.portalType {
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: springgreen;
+}
+
+.activeLink {
+    text-decoration: underline;
+    color: red;
+}

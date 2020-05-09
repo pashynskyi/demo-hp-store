@@ -1,7 +1,8 @@
 .app-wrapper-content {
-  background: aqua;
   width: 1440px;
   height: 100%;
   min-height: 1140px;
   margin: 0 auto;
+  padding: 20px 0px;
+  background: aqua;
 }
