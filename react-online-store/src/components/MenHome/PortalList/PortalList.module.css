@@ -3,7 +3,8 @@
 }
 
 .portalList {
-  width: 50%;
+  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;

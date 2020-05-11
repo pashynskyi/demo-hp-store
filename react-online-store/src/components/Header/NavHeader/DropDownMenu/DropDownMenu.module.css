@@ -12,6 +12,7 @@
 
 .dropDownMenu:hover ul {
   display: block;
+  z-index: 5;
 }
 
 .dropDownMenu ul li {

@@ -1,18 +1,5 @@
-/* .itemRow {
-    display: flex;
-} */
-
-.productsCatalog {
-    background: navajowhite;
-}
-
 .item {
-    width: 25%;
-    background: silver;
-}
-
-.containerPhoto {
-    border: 1px solid white;
+margin-bottom: 15px;
 }
 
 .productPhoto {

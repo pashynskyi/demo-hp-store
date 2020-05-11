@@ -1,6 +1,7 @@
 .mainHeader {
   height: 70px;
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   background: white;
   margin: 0 auto;
   display: flex;
