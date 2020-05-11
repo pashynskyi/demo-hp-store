@@ -8,7 +8,7 @@ import WomenHome from "./components/WomenHome/WomenHome";
 import KidsHome from "./components/KidsHome/KidsHome";
 import ClientAccount from "./components/ClientAccount/ClientAccount";
 import RegisterAccount from "./components/RegisterAccount/RegisterAccount";
-import MenTSirts from "./components/MenTShirts/MenTSirts";
+import MenTShirtsContainer from "./components/MenTShirts/MenTShirtsContainer";
 import { Route } from "react-router-dom";
 
 
@@ -19,7 +19,7 @@ const App = (props) => {
       <main className='app-wrapper-content'>
         <Route exact path='/' render={() => <Home />} />
         <Route exact path='/men-home' render={() => <MenHome />} />
-        <Route path='/men-home/t-shirt' render={() => <MenTSirts />} />
+        <Route path='/men-home/t-shirt' render={() => <MenTShirtsContainer />} />
         <Route path='/women-home' render={() => <WomenHome />} />
         <Route path='/kids-home' render={() => <KidsHome />} />
         <Route path='/client-account/login' render={() => <ClientAccount />} />

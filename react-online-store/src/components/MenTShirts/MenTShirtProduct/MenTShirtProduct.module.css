@@ -1,0 +1,25 @@
+/* .itemRow {
+    display: flex;
+} */
+
+.productsCatalog {
+    background: navajowhite;
+}
+
+.item {
+    width: 25%;
+    background: silver;
+}
+
+.containerPhoto {
+    border: 1px solid white;
+}
+
+.productPhoto {
+    width: 100%;
+    height: auto;
+}
+
+.containerInfo {
+    background: aquamarine;
+}
