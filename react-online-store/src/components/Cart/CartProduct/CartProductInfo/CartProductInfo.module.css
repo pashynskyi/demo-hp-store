@@ -1,0 +1,19 @@
+.productContainer {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.photoContainer {
+    max-width: 400px;
+}
+
+.photoContainer img {
+    width: 100%;
+    height: auto;
+}
+
+.infoContainer {
+    width: 40%;
+    margin-left: 70px;
+}

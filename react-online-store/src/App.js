@@ -10,6 +10,7 @@ import ClientAccount from "./components/ClientAccount/ClientAccount";
 import RegisterAccount from "./components/RegisterAccount/RegisterAccount";
 import MenTShirtsContainer from "./components/MenTShirts/MenTShirtsContainer";
 import { Route } from "react-router-dom";
+import Cart from "./components/Cart/Cart";
 
 
 const App = (props) => {
@@ -24,6 +25,7 @@ const App = (props) => {
         <Route path='/kids-home' render={() => <KidsHome />} />
         <Route path='/client-account/login' render={() => <ClientAccount />} />
         <Route path='/client-account/register' render={() => <RegisterAccount />} />
+        <Route path='/cart' render={() => <Cart />} />
       </main>
       <Footer />
     </div>

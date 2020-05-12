@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./MenHome.module.css";
-import PortalList from "./PortalList/PortalList";
+import PortalList from "../PortalList/PortalList";
 import PortalMenTypes from "./PortalMenTypes/PortalMenTypes";
 import menWidePhoto from '../../assets/images/men_wide_1.jpg';
 

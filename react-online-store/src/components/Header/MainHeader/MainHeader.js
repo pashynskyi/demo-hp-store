@@ -11,9 +11,12 @@ const MainHeader = (props) => {
                     alt="" />
             </NavLink>
             <h3>This is the main header!</h3>
-           <NavLink to="/client-account/login">
-               <span>Client Account</span>
-           </NavLink>
+            <NavLink to="/client-account/login">
+                <span>Client Account</span>
+            </NavLink>
+            <NavLink to="/cart">
+                <h5>Cart</h5>
+            </NavLink>
         </div>
     );
 }
