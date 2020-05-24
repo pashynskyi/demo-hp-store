@@ -1,7 +1,8 @@
 .productContainer {
-    width: 60%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 50px;
 }
 
 .photoContainer {
@@ -14,6 +15,6 @@
 }
 
 .infoContainer {
-    width: 40%;
+    width: 100%;
     margin-left: 70px;
 }

@@ -1,19 +1,14 @@
 import React from "react";
 import { connect } from 'react-redux';
 import CartProduct from './CartProduct';
-import {addCartProductsAC} from "../../../redux/reducers/cartProductReducer";
+import {addToCart} from "../../../redux/reducers/cartProductReducer";
 
-debugger;
 let mapStateToProps = (state) => {
     return {
-        cartProducts: state.cartProductPage.cartProducts
+        cartProducts: state.cartProductPage.items,
+        totalPrice: state.cartProductPage.items.reduce((total, item) => total + item.productPrice, 0),
+        count: state.cartProductPage.items.length
     }
 }
-let mapDispatchToProps = (dispatch) => {
-    return {
-        addCartProducts: (cartProducts) => {
-            dispatch(addCartProductsAC(cartProducts))
-        }
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(CartProduct);
+
+export default connect(mapStateToProps, {addToCart})(CartProduct);

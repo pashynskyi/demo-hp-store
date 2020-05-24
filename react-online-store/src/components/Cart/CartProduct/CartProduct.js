@@ -4,14 +4,34 @@ import CartProductInfo from "./CartProductInfo/CartProductInfo";
 import SubtotalPrice from "./SubtotalPrice/SubtotalPrice";
 
 
-const ProductInCart = (props) => {
-    console.log(props);
+const CartProduct = (props) => {
+
+    let state = props.cartProducts;
+    let productElements = state.map((p) => (
+        <CartProductInfo
+            key={p.productId}
+            productId={p.productId}
+            pictureUrl={p.pictureUrl}
+            productPrice={p.productPrice}
+            productFirm={p.productFirm}
+            productType={p.productType}
+            productMaterial={p.productMaterial}
+            productSizes={p.productSizes} />
+    ));
+
     return (
-        <div className={styles.container}>
-            <CartProductInfo />
-            <SubtotalPrice />
+        <div className={styles.conteiner}>
+            <div className={styles.productContainer}>
+                {productElements}
+            </div>
+            <SubtotalPrice
+                totalPrice={props.totalPrice}
+                count={props.count}
+                
+            />
         </div>
+
     );
 }
 
-export default ProductInCart;
+export default CartProduct;

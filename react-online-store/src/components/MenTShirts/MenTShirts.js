@@ -3,34 +3,39 @@ import styles from "./MenTShirts.module.css";
 import PortalList from "../PortalList/PortalList";
 import PortalMenTypes from "../MenHome/PortalMenTypes/PortalMenTypes";
 import MenTShirtProduct from "./MenTShirtProduct/MenTShirtProduct";
-import { Container, Row, Col} from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 
-const MenTSirts = (props) => {
-    let state = props.products;
-    let productElements = state.map((p) => (
-        <Col xs="12" sm="6" md="4" lg="3" xl="3" key={p.id}>
+const MenTShirts = (props) => {
+  
+  let state = props.products;
+  let productElements = !props.isReady ? 'Загрузка...'
+    : state.map((p) => (
+      <Col xs="12" sm="6" md="4" lg="3" xl="3" key={p.productId}>
         <MenTShirtProduct
-            id={p.id}
-            photoUrl={p.photoUrl}
-            price={p.price}
-            firm={p.firm}
-            type={p.type}
-            material={p.material}
-            sizes={p.sizes}
-        /></Col>
+          productId={p.productId}
+          pictureUrl={p.pictureUrl}
+          productPrice={p.productPrice}
+          productFirm={p.productFirm}
+          productType={p.productType}
+          productMaterial={p.productMaterial}
+          productSizes={p.productSizes}
+          addToCart={props.addToCart}
+          addedCount={props.addedCount}
+        />
+      </Col>
     ));
-    return (
-        <section>
-            <PortalList />
-            <PortalMenTypes />
-            <Container>
-                <Row>
-                   {productElements}
-                </Row>
-            </Container>
-        </section>
-    );
+  return (
+    <section>
+      <PortalList />
+      <PortalMenTypes />
+      <Container>
+        <Row>
+          {productElements}
+        </Row>
+      </Container>
+    </section>
+  );
 }
 
-export default MenTSirts;
+export default MenTShirts;

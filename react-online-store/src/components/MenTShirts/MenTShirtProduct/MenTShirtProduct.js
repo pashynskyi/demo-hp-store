@@ -3,30 +3,26 @@ import styles from "./MenTShirtProduct.module.css"
 import MenTShirtPhoto from "./MenTShirtPhoto/MenTShirtPhoto";
 import MenTShirtInfo from "./MenTShirtInfo/MenTShirtInfo";
 import Button from 'react-bootstrap/Button';
-
+import * as axios from 'axios';
 
 
 const MenTShirtProduct = (props) => {
-
-  let addToCart = (id) => {
-    if (props.id === id) {
-      return console.log(props);
-    }
-  };
-
+const onAddToCart = (props) => {
+  return props.addToCart(props);
+}
   return (
     <div className={styles.item}>
-      <MenTShirtPhoto photoUrl={props.photoUrl} />
+      <MenTShirtPhoto pictureUrl={props.pictureUrl} />
       <MenTShirtInfo
-        id={props.id}
-        price={props.price}
-        firm={props.firm}
-        type={props.type}
-        material={props.material}
-        sizes={props.sizes}
+        productId={props.productId}
+        productPrice={props.productPrice}
+        productFirm={props.productFirm}
+        productType={props.productType}
+        productMaterial={props.productMaterial}
+        productSizes={props.productSizes}
       />
       <div>
-        <Button variant="success" onClick={() => addToCart(props.id)}>Добавить в корзину</Button>
+        <Button variant="success" onClick={() => onAddToCart(props)}>Добавить в корзину</Button>
       </div>
     </div>
   );
