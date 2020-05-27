@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./MenTShirtInfo.module.css";
-import { Form, Button } from "react-bootstrap";
+import { Form } from "react-bootstrap";
+import ProductButton from "../../../../common/Button/ProductButton";
 
 
 const MenTShirtInfo = (props) => {
@@ -20,7 +21,7 @@ const MenTShirtInfo = (props) => {
       props.pictureUrl
     );
   }
- 
+
   const onRemoveFromCart = () => {
     props.removeFromCart(props.productId)
   }
@@ -44,10 +45,7 @@ const MenTShirtInfo = (props) => {
           </Form.Control>
         </Form.Group>
       </Form>
-      <div>
-        <Button variant="success" onClick={() => onAddToCart()}>Добавить в корзину</Button>
-        <Button variant="danger" onClick={() => onRemoveFromCart()}>Удалить из корзины</Button>
-      </div>
+      <ProductButton onAddToCart={onAddToCart} onRemoveFromCart={onRemoveFromCart} />
     </div>
   );
 }
