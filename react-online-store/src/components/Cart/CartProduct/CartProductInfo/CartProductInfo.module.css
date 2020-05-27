@@ -3,6 +3,8 @@
     display: flex;
     justify-content: space-around;
     margin-bottom: 50px;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
 }
 
 .photoContainer {
@@ -17,4 +19,8 @@
 .infoContainer {
     width: 100%;
     margin-left: 70px;
+}
+
+.size {
+    margin-left: 5px;
 }

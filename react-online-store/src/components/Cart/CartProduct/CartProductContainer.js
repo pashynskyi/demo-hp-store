@@ -1,7 +1,19 @@
 import React from "react";
 import { connect } from 'react-redux';
 import CartProduct from './CartProduct';
-import {addToCart} from "../../../redux/reducers/cartProductReducer";
+import {addToCart, orderProduct} from "../../../redux/reducers/cartProductReducer";
+
+class CartProductContainer extends React.Component {
+    componentDidMount() {
+    }
+    render() {
+      return <CartProduct 
+      cartProducts={this.props.cartProducts}
+      totalPrice={this.props.totalPrice}
+      count={this.props.count}
+      orderProduct={this.props.orderProduct} />
+    }
+  }
 
 let mapStateToProps = (state) => {
     return {
@@ -11,4 +23,4 @@ let mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {addToCart})(CartProduct);
+export default connect(mapStateToProps, {addToCart, orderProduct})(CartProductContainer);

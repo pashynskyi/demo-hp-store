@@ -21,7 +21,8 @@ const MenTShirts = (props) => {
           productMaterial={p.productMaterial}
           productSizes={p.productSizes}
           addToCart={props.addToCart}
-          addedCount={props.addedCount}
+          removeFromCart={props.removeFromCart}
+          // addedCount={props.addedCount}
         />
       </Col>
     ));

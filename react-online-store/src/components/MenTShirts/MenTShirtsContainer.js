@@ -2,10 +2,11 @@ import React from "react";
 import { connect } from 'react-redux';
 import MenTShirts from './MenTShirts'
 import { setProducts } from "../../redux/reducers/menTShirtsReducer";
-import { addToCart } from "../../redux/reducers/cartProductReducer";
+import { addToCart, removeFromCart } from "../../redux/reducers/cartProductReducer";
 import * as axios from 'axios';
 
 class MenTShirtContainer extends React.Component {
+
   componentDidMount() {
     axios.get('http://localhost:8000/collection/men-home/T-Shirts')
       .then(response => {
@@ -16,12 +17,13 @@ class MenTShirtContainer extends React.Component {
     return <MenTShirts products={this.props.products}
       isReady={this.props.isReady}
       addToCart={this.props.addToCart}
-      addedCount={this.props.addedCount} />
+      removeFromCart={this.props.removeFromCart}
+      // addedCount={this.props.addedCount}
+       />
   }
 }
 
 let mapStateToProps = (state) => {
-  debugger;
   return {
     products: state.menTShirtsPage.products,
     isReady: state.menTShirtsPage.isReady,
@@ -31,4 +33,4 @@ let mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { setProducts, addToCart })(MenTShirtContainer);
+export default connect(mapStateToProps, { setProducts, addToCart, removeFromCart })(MenTShirtContainer);

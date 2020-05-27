@@ -3,6 +3,7 @@ import styles from './MainHeader.module.css';
 import { NavLink } from 'react-router-dom';
 
 const MainHeader = (props) => {
+    debugger;
     return (
         <div className={styles.mainHeader}>
             <NavLink to="/">
@@ -15,7 +16,8 @@ const MainHeader = (props) => {
                 <span>Client Account</span>
             </NavLink>
             <NavLink to="/cart">
-                <h5>Cart</h5>
+                <h5>Cart <span className={styles.count}>{props.count}</span></h5>
+                
             </NavLink>
         </div>
     );

@@ -16,7 +16,9 @@ const CartProduct = (props) => {
             productFirm={p.productFirm}
             productType={p.productType}
             productMaterial={p.productMaterial}
-            productSizes={p.productSizes} />
+            selectedSize={p.selectedSize}
+             />
+            
     ));
 
     return (
@@ -27,7 +29,8 @@ const CartProduct = (props) => {
             <SubtotalPrice
                 totalPrice={props.totalPrice}
                 count={props.count}
-                
+                productId={props.cartProducts}
+                orderProduct={props.orderProduct}
             />
         </div>
 
