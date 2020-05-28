@@ -8,27 +8,32 @@ class FormSelectSize extends React.Component {
     super(props);
     this.state = { value: 'Выберите размер' };
     this.selectSize = this.selectSize.bind(this);
-
+    this.defaultSize = this.defaultSize.bind(this);
   }
 
   selectSize(event) {
-      this.setState({ value: event.target.value });
-      this.props.selectSize(
-        event.target.value,
-        this.props.productId,
-        this.props.productPrice,
-        this.props.productFirm,
-        this.props.productType,
-        this.props.productMaterial,
-        this.props.pictureUrl
-      )
-      event.preventDefault();
+    this.setState({ value: event.target.value });
+    this.props.selectSize(
+      event.target.value,
+      this.props.productId,
+      this.props.productPrice,
+      this.props.productFirm,
+      this.props.productType,
+      this.props.productMaterial,
+      this.props.pictureUrl
+    )
+    event.preventDefault();
+  }
+
+  defaultSize(event) {
+    setTimeout(() => this.setState({value: 'Выберите размер'}), 500);
+    event.preventDefault();
   }
 
   render() {
     return (
       <>
-        <Form>
+        <Form onBlur={this.defaultSize}>
           <Form.Group controlId="exampleForm.SelectCustom">
             <Form.Label>Размеры(INT):</Form.Label>
             <Form.Control as="select" custom value={this.state.value} onChange={this.selectSize}>
@@ -38,8 +43,9 @@ class FormSelectSize extends React.Component {
           </Form.Group>
         </Form>
         <ProductButton onAddToCart={this.props.onAddToCart}
-         onRemoveFromCart={this.props.onRemoveFromCart} 
-         currentValue={this.state.value} />
+          onRemoveFromCart={this.props.onRemoveFromCart}
+          currentValue={this.state.value}
+        />
       </>
     )
   }
