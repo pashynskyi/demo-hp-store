@@ -1,16 +1,11 @@
 import React from "react";
 import styles from "./MenTShirtInfo.module.css";
 import { Form } from "react-bootstrap";
-import ProductButton from "../../../../common/Button/ProductButton";
 import FormSelectSize from "../../../../common/Form/FormSelectSize";
 
 
 const MenTShirtInfo = (props) => {
   const onAddToCart = () => {
-    // let selectedSize = newSizeElement.current.value;
-    // if (props.selectedSize.length < 1) {
-    //   return alert("Выберите размер.")
-    // }
     debugger;
     props.addToCart(
       props.selectedSize,
@@ -45,17 +40,11 @@ const MenTShirtInfo = (props) => {
         productFirm={props.productFirm}
         productType={props.productType}
         productMaterial={props.productMaterial}
-        pictureUrl={props.pictureUrl} />
-      {/* <Form>
-        <Form.Group controlId="exampleForm.SelectCustom">
-          <Form.Label>Размеры(INT):</Form.Label>
-          <Form.Control as="select" custom ref={newSizeElement} >
-            <option>Выберите размер</option>
-            {newProductSizes}
-          </Form.Control>
-        </Form.Group>
-      </Form> */}
-      <ProductButton onAddToCart={onAddToCart} onRemoveFromCart={onRemoveFromCart} selectedSize={props.selectedSize} />
+        pictureUrl={props.pictureUrl}
+        onAddToCart={onAddToCart}
+        onRemoveFromCart={onRemoveFromCart}
+        selectedSize={props.selectedSize} />
+      {/* <ProductButton onAddToCart={onAddToCart} onRemoveFromCart={onRemoveFromCart} selectedSize={props.selectedSize} /> */}
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Form } from "react-bootstrap";
+import ProductButton from '../Button/ProductButton';
+
 
 class FormSelectSize extends React.Component {
   constructor(props) {
@@ -10,17 +12,17 @@ class FormSelectSize extends React.Component {
   }
 
   selectSize(event) {
-    this.setState({ value: event.target.value });
-    this.props.selectSize(
-      event.target.value,
-      this.props.productId,
-      this.props.productPrice,
-      this.props.productFirm,
-      this.props.productType,
-      this.props.productMaterial,
-      this.props.pictureUrl
-    )
-    event.preventDefault();
+      this.setState({ value: event.target.value });
+      this.props.selectSize(
+        event.target.value,
+        this.props.productId,
+        this.props.productPrice,
+        this.props.productFirm,
+        this.props.productType,
+        this.props.productMaterial,
+        this.props.pictureUrl
+      )
+      event.preventDefault();
   }
 
   render() {
@@ -35,6 +37,9 @@ class FormSelectSize extends React.Component {
             </Form.Control>
           </Form.Group>
         </Form>
+        <ProductButton onAddToCart={this.props.onAddToCart}
+         onRemoveFromCart={this.props.onRemoveFromCart} 
+         currentValue={this.state.value} />
       </>
     )
   }

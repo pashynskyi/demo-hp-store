@@ -6,30 +6,31 @@ class ProductButton extends React.Component {
     editMode: false
   }
 
-  activateEditMode() {
+  activateEditMode = () => {
     this.setState({
       editMode: true
     });
   }
 
-  deactivateEditMode() {
+  deactivateEditMode = () => {
     this.setState({
       editMode: false
     });
   }
 
   render() {
+    console.log(this.props.currentValue)
     return (
       <>
-        {(!this.state.editMode && this.props.selectedSize !== null) &&
-          <div onClick={this.activateEditMode.bind(this)}>
+        {(!this.state.editMode && this.props.currentValue.length < 5 ) &&
+          <span onClick={this.activateEditMode}>
             <Button variant="success" onClick={() => this.props.onAddToCart()}>Добавить в корзину</Button>
-          </div>
+          </span>
         }
         {this.state.editMode &&
-          <div onClick={this.deactivateEditMode.bind(this)}>
+          <span onClick={this.deactivateEditMode}>
             <Button variant="danger" onClick={() => this.props.onRemoveFromCart()}>Удалить из корзины</Button>
-          </div>
+          </span>
         }
       </>
     )
