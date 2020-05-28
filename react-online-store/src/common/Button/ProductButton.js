@@ -21,8 +21,7 @@ class ProductButton extends React.Component {
   render() {
     return (
       <>
-      {console.log(this.props.onAddToCart)}
-        {!this.state.editMode &&
+        {(!this.state.editMode && this.props.selectedSize !== null) &&
           <div onClick={this.activateEditMode.bind(this)}>
             <Button variant="success" onClick={() => this.props.onAddToCart()}>Добавить в корзину</Button>
           </div>

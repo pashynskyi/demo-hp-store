@@ -7,7 +7,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 
 const MenTShirts = (props) => {
-  
   let state = props.products;
   let productElements = !props.isReady ? 'Загрузка...'
     : state.map((p) => (
@@ -22,6 +21,8 @@ const MenTShirts = (props) => {
           productSizes={p.productSizes}
           addToCart={props.addToCart}
           removeFromCart={props.removeFromCart}
+          selectSize={props.selectSize}
+          selectedSize={props.selectedSize}
           // addedCount={props.addedCount}
         />
       </Col>

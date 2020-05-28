@@ -3,7 +3,6 @@ import styles from './MainHeader.module.css';
 import { NavLink } from 'react-router-dom';
 
 const MainHeader = (props) => {
-    debugger;
     return (
         <div className={styles.mainHeader}>
             <NavLink to="/">

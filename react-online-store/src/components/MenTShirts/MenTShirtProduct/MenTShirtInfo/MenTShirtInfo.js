@@ -2,23 +2,24 @@ import React from "react";
 import styles from "./MenTShirtInfo.module.css";
 import { Form } from "react-bootstrap";
 import ProductButton from "../../../../common/Button/ProductButton";
+import FormSelectSize from "../../../../common/Form/FormSelectSize";
 
 
 const MenTShirtInfo = (props) => {
-  let newSizeElement = React.createRef();
   const onAddToCart = () => {
-    let selectedSize = newSizeElement.current.value;
-    if (selectedSize.length > 4) {
-      return alert("Выберите размер.")
-    }
+    // let selectedSize = newSizeElement.current.value;
+    // if (props.selectedSize.length < 1) {
+    //   return alert("Выберите размер.")
+    // }
+    debugger;
     props.addToCart(
-      selectedSize,
-      props.productId,
-      props.productPrice,
-      props.productFirm,
-      props.productType,
-      props.productMaterial,
-      props.pictureUrl
+      props.selectedSize,
+      // props.productId,
+      // props.productPrice,
+      // props.productFirm,
+      // props.productType,
+      // props.productMaterial,
+      // props.pictureUrl
     );
   }
 
@@ -36,7 +37,16 @@ const MenTShirtInfo = (props) => {
       <div>{props.productPrice} грн</div>
       <div>{props.productFirm} <span>/ {props.productType}</span></div>
       <div>Состав: <span>{props.productMaterial}</span></div>
-      <Form>
+      <FormSelectSize
+        newProductSizes={newProductSizes}
+        selectSize={props.selectSize}
+        productId={props.productId}
+        productPrice={props.productPrice}
+        productFirm={props.productFirm}
+        productType={props.productType}
+        productMaterial={props.productMaterial}
+        pictureUrl={props.pictureUrl} />
+      {/* <Form>
         <Form.Group controlId="exampleForm.SelectCustom">
           <Form.Label>Размеры(INT):</Form.Label>
           <Form.Control as="select" custom ref={newSizeElement} >
@@ -44,8 +54,8 @@ const MenTShirtInfo = (props) => {
             {newProductSizes}
           </Form.Control>
         </Form.Group>
-      </Form>
-      <ProductButton onAddToCart={onAddToCart} onRemoveFromCart={onRemoveFromCart} />
+      </Form> */}
+      <ProductButton onAddToCart={onAddToCart} onRemoveFromCart={onRemoveFromCart} selectedSize={props.selectedSize} />
     </div>
   );
 }

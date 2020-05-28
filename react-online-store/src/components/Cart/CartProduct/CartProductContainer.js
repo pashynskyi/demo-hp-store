@@ -7,6 +7,7 @@ class CartProductContainer extends React.Component {
     componentDidMount() {
     }
     render() {
+      debugger;
       return <CartProduct 
       cartProducts={this.props.cartProducts}
       totalPrice={this.props.totalPrice}

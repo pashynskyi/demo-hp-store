@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./MenTShirtPhoto.module.css"
+import styles from "./MenTShirtPhoto.module.css";
 
 const MenTShirtPhoto = (props) => {
     return (

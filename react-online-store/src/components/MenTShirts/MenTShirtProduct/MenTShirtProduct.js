@@ -20,6 +20,8 @@ const MenTShirtProduct = (props) => {
         pictureUrl={props.pictureUrl}
         addToCart={props.addToCart}
         removeFromCart={props.removeFromCart}
+        selectSize={props.selectSize}
+        selectedSize={props.selectedSize}
       />
     </div>
   );
