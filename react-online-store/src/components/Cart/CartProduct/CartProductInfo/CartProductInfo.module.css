@@ -24,3 +24,15 @@
 .size {
     margin-left: 5px;
 }
+
+span.removeFromCart {
+    cursor: pointer;
+    color: red;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+span.removeFromCart:hover {
+    color: white;
+    background: black;
+}

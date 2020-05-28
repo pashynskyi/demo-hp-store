@@ -39,7 +39,6 @@ const cartProductReducer = (state = initialState, action) => {
 
 
 export const addToCart = (obj) => ({ type: ADD_PRODUCT, payload: obj })
-
 export const removeFromCart = (productId) => ({ type: REMOVE_PRODUCT, payload: productId })
 export const orderProduct = (totalPrice, count, obj ) => ({ type: ORDER_PRODUCT, payload: { totalPrice, count, obj } })
 

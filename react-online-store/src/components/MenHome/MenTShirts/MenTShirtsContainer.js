@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from 'react-redux';
-import MenTShirts from './MenTShirts'
-import { setProducts, selectSize } from "../../redux/reducers/menTShirtsReducer";
-import { addToCart, removeFromCart } from "../../redux/reducers/cartProductReducer";
+import Products from '../../Products/Products';
+import { setProducts, selectSize } from "../../../redux/reducers/menTShirtsReducer";
+import { addToCart, removeFromCart } from "../../../redux/reducers/cartProductReducer";
 import * as axios from 'axios';
 
 class MenTShirtContainer extends React.Component {
@@ -14,7 +14,7 @@ class MenTShirtContainer extends React.Component {
       });
   }
   render() {
-    return <MenTShirts products={this.props.products}
+    return <Products products={this.props.products}
       isReady={this.props.isReady}
       addToCart={this.props.addToCart}
       removeFromCart={this.props.removeFromCart}

@@ -1,17 +1,17 @@
 import React from "react";
-import styles from "./MenTShirts.module.css";
+import styles from "./Products.module.css";
 import PortalList from "../PortalList/PortalList";
 import PortalMenTypes from "../MenHome/PortalMenTypes/PortalMenTypes";
-import MenTShirtProduct from "./MenTShirtProduct/MenTShirtProduct";
+import Product from "./Product/Product";
 import { Container, Row, Col } from 'react-bootstrap';
 
 
-const MenTShirts = (props) => {
+const Products = (props) => {
   let state = props.products;
   let productElements = !props.isReady ? 'Загрузка...'
     : state.map((p) => (
       <Col xs="12" sm="6" md="4" lg="3" xl="3" key={p.productId}>
-        <MenTShirtProduct
+        <Product
           productId={p.productId}
           pictureUrl={p.pictureUrl}
           productPrice={p.productPrice}
@@ -40,4 +40,4 @@ const MenTShirts = (props) => {
   );
 }
 
-export default MenTShirts;
+export default Products;

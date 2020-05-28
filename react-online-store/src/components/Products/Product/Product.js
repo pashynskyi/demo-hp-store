@@ -1,16 +1,14 @@
 import React from "react";
-import styles from "./MenTShirtProduct.module.css"
-import MenTShirtPhoto from "./MenTShirtPhoto/MenTShirtPhoto";
-import MenTShirtInfo from "./MenTShirtInfo/MenTShirtInfo";
-import * as axios from 'axios';
+import styles from "./Product.module.css"
+import ProductPhoto from "./ProductPhoto/ProductPhoto";
+import ProductInfo from "./ProductInfo/ProductInfo";
 
-
-const MenTShirtProduct = (props) => {
+const Product = (props) => {
 
   return (
     <div className={styles.item}>
-      <MenTShirtPhoto pictureUrl={props.pictureUrl} />
-      <MenTShirtInfo
+      <ProductPhoto pictureUrl={props.pictureUrl} />
+      <ProductInfo
         productId={props.productId}
         productPrice={props.productPrice}
         productFirm={props.productFirm}
@@ -27,4 +25,4 @@ const MenTShirtProduct = (props) => {
   );
 }
 
-export default MenTShirtProduct;
+export default Product;

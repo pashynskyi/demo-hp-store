@@ -5,7 +5,6 @@ import SubtotalPrice from "./SubtotalPrice/SubtotalPrice";
 
 
 const CartProduct = (props) => {
- debugger;
     let state = props.cartProducts;
     let productElements = state.map((p) => (
         <CartProductInfo
@@ -17,8 +16,8 @@ const CartProduct = (props) => {
             productType={p.productType}
             productMaterial={p.productMaterial}
             productSize={p.productSize}
+            removeFromCart={props.removeFromCart}
              />
-            
     ));
 
     return (

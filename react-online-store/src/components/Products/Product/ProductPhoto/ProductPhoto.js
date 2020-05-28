@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./MenTShirtPhoto.module.css";
+import styles from "./ProductPhoto.module.css";
 
-const MenTShirtPhoto = (props) => {
+const ProductPhoto = (props) => {
     return (
         <div className={styles.containerPhoto}>
             <img className={styles.productPhoto} src={props.pictureUrl} alt="" />
@@ -9,4 +9,4 @@ const MenTShirtPhoto = (props) => {
     );
 }
 
-export default MenTShirtPhoto;
+export default ProductPhoto;

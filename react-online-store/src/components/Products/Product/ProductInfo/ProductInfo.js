@@ -1,10 +1,9 @@
 import React from "react";
-import styles from "./MenTShirtInfo.module.css";
-import { Form } from "react-bootstrap";
+import styles from "./ProductInfo.module.css";
 import FormSelectSize from "../../../../common/Form/FormSelectSize";
 
 
-const MenTShirtInfo = (props) => {
+const ProductInfo = (props) => {
   const onAddToCart = () => {
     debugger;
     props.addToCart(
@@ -49,4 +48,4 @@ const MenTShirtInfo = (props) => {
   );
 }
 
-export default MenTShirtInfo;
+export default ProductInfo;

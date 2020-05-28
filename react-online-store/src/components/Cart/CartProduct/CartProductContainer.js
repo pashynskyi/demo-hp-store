@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import CartProduct from './CartProduct';
-import {addToCart, orderProduct} from "../../../redux/reducers/cartProductReducer";
+import {addToCart, removeFromCart, orderProduct} from "../../../redux/reducers/cartProductReducer";
 
 class CartProductContainer extends React.Component {
     componentDidMount() {
@@ -12,7 +12,8 @@ class CartProductContainer extends React.Component {
       cartProducts={this.props.cartProducts}
       totalPrice={this.props.totalPrice}
       count={this.props.count}
-      orderProduct={this.props.orderProduct} />
+      orderProduct={this.props.orderProduct}
+      removeFromCart={this.props.removeFromCart} />
     }
   }
 
@@ -24,4 +25,4 @@ let mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {addToCart, orderProduct})(CartProductContainer);
+export default connect(mapStateToProps, {addToCart, removeFromCart, orderProduct})(CartProductContainer);

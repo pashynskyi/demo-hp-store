@@ -8,7 +8,7 @@ import WomenHome from "./components/WomenHome/WomenHome";
 import KidsHome from "./components/KidsHome/KidsHome";
 import ClientAccount from "./components/ClientAccount/ClientAccount";
 import RegisterAccount from "./components/RegisterAccount/RegisterAccount";
-import MenTShirtsContainer from "./components/MenTShirts/MenTShirtsContainer";
+import MenTShirtsContainer from "./components/MenHome/MenTShirts/MenTShirtsContainer";
 import { Route } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
 
