@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./CartProductInfo.module.css";
+import CounterButton from "../../../../common/Button/CounterButton";
 
 
 const CartProductInfo = (props) => {
@@ -18,10 +19,11 @@ const CartProductInfo = (props) => {
         <div>Состав: <span>{props.productMaterial}</span></div>
         <div>Размер: <span>{props.productSize}</span></div>
         <div>Цена: {props.productPrice} грн</div>
+        <CounterButton />
       </div>
       <div>
         <span className={styles.removeFromCart} onClick={onRemoveFromCart}>X</span>
-        </div>
+      </div>
     </div>
   );
 }
