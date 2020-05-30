@@ -15,7 +15,7 @@ const MainHeader = (props) => {
                 <span>Client Account</span>
             </NavLink>
             <NavLink to="/cart">
-                <h5>Cart <span className={styles.count}>{props.count}</span></h5>
+                <h5>Cart <span className={styles.count}>{props.totalCount}</span></h5>
                 
             </NavLink>
         </div>

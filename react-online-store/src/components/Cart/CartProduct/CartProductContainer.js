@@ -25,7 +25,7 @@ let mapStateToProps = (state) => {
     cartProducts: state.cartProductPage.items,
     totalPrice: state.cartProductPage.quantityItem.reduce((total, quantityItem) => (total + (quantityItem.productPrice * quantityItem.quantity - quantityItem.productPrice)),
       state.cartProductPage.items.reduce((total, item) => total + item.productPrice, 0)),
-    totalCount: state.cartProductPage.items.length + state.cartProductPage.quantityItem.reduce((total, quantityItem) => (total + quantityItem.quantity - 1), 0),
+    totalCount: state.cartProductPage.items.length + (state.cartProductPage.quantityItem.reduce((total, quantityItem) => (total + quantityItem.quantity - 1), 0)),
   }
 }
 

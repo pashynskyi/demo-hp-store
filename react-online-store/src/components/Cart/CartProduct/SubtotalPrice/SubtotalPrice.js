@@ -7,6 +7,7 @@ const SubtotalPrice = (props) => {
     props.orderProduct(props.totalPrice, props.totalCount, props.productId);
     console.log(props.totalPrice, props.totalCount, props.productId);
   }
+  debugger;
   return (
     <div className={styles.subtotalPrice}>
       <div>ИТОГО: <span>{props.totalPrice}</span></div>

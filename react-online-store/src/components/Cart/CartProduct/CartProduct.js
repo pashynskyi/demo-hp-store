@@ -7,7 +7,6 @@ import SubtotalPrice from "./SubtotalPrice/SubtotalPrice";
 const CartProduct = (props) => {
   let state = props.cartProducts;
   let productElements = state.map((p) => (
-    !state.productId &&
     <CartProductInfo
       key={p.productId}
       productId={p.productId}
