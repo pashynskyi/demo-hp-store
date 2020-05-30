@@ -7,7 +7,6 @@ class CartProductContainer extends React.Component {
   componentDidMount() {
   }
   render() {
-    debugger;
     return <CartProduct
       cartProducts={this.props.cartProducts}
       totalPrice={this.props.totalPrice}
@@ -16,15 +15,17 @@ class CartProductContainer extends React.Component {
       removeFromCart={this.props.removeFromCart}
       addQuantity={this.props.addQuantity}
       removeQuantity={this.props.removeQuantity}
-      orderProduct={this.props.orderProduct} />
+      orderProduct={this.props.orderProduct}
+    />
   }
 }
 
 let mapStateToProps = (state) => {
   return {
     cartProducts: state.cartProductPage.items,
-    totalPrice: state.cartProductPage.items.reduce((total, item) => total + item.productPrice, 0),
-    totalCount: state.cartProductPage.items.length
+    totalPrice: state.cartProductPage.quantityItem.reduce((total, quantityItem) => (total + (quantityItem.productPrice * quantityItem.quantity - quantityItem.productPrice)),
+      state.cartProductPage.items.reduce((total, item) => total + item.productPrice, 0)),
+    totalCount: state.cartProductPage.items.length + state.cartProductPage.quantityItem.reduce((total, quantityItem) => (total + quantityItem.quantity - 1), 0),
   }
 }
 

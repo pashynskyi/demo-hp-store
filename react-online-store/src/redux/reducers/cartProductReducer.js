@@ -14,7 +14,6 @@ let initialState = {
 const cartProductReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PRODUCT:
-      debugger;
       return {
         ...state,
         items: [
@@ -28,7 +27,6 @@ const cartProductReducer = (state = initialState, action) => {
         items: state.items.filter(e => e.productId !== action.payload)
       };
     case ADD_QUANTITY:
-        debugger;
         return {
           ...state,
           quantityItem: [
@@ -36,13 +34,11 @@ const cartProductReducer = (state = initialState, action) => {
           ]
         };
     case REMOVE_QUANTITY:
-      debugger;
       return {
         ...state,
         quantityItem: [...state.quantityItem.filter(e => e.productId !== action.payload.productId), action.payload]
       };
     case ORDER_PRODUCT:
-      debugger;
       return {
         ...state,
         selectedItems: [
@@ -57,8 +53,8 @@ const cartProductReducer = (state = initialState, action) => {
 
 export const addToCart = (obj) => ({ type: ADD_PRODUCT, payload: obj })
 export const removeFromCart = (productId) => ({ type: REMOVE_PRODUCT, payload: productId })
-export const addQuantity = (productId, productSize, quantity) => ({ type: ADD_QUANTITY, payload: { productId, productSize, quantity } })
-export const removeQuantity = (productId, productSize, quantity) => ({ type: REMOVE_QUANTITY, payload: { productId, productSize, quantity } })
+export const addQuantity = (productId, productSize, quantity, productPrice) => ({ type: ADD_QUANTITY, payload: { productId, productSize, quantity, productPrice } })
+export const removeQuantity = (productId, productSize, quantity, productPrice) => ({ type: REMOVE_QUANTITY, payload: { productId, productSize, quantity, productPrice } })
 export const orderProduct = (totalPrice, totalCount, obj) => ({ type: ORDER_PRODUCT, payload: { totalPrice, totalCount, obj } })
 
 export default cartProductReducer;

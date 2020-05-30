@@ -7,6 +7,7 @@ const CartProductInfo = (props) => {
   console.log(props)
   const onRemoveFromCart = () => {
     props.removeFromCart(props.productId)
+    props.removeQuantity(props.productId)
   }
 
   return (
@@ -22,6 +23,7 @@ const CartProductInfo = (props) => {
         <CounterButton
           productId={props.productId}
           productSize={props.productSize}
+          productPrice={props.productPrice}
           addQuantity={props.addQuantity}
           removeQuantity={props.removeQuantity} />
       </div>

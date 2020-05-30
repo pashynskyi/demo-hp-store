@@ -5,7 +5,7 @@ import { Button } from "react-bootstrap";
 const SubtotalPrice = (props) => {
   const onClickBtn = () => {
     props.orderProduct(props.totalPrice, props.totalCount, props.productId);
-    console.log(props.totalPrice, props.totalCount, props.productId)
+    console.log(props.totalPrice, props.totalCount, props.productId);
   }
   return (
     <div className={styles.subtotalPrice}>

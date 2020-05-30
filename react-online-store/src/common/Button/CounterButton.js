@@ -7,17 +7,31 @@ class CounterButton extends React.Component {
   }
 
   addBtn = (event) => {
-    this.setState({
-      value: ++event.target.value
-    });
-    setTimeout(() => this.props.addQuantity(this.props.productId, this.props.productSize, this.state.value))
+    if (event.target.value >= 99) {
+      return this.setState({
+        value: 99
+      });
+    }
+    else {
+      this.setState({
+        value: ++event.target.value
+      });
+    }
+    setTimeout(() => this.props.addQuantity(this.props.productId, this.props.productSize, this.state.value, this.props.productPrice))
   }
 
   subBtn = (event) => {
-    this.setState({
-      value: --event.target.value
-    });
-    setTimeout(() => this.props.removeQuantity(this.props.productId, this.props.productSize, this.state.value))
+    if (event.target.value <= 1) {
+      return this.setState({
+        value: 1
+      });
+    }
+    else {
+      this.setState({
+        value: --event.target.value
+      });
+    }
+    setTimeout(() => this.props.removeQuantity(this.props.productId, this.props.productSize, this.state.value, this.props.productPrice))
   }
 
   render() {
