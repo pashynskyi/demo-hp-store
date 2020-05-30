@@ -1,28 +1,31 @@
 import React from "react";
 import { connect } from 'react-redux';
 import CartProduct from './CartProduct';
-import {addToCart, removeFromCart, orderProduct} from "../../../redux/reducers/cartProductReducer";
+import { addToCart, removeFromCart, addQuantity, removeQuantity, orderProduct } from "../../../redux/reducers/cartProductReducer";
 
 class CartProductContainer extends React.Component {
-    componentDidMount() {
-    }
-    render() {
-      debugger;
-      return <CartProduct 
+  componentDidMount() {
+  }
+  render() {
+    debugger;
+    return <CartProduct
       cartProducts={this.props.cartProducts}
       totalPrice={this.props.totalPrice}
-      count={this.props.count}
-      orderProduct={this.props.orderProduct}
-      removeFromCart={this.props.removeFromCart} />
-    }
+      totalCount={this.props.totalCount}
+      addToCart={this.props.addToCart}
+      removeFromCart={this.props.removeFromCart}
+      addQuantity={this.props.addQuantity}
+      removeQuantity={this.props.removeQuantity}
+      orderProduct={this.props.orderProduct} />
   }
-
-let mapStateToProps = (state) => {
-    return {
-        cartProducts: state.cartProductPage.items,
-        totalPrice: state.cartProductPage.items.reduce((total, item) => total + item.productPrice, 0),
-        count: state.cartProductPage.items.length
-    }
 }
 
-export default connect(mapStateToProps, {addToCart, removeFromCart, orderProduct})(CartProductContainer);
+let mapStateToProps = (state) => {
+  return {
+    cartProducts: state.cartProductPage.items,
+    totalPrice: state.cartProductPage.items.reduce((total, item) => total + item.productPrice, 0),
+    totalCount: state.cartProductPage.items.length
+  }
+}
+
+export default connect(mapStateToProps, { addToCart, removeFromCart, addQuantity, removeQuantity, orderProduct })(CartProductContainer);

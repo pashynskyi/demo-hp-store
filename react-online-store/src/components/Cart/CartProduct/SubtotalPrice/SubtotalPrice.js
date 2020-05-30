@@ -4,13 +4,13 @@ import { Button } from "react-bootstrap";
 
 const SubtotalPrice = (props) => {
   const onClickBtn = () => {
-    props.orderProduct(props.totalPrice, props.count, props.productId);
-    console.log(props.totalPrice, props.count, props.productId)
+    props.orderProduct(props.totalPrice, props.totalCount, props.productId);
+    console.log(props.totalPrice, props.totalCount, props.productId)
   }
   return (
     <div className={styles.subtotalPrice}>
       <div>ИТОГО: <span>{props.totalPrice}</span></div>
-      <div>Количество: <span>{props.count}</span></div>
+      <div>Количество: <span>{props.totalCount}</span></div>
       <Button variant="success" onClick={onClickBtn}>Купить</Button>
     </div>
   );
