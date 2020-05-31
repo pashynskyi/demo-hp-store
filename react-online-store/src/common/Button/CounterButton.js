@@ -31,7 +31,7 @@ class CounterButton extends React.Component {
         value: --event.target.value
       });
     }
-    setTimeout(() => this.props.removeQuantity(this.props.productId, this.props.productSize, this.state.value, this.props.productPrice))
+    setTimeout(() => this.props.subQuantity(this.props.productId, this.props.productSize, this.state.value, this.props.productPrice))
   }
 
   render() {

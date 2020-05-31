@@ -4,8 +4,8 @@ import { Button } from "react-bootstrap";
 
 const SubtotalPrice = (props) => {
   const onClickBtn = () => {
-    props.orderProduct(props.totalPrice, props.totalCount, props.productId);
-    console.log(props.totalPrice, props.totalCount, props.productId);
+    props.orderProduct(props.totalPrice, props.totalCount, props.confirmedQuantityProducts);
+    console.log(props.totalPrice, props.totalCount, props.confirmedQuantityProducts);
   }
   debugger;
   return (

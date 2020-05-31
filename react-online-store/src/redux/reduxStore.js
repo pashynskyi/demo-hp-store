@@ -1,9 +1,9 @@
 import { createStore, combineReducers } from "redux";
-import menTShirtsReducer from "./reducers/menTShirtsReducer";
+import productsReducer from "./reducers/productsReducer";
 import cartProductReducer from "./reducers/cartProductReducer";
 
 let reducers = combineReducers({
-    menTShirtsPage: menTShirtsReducer,
+    productsPage: productsReducer,
     cartProductPage: cartProductReducer
 });
 

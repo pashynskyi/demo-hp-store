@@ -5,23 +5,14 @@ import FormSelectSize from "../../../../common/Form/FormSelectSize";
 
 const ProductInfo = (props) => {
   const onAddToCart = () => {
-    debugger;
-    props.addToCart(
-      props.selectedSize,
-      // props.productId,
-      // props.productPrice,
-      // props.productFirm,
-      // props.productType,
-      // props.productMaterial,
-      // props.pictureUrl
-    );
+    props.addToCart(props.selectedSize);
   }
 
   const onRemoveFromCart = () => {
     props.removeFromCart(props.productId)
   }
 
-  let splitProductSizes = props.productSizes.split(',');
+  let splitProductSizes = props.productSizes.split(', ');
   let newProductSizes = splitProductSizes.map((item, index) => (
     <option key={index} value={item}>{item}</option>
   ));

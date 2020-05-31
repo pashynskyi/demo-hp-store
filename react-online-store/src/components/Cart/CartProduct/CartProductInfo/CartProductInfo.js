@@ -7,7 +7,6 @@ const CartProductInfo = (props) => {
   console.log(props)
   const onRemoveFromCart = () => {
     props.removeFromCart(props.productId);
-    props.removeQuantity(props.productId, props.productSize, 1, 1);
   }
 
   return (
@@ -25,7 +24,7 @@ const CartProductInfo = (props) => {
           productSize={props.productSize}
           productPrice={props.productPrice}
           addQuantity={props.addQuantity}
-          removeQuantity={props.removeQuantity} />
+          subQuantity={props.subQuantity} />
       </div>
       <div>
         <span className={styles.removeFromCart} onClick={onRemoveFromCart}>X</span>

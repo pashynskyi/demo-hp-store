@@ -8,7 +8,7 @@ let initialState = {
   selectedSize: null
 };
 
-const menTShirtsReducer = (state = initialState, action) => {
+const productsReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_MEN_TSHIRTS:
       return {
@@ -56,4 +56,4 @@ export const requestProducts = (page, pageSize) => {
   }
 }
 
-export default menTShirtsReducer;
+export default productsReducer;

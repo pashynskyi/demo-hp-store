@@ -1,7 +1,13 @@
 import React from "react";
 import { connect } from 'react-redux';
 import CartProduct from './CartProduct';
-import { addToCart, removeFromCart, addQuantity, removeQuantity, orderProduct } from "../../../redux/reducers/cartProductReducer";
+import {
+  addToCart,
+  removeFromCart,
+  addQuantity,
+  subQuantity,
+  orderProduct
+} from "../../../redux/reducers/cartProductReducer";
 
 class CartProductContainer extends React.Component {
   componentDidMount() {
@@ -14,8 +20,9 @@ class CartProductContainer extends React.Component {
       addToCart={this.props.addToCart}
       removeFromCart={this.props.removeFromCart}
       addQuantity={this.props.addQuantity}
-      removeQuantity={this.props.removeQuantity}
+      subQuantity={this.props.subQuantity}
       orderProduct={this.props.orderProduct}
+      confirmedQuantityProducts={this.props.confirmedQuantityProducts}
     />
   }
 }
@@ -26,7 +33,8 @@ let mapStateToProps = (state) => {
     totalPrice: state.cartProductPage.quantityItem.reduce((total, quantityItem) => (total + (quantityItem.productPrice * quantityItem.quantity - quantityItem.productPrice)),
       state.cartProductPage.items.reduce((total, item) => total + item.productPrice, 0)),
     totalCount: state.cartProductPage.items.length + (state.cartProductPage.quantityItem.reduce((total, quantityItem) => (total + quantityItem.quantity - 1), 0)),
+    confirmedQuantityProducts: state.cartProductPage.quantityItem
   }
 }
 
-export default connect(mapStateToProps, { addToCart, removeFromCart, addQuantity, removeQuantity, orderProduct })(CartProductContainer);
+export default connect(mapStateToProps, { addToCart, removeFromCart, addQuantity, subQuantity, orderProduct })(CartProductContainer);
