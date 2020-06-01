@@ -3,15 +3,19 @@ import { connect } from 'react-redux';
 import Products from '../../Products/Products';
 import { setProducts, selectSize } from "../../../redux/reducers/productsReducer";
 import { addToCart, removeFromCart, addQuantity } from "../../../redux/reducers/cartProductReducer";
-import * as axios from 'axios';
+import { productsAPI } from "../../../api/api";
 
 class MenTShirtContainer extends React.Component {
 
   componentDidMount() {
-    axios.get('http://localhost:8000/collection/men-home/T-Shirts')
-      .then(response => {
-        this.props.setProducts(response.data);
-      });
+    productsAPI.getMenTShirts().then(response => {
+      this.props.setProducts(response);
+    });
+
+    // axios.get('http://localhost:8000/collection/men-home/T-Shirts')
+    //   .then(response => {
+    //     this.props.setProducts(response.data);
+    //   });
   }
   render() {
     return <Products products={this.props.products}

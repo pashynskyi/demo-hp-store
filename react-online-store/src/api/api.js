@@ -1,15 +1,15 @@
 import * as axios from 'axios';
 
 const instance = axios.create({
-  withCredentials: true,
   baseURL: 'http://localhost:8000/'
 })
 
 export const productsAPI = {
-  getProducts() {
-    return instance.get(`collection`)
+  getMenTShirts() {
+    return instance.get('collection/men-home/T-Shirts')
       .then(response => {
         return response.data;
       });
-  },
+  }
 }
+
