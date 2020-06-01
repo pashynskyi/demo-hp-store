@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from 'react-redux';
 import Products from '../../Products/Products';
 import { setProducts, selectSize } from "../../../redux/reducers/productsReducer";
-import { addToCart, removeFromCart } from "../../../redux/reducers/cartProductReducer";
+import { addToCart, removeFromCart, addQuantity } from "../../../redux/reducers/cartProductReducer";
 import * as axios from 'axios';
 
 class MenTShirtContainer extends React.Component {
@@ -20,6 +20,7 @@ class MenTShirtContainer extends React.Component {
       removeFromCart={this.props.removeFromCart}
       selectSize={this.props.selectSize}
       selectedSize={this.props.selectedSize}
+      addQuantity={this.props.addQuantity}
     // addedCount={this.props.addedCount}
     />
   }
@@ -36,4 +37,4 @@ let mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { setProducts, addToCart, removeFromCart, selectSize })(MenTShirtContainer);
+export default connect(mapStateToProps, { setProducts, addToCart, removeFromCart, selectSize, addQuantity })(MenTShirtContainer);

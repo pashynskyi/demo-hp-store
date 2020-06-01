@@ -4,13 +4,6 @@ import FormSelectSize from "../../../../common/Form/FormSelectSize";
 
 
 const ProductInfo = (props) => {
-  const onAddToCart = () => {
-    props.addToCart(props.selectedSize);
-  }
-
-  const onRemoveFromCart = () => {
-    props.removeFromCart(props.productId)
-  }
 
   let splitProductSizes = props.productSizes.split(', ');
   let newProductSizes = splitProductSizes.map((item, index) => (
@@ -31,10 +24,10 @@ const ProductInfo = (props) => {
         productType={props.productType}
         productMaterial={props.productMaterial}
         pictureUrl={props.pictureUrl}
-        onAddToCart={onAddToCart}
-        onRemoveFromCart={onRemoveFromCart}
-        selectedSize={props.selectedSize} />
-      {/* <ProductButton onAddToCart={onAddToCart} onRemoveFromCart={onRemoveFromCart} selectedSize={props.selectedSize} /> */}
+        addToCart={props.addToCart}
+        removeFromCart={props.removeFromCart}
+        selectedSize={props.selectedSize}
+        addQuantity={props.addQuantity} />
     </div>
   );
 }

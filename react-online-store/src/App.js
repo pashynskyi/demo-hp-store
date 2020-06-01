@@ -11,7 +11,7 @@ import RegisterAccount from "./components/RegisterAccount/RegisterAccount";
 import MenTShirtsContainer from "./components/MenHome/MenTShirts/MenTShirtsContainer";
 import { Route } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
-
+import CheckoutContainer from "./components/Checkout/CheckoutContainer";
 
 const App = (props) => {
   return (
@@ -26,6 +26,7 @@ const App = (props) => {
         <Route path='/client-account/login' render={() => <ClientAccount />} />
         <Route path='/client-account/register' render={() => <RegisterAccount />} />
         <Route path='/cart' render={() => <Cart />} />
+        <Route path='/checkout' render={() => <CheckoutContainer />} />
       </main>
       <Footer />
     </div>

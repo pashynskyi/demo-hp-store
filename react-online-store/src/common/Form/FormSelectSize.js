@@ -11,6 +11,15 @@ class FormSelectSize extends React.Component {
     this.defaultSize = this.defaultSize.bind(this);
   }
 
+   onAddToCart = () => {
+    this.props.addToCart(this.props.selectedSize);
+    this.props.addQuantity(this.props.productId, this.state.value, 1, this.props.productPrice);
+  }
+
+    onRemoveFromCart = () => {
+    this.props.removeFromCart(this.props.productId)
+  }
+
   selectSize(event) {
     this.setState({ value: event.target.value });
     this.props.selectSize(
@@ -20,7 +29,7 @@ class FormSelectSize extends React.Component {
       this.props.productFirm,
       this.props.productType,
       this.props.productMaterial,
-      this.props.pictureUrl
+      this.props.pictureUrl,
     )
     event.preventDefault();
   }
@@ -42,8 +51,8 @@ class FormSelectSize extends React.Component {
             </Form.Control>
           </Form.Group>
         </Form>
-        <ProductButton onAddToCart={this.props.onAddToCart}
-          onRemoveFromCart={this.props.onRemoveFromCart}
+        <ProductButton onAddToCart={this.onAddToCart}
+          onRemoveFromCart={this.onRemoveFromCart}
           currentValue={this.state.value}
         />
       </>

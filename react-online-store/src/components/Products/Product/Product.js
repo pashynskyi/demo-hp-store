@@ -20,6 +20,7 @@ const Product = (props) => {
         removeFromCart={props.removeFromCart}
         selectSize={props.selectSize}
         selectedSize={props.selectedSize}
+        addQuantity={props.addQuantity}
       />
     </div>
   );

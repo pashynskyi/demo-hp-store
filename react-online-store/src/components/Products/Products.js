@@ -23,6 +23,7 @@ const Products = (props) => {
           removeFromCart={props.removeFromCart}
           selectSize={props.selectSize}
           selectedSize={props.selectedSize}
+          addQuantity={props.addQuantity}
           // addedCount={props.addedCount}
         />
       </Col>

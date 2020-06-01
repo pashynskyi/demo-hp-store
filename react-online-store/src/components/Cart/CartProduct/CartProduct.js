@@ -35,6 +35,7 @@ const CartProduct = (props) => {
         productPrice={props.productPrice}
         orderProduct={props.orderProduct}
         confirmedQuantityProducts={props.confirmedQuantityProducts}
+        selectedProducts={props.selectedProducts}
       />
     </div>
 

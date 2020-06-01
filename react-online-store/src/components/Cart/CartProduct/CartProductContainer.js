@@ -23,6 +23,7 @@ class CartProductContainer extends React.Component {
       subQuantity={this.props.subQuantity}
       orderProduct={this.props.orderProduct}
       confirmedQuantityProducts={this.props.confirmedQuantityProducts}
+      selectedProducts={this.props.selectedProducts}
     />
   }
 }
@@ -33,7 +34,8 @@ let mapStateToProps = (state) => {
     totalPrice: state.cartProductPage.quantityItem.reduce((total, quantityItem) => (total + (quantityItem.productPrice * quantityItem.quantity - quantityItem.productPrice)),
       state.cartProductPage.items.reduce((total, item) => total + item.productPrice, 0)),
     totalCount: state.cartProductPage.items.length + (state.cartProductPage.quantityItem.reduce((total, quantityItem) => (total + quantityItem.quantity - 1), 0)),
-    confirmedQuantityProducts: state.cartProductPage.quantityItem
+    confirmedQuantityProducts: state.cartProductPage.quantityItem,
+    selectedProducts: state.cartProductPage.selectedItems
   }
 }
 
