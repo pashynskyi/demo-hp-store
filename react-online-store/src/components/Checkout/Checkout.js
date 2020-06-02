@@ -1,7 +1,8 @@
 import React from "react";
 import { CheckoutReduxForm } from "./CheckoutReduxForm/CheckoutReduxForm";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import * as axios from 'axios';
+import { NavLink } from "react-router-dom";
 
 const Checkout = (props) => {
 
@@ -9,12 +10,16 @@ const Checkout = (props) => {
 
   const onSubmit = (formData) => {
     props.sendOrder(formData, data);
-      axios.post('http://localhost:8000/checkout', { formData, data })
-        .then(response => {
-          if (response.data.resultCode === 0) {
-            console.log('success')
-          }
-        }).catch(console.log('fault'));
+    axios.post('http://localhost:8000/checkout', { formData, data })
+      .then(response => {
+        if (response.data.resultCode === 0) {
+          console.log('success')
+        }
+      }).catch(console.log('fault'));
+  }
+
+  const onResetOrder = () => {
+    props.resetOrder();
   }
 
   return (
@@ -26,6 +31,7 @@ const Checkout = (props) => {
             <CheckoutReduxForm onSubmit={onSubmit} />
           </Col>
           <div>
+            <div><NavLink to="/cart" ><Button onClick={onResetOrder}>Вернуться в корзину</Button></NavLink></div>
             <div>Общая сумма: <span>{data.totalPrice} грн</span></div>
             <div>Количество товара: <span>{data.totalCount}</span></div>
           </div>

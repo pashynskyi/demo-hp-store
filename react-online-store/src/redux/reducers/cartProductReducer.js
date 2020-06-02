@@ -3,6 +3,7 @@ const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
 const ADD_QUANTITY = 'ADD_QUANTITY';
 const SUB_QUANTITY = 'SUB_QUANTITY';
 const ORDER_PRODUCT = 'ORDER_PRODUCT';
+const RESET_ORDER = 'RESET_ORDER';
 
 
 let initialState = {
@@ -44,6 +45,12 @@ const cartProductReducer = (state = initialState, action) => {
         ...state,
         selectedItems: [action.payload]
       };
+      case RESET_ORDER:
+        debugger;
+        return {
+          ...state,
+          selectedItems: action.payload
+        };
     default:
       return state;
   }
@@ -55,5 +62,6 @@ export const removeFromCart = (productId) => ({ type: REMOVE_PRODUCT, payload: p
 export const addQuantity = (productId, productSize, quantity, productPrice) => ({ type: ADD_QUANTITY, payload: { productId, productSize, quantity, productPrice } })
 export const subQuantity = (productId, productSize, quantity, productPrice) => ({ type: SUB_QUANTITY, payload: { productId, productSize, quantity, productPrice } })
 export const orderProduct = (totalPrice, totalCount, obj) => ({ type: ORDER_PRODUCT, payload: { totalPrice, totalCount, obj } })
+export const resetOrder = () => ({ type: RESET_ORDER, payload: {}}) 
 
 export default cartProductReducer;
