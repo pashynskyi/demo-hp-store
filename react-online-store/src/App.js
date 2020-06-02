@@ -8,7 +8,7 @@ import WomenHome from "./components/WomenHome/WomenHome";
 import KidsHome from "./components/KidsHome/KidsHome";
 import ClientAccount from "./components/ClientAccount/ClientAccount";
 import RegisterAccount from "./components/RegisterAccount/RegisterAccount";
-import MenTShirtsContainer from "./components/MenHome/MenTShirts/MenTShirtsContainer";
+import ProductsContainer from "./components/Products/ProductsContainer";
 import { Route } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
 import CheckoutContainer from "./components/Checkout/CheckoutContainer";
@@ -20,7 +20,7 @@ const App = (props) => {
       <main className='app-wrapper-content'>
         <Route exact path='/' render={() => <Home />} />
         <Route exact path='/men-home' render={() => <MenHome />} />
-        <Route path='/men-home/t-shirts' component={MenTShirtsContainer} />
+        <Route path='/men-home/t-shirts' component={ProductsContainer} />
         <Route path='/women-home' render={() => <WomenHome />} />
         <Route path='/kids-home' render={() => <KidsHome />} />
         <Route path='/client-account/login' render={() => <ClientAccount />} />

@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from 'react-redux';
-import Products from '../../Products/Products';
-import { selectSize, requestMenTShirts } from "../../../redux/reducers/productsReducer";
-import { addToCart, removeFromCart, addQuantity } from "../../../redux/reducers/cartProductReducer";
+import Products from './Products';
+import { selectSize, requestMenTShirts } from "../../redux/reducers/productsReducer";
+import { addToCart, removeFromCart, addQuantity } from "../../redux/reducers/cartProductReducer";
 
-class MenTShirtContainer extends React.Component {
+class ProductsContainer extends React.Component {
 
   componentDidMount() {
     if (this.props.location.pathname === '/men-home/t-shirts') {
@@ -51,4 +51,4 @@ export default connect(mapStateToProps,
     selectSize,
     addQuantity,
     requestMenTShirts
-  })(MenTShirtContainer);
+  })(ProductsContainer);
