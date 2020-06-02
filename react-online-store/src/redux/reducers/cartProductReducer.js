@@ -18,8 +18,7 @@ const cartProductReducer = (state = initialState, action) => {
       return {
         ...state,
         items: [
-          ...state.items,
-          action.payload
+          ...state.items.filter(e => e.productId  !== action.payload.productId), action.payload
         ]
       };
     case REMOVE_PRODUCT:
@@ -29,12 +28,12 @@ const cartProductReducer = (state = initialState, action) => {
         quantityItem: state.quantityItem.filter(e => e.productId !== action.payload)
       };
     case ADD_QUANTITY:
-        return {
-          ...state,
-          quantityItem: [
-            ...state.quantityItem.filter(e => e.productId !== action.payload.productId), action.payload
-          ]
-        };
+      return {
+        ...state,
+        quantityItem: [
+          ...state.quantityItem.filter(e => e.productId !== action.payload.productId), action.payload
+        ]
+      };
     case SUB_QUANTITY:
       return {
         ...state,
@@ -45,13 +44,13 @@ const cartProductReducer = (state = initialState, action) => {
         ...state,
         selectedItems: [action.payload]
       };
-      case RESET_ORDER:
-        debugger;
-        return {
-          ...state,
-          selectedItems: action.payload,
-          quantityItem: [{productId: '', productSize: '', quantity: 1, productPrice: 0}]
-        };
+    case RESET_ORDER:
+      debugger;
+      return {
+        ...state,
+        selectedItems: action.payload,
+        quantityItem: [{ productId: '', productSize: '', quantity: 1, productPrice: 0 }]
+      };
     default:
       return state;
   }
@@ -63,6 +62,6 @@ export const removeFromCart = (productId) => ({ type: REMOVE_PRODUCT, payload: p
 export const addQuantity = (productId, productSize, quantity, productPrice) => ({ type: ADD_QUANTITY, payload: { productId, productSize, quantity, productPrice } })
 export const subQuantity = (productId, productSize, quantity, productPrice) => ({ type: SUB_QUANTITY, payload: { productId, productSize, quantity, productPrice } })
 export const orderProduct = (totalPrice, totalCount, obj) => ({ type: ORDER_PRODUCT, payload: { totalPrice, totalCount, obj } })
-export const resetOrder = () => ({ type: RESET_ORDER, payload: {}}) 
+export const resetOrder = () => ({ type: RESET_ORDER, payload: {} })
 
 export default cartProductReducer;

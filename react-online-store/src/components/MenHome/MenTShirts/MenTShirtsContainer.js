@@ -1,14 +1,15 @@
 import React from "react";
 import { connect } from 'react-redux';
 import Products from '../../Products/Products';
-import { selectSize, requestProducts } from "../../../redux/reducers/productsReducer";
+import { selectSize, requestMenTShirts } from "../../../redux/reducers/productsReducer";
 import { addToCart, removeFromCart, addQuantity } from "../../../redux/reducers/cartProductReducer";
 
 class MenTShirtContainer extends React.Component {
 
   componentDidMount() {
-
-    this.props.requestProducts();
+    if (this.props.location.pathname === '/men-home/t-shirts') {
+      this.props.requestMenTShirts();
+    }
 
     // productsAPI.getMenTShirts().then(response => {
     //   this.props.setProducts(response);
@@ -49,5 +50,5 @@ export default connect(mapStateToProps,
     removeFromCart,
     selectSize,
     addQuantity,
-    requestProducts
+    requestMenTShirts
   })(MenTShirtContainer);

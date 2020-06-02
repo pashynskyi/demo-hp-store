@@ -20,7 +20,7 @@ const App = (props) => {
       <main className='app-wrapper-content'>
         <Route exact path='/' render={() => <Home />} />
         <Route exact path='/men-home' render={() => <MenHome />} />
-        <Route path='/men-home/t-shirt' render={() => <MenTShirtsContainer />} />
+        <Route path='/men-home/t-shirts' component={MenTShirtsContainer} />
         <Route path='/women-home' render={() => <WomenHome />} />
         <Route path='/kids-home' render={() => <KidsHome />} />
         <Route path='/client-account/login' render={() => <ClientAccount />} />
