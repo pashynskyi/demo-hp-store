@@ -1,16 +1,18 @@
 import React from "react";
 import { connect } from 'react-redux';
 import Products from '../../Products/Products';
-import { setProducts, selectSize } from "../../../redux/reducers/productsReducer";
+import { selectSize, requestProducts } from "../../../redux/reducers/productsReducer";
 import { addToCart, removeFromCart, addQuantity } from "../../../redux/reducers/cartProductReducer";
-import { productsAPI } from "../../../api/api";
 
 class MenTShirtContainer extends React.Component {
 
   componentDidMount() {
-    productsAPI.getMenTShirts().then(response => {
-      this.props.setProducts(response);
-    });
+
+    this.props.requestProducts();
+
+    // productsAPI.getMenTShirts().then(response => {
+    //   this.props.setProducts(response);
+    // });
 
     // axios.get('http://localhost:8000/collection/men-home/T-Shirts')
     //   .then(response => {
@@ -41,4 +43,11 @@ let mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { setProducts, addToCart, removeFromCart, selectSize, addQuantity })(MenTShirtContainer);
+export default connect(mapStateToProps,
+  {
+    addToCart,
+    removeFromCart,
+    selectSize,
+    addQuantity,
+    requestProducts
+  })(MenTShirtContainer);

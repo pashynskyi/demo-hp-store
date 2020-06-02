@@ -14,7 +14,6 @@ let initialState = {
 const cartProductReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PRODUCT:
-      debugger;
       return {
         ...state,
         items: [
@@ -41,12 +40,9 @@ const cartProductReducer = (state = initialState, action) => {
         quantityItem: [...state.quantityItem.filter(e => e.productId !== action.payload.productId), action.payload]
       };
     case ORDER_PRODUCT:
-      debugger;
       return {
         ...state,
-        selectedItems: [
-          ...state.selectedItems,
-          action.payload]
+        selectedItems: [action.payload]
       };
     default:
       return state;
