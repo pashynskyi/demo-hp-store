@@ -31,7 +31,7 @@ const Checkout = (props) => {
             <CheckoutReduxForm onSubmit={onSubmit} />
           </Col>
           <div>
-            <div><NavLink to="/cart" ><Button onClick={onResetOrder}>Вернуться в корзину</Button></NavLink></div>
+            <div><NavLink to="/cart" ><Button variant="danger" onClick={onResetOrder}>Отменить заказ</Button></NavLink></div>
             <div>Общая сумма: <span>{data.totalPrice} грн</span></div>
             <div>Количество товара: <span>{data.totalCount}</span></div>
           </div>

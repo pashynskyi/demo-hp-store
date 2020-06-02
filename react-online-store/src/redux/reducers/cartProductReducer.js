@@ -49,7 +49,8 @@ const cartProductReducer = (state = initialState, action) => {
         debugger;
         return {
           ...state,
-          selectedItems: action.payload
+          selectedItems: action.payload,
+          quantityItem: [{productId: '', productSize: '', quantity: 1, productPrice: 0}]
         };
     default:
       return state;
