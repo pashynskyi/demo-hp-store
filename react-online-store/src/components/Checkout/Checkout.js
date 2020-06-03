@@ -2,7 +2,7 @@ import React from "react";
 import { CheckoutReduxForm } from "./CheckoutReduxForm/CheckoutReduxForm";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import * as axios from 'axios';
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 
 const Checkout = (props) => {
 
@@ -21,7 +21,8 @@ const Checkout = (props) => {
   const onResetOrder = () => {
     props.resetOrder();
   }
-
+  
+  if (!data) return <Redirect to="/cart" />;
   return (
     <div>
       <h1>Оформление заказа</h1>

@@ -38,11 +38,10 @@ export const selectSize = (
   productSize,
   productId,
   productPrice,
-  productFirm,
-  productType,
+  productDescription,
   productMaterial,
   pictureUrl
-) => ({ type: SELECTED_SIZE, payload: { productSize, productId, productPrice, productFirm, productType, productMaterial, pictureUrl } })
+) => ({ type: SELECTED_SIZE, payload: { productSize, productId, productPrice, productDescription, productMaterial, pictureUrl } })
 
 
 export const requestMenTShirts = () => {

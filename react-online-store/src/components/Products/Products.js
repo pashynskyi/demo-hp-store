@@ -15,8 +15,7 @@ const Products = (props) => {
           productId={p.productId}
           pictureUrl={p.pictureUrl}
           productPrice={p.productPrice}
-          productFirm={p.productFirm}
-          productType={p.productType}
+          productDescription={p.productDescription}
           productMaterial={p.productMaterial}
           productSizes={p.productSizes}
           addToCart={props.addToCart}

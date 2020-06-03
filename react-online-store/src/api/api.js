@@ -6,7 +6,13 @@ const instance = axios.create({
 
 export const productsAPI = {
   getMenTShirts() {
-    return instance.get('collection/men-home/T-Shirts')
+    return instance.get('collection/men-home/t-shirts')
+      .then(response => {
+        return response.data;
+      });
+  },
+  getMenShirts() {
+    return instance.get('collection/men-home/shirts')
       .then(response => {
         return response.data;
       });

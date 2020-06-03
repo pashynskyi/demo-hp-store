@@ -19,8 +19,14 @@ const App = (props) => {
       <Header />
       <main className='app-wrapper-content'>
         <Route exact path='/' render={() => <Home />} />
+
         <Route exact path='/men-home' render={() => <MenHome />} />
         <Route path='/men-home/t-shirts' component={ProductsContainer} />
+        <Route path='/men-home/shirts' component={ProductsContainer} />
+        <Route path='/men-home/jeans' component={ProductsContainer} />
+        <Route path='/men-home/shorts' component={ProductsContainer} />
+        <Route path='/men-home/jackets' component={ProductsContainer} />
+
         <Route path='/women-home' render={() => <WomenHome />} />
         <Route path='/kids-home' render={() => <KidsHome />} />
         <Route path='/client-account/login' render={() => <ClientAccount />} />

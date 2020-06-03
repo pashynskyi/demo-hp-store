@@ -26,8 +26,7 @@ class FormSelectSize extends React.Component {
       event.target.value,
       this.props.productId,
       this.props.productPrice,
-      this.props.productFirm,
-      this.props.productType,
+      this.props.productDescription,
       this.props.productMaterial,
       this.props.pictureUrl,
     )

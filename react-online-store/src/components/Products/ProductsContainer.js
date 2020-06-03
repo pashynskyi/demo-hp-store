@@ -9,6 +9,8 @@ class ProductsContainer extends React.Component {
   componentDidMount() {
     if (this.props.location.pathname === '/men-home/t-shirts') {
       this.props.requestMenTShirts();
+    } else if (this.props.location.pathname === '/men-home/shirts') {
+      this.props.requestMenTShirts();
     }
 
     // productsAPI.getMenTShirts().then(response => {

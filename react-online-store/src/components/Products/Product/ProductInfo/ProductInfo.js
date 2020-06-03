@@ -13,15 +13,14 @@ const ProductInfo = (props) => {
   return (
     <div className={styles.containerInfo}>
       <div>{props.productPrice} грн</div>
-      <div>{props.productFirm} <span>/ {props.productType}</span></div>
+      <div>{props.productDescription}</div>
       <div>Состав: <span>{props.productMaterial}</span></div>
       <FormSelectSize
         newProductSizes={newProductSizes}
         selectSize={props.selectSize}
         productId={props.productId}
         productPrice={props.productPrice}
-        productFirm={props.productFirm}
-        productType={props.productType}
+        productDescription={props.productDescription}
         productMaterial={props.productMaterial}
         pictureUrl={props.pictureUrl}
         addToCart={props.addToCart}

@@ -15,7 +15,7 @@ const CartProductInfo = (props) => {
         <img src={props.pictureUrl} alt='' />
       </div>
       <div className={styles.infoContainer}>
-        <div>{props.productFirm}<span> / {props.productType}</span></div>
+        <div>{props.productDescription}</div>
         <div>Состав: <span>{props.productMaterial}</span></div>
         <div>Размер: <span>{props.productSize}</span></div>
         <div>Цена: {props.productPrice} грн</div>

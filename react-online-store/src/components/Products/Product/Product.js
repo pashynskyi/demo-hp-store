@@ -11,8 +11,7 @@ const Product = (props) => {
       <ProductInfo
         productId={props.productId}
         productPrice={props.productPrice}
-        productFirm={props.productFirm}
-        productType={props.productType}
+        productDescription={props.productDescription}
         productMaterial={props.productMaterial}
         productSizes={props.productSizes}
         pictureUrl={props.pictureUrl}

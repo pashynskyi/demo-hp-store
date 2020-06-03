@@ -12,8 +12,7 @@ const CartProduct = (props) => {
       productId={p.productId}
       pictureUrl={p.pictureUrl}
       productPrice={p.productPrice}
-      productFirm={p.productFirm}
-      productType={p.productType}
+      productDescription={p.productDescription}
       productMaterial={p.productMaterial}
       productSize={p.productSize}
       removeFromCart={props.removeFromCart}
