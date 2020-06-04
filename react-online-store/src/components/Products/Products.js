@@ -5,6 +5,7 @@ import PortalMenTypes from "../MenHome/PortalMenTypes/PortalMenTypes";
 import Product from "./Product/Product";
 import { Container, Row, Col } from 'react-bootstrap';
 import PortalWomenTypes from "../WomenHome/PortalWomenTypes/PortalWomenTypes";
+import FilterContainer from "../Filter/FilterContainer";
 
 
 const Products = (props) => {
@@ -38,6 +39,7 @@ const Products = (props) => {
         <PortalWomenTypes />
       }
       <Container>
+        <FilterContainer />
         <Row>
           {productElements}
         </Row>

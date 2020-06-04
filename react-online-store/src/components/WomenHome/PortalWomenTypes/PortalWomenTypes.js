@@ -8,7 +8,7 @@ const PortalWomenTypes = () => {
       <ul className={styles.portalType}>
         <li>
           <NavLink to="/collection/women-home/t-shirts" activeClassName={styles.activeLink}>
-            Футблолки
+            Футболки
           </NavLink>
         </li>
         <li>

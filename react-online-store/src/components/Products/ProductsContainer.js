@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Products from './Products';
 import { selectSize, requestMenProducts, requestWomenProducts } from "../../redux/reducers/productsReducer";
 import { addToCart, removeFromCart, addQuantity } from "../../redux/reducers/cartProductReducer";
+import orderBy from "lodash/orderBy";
 
 class ProductsContainer extends React.Component {
 
@@ -54,11 +55,24 @@ class ProductsContainer extends React.Component {
   }
 }
 
-let mapStateToProps = (state) => {
+const sortBy = (products, filterBy) => {
+  switch (filterBy) {
+    case 'all':
+      return products;
+    case 'price_high':
+      return orderBy(products, 'productPrice', 'desc');
+    case 'price_low':
+      return orderBy(products, 'productPrice', 'asc');
+    default:
+      return products;
+  }
+}
+
+let mapStateToProps = ({ productsPage }) => {
   return {
-    products: state.productsPage.products,
-    isReady: state.productsPage.isReady,
-    selectedSize: state.productsPage.selectedSize
+    products: sortBy(productsPage.products, productsPage.filterBy),
+    isReady: productsPage.isReady,
+    selectedSize: productsPage.selectedSize
     // addedCount: state.cartProductPage.items.reduce(
     // (count, item) => count + (item.productId === productId ? 1 : 0), 0,
     //  ),
