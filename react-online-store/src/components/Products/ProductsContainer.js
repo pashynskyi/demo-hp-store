@@ -6,15 +6,6 @@ import { addToCart, removeFromCart, addQuantity } from "../../redux/reducers/car
 
 class ProductsContainer extends React.Component {
 
-  // onTestMen() {
-  //   this.props.requestMenProducts('');
-  //   alert('Men')
-  // }
-  // onTestWomen() {
-  //   this.props.requestWomenProducts('');
-  //   alert('Women')
-  // }
-
   componentDidMount() {
     if (this.props.location.pathname === '/collection/men-home/t-shirts') {
       this.props.requestMenProducts('t-shirts');
@@ -48,23 +39,9 @@ class ProductsContainer extends React.Component {
     //   });
   }
 
-  // componentDidUpdate(prevProps) {
-  //   // Популярный пример (не забудьте сравнить пропсы):
-  //   if (this.props.location.pathname !== prevProps.location.pathname) {
-  //       // (this.onTestMen() || this.onTestWomen())
-  //     }
-  //   }
-
-  // componentWillUnmount() {
-  //   if (!this.props.requestMenProducts) {
-  //     this.onTestMen()
-  //   }
-  //   else { this.onTestWomen() }
-  // }
-
   render() {
     return (
-      !this.props.isReady ? 'Loading...' :
+      !this.props.isReady ? 'Загрузка...' :
         <Products products={this.props.products}
           isReady={this.props.isReady}
           addToCart={this.props.addToCart}
@@ -72,8 +49,6 @@ class ProductsContainer extends React.Component {
           selectSize={this.props.selectSize}
           selectedSize={this.props.selectedSize}
           addQuantity={this.props.addQuantity}
-          onTestMen={this.props.onTestMen}
-          onTestWomen={this.props.onTestWomen}
         // addedCount={this.props.addedCount}
         />)
   }

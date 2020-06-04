@@ -30,18 +30,12 @@ const Products = (props) => {
     ));
   return (
     <section>
-      <div onClick={`${props.onTestMen} ${props.onTestWomen}`}>
-        <PortalList />
-      </div>
+      <PortalList />
       {(props.isReady && state[0].categoryType === "men-home") &&
-        <div onClick={props.onTestMen}>
-          <PortalMenTypes />
-        </div>
+        <PortalMenTypes />
       }
       {(props.isReady && state[0].categoryType === "women-home") &&
-        <div onClick={props.onTestWomen}>
-          <PortalWomenTypes />
-        </div>
+        <PortalWomenTypes />
       }
       <Container>
         <Row>
