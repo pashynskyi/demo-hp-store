@@ -44,9 +44,17 @@ export const selectSize = (
 ) => ({ type: SELECTED_SIZE, payload: { productSize, productId, productPrice, productDescription, productMaterial, pictureUrl } })
 
 
-export const requestMenTShirts = () => {
+export const requestMenProducts = (type) => {
   return (dispatch) => {
-    productsAPI.getMenTShirts().then(response => {
+    productsAPI.getMenProducts(type).then(response => {
+      dispatch(setProducts(response));
+    });
+  }
+}
+
+export const requestWomenProducts = (type) => {
+  return (dispatch) => {
+    productsAPI.getWomenProducts(type).then(response => {
       dispatch(setProducts(response));
     });
   }

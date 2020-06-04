@@ -21,13 +21,19 @@ const App = (props) => {
         <Route exact path='/' render={() => <Home />} />
 
         <Route exact path='/men-home' render={() => <MenHome />} />
-        <Route path='/men-home/t-shirts' component={ProductsContainer} />
-        <Route path='/men-home/shirts' component={ProductsContainer} />
-        <Route path='/men-home/jeans' component={ProductsContainer} />
-        <Route path='/men-home/shorts' component={ProductsContainer} />
-        <Route path='/men-home/jackets' component={ProductsContainer} />
+        <Route path='/collection/men-home/t-shirts' component={ProductsContainer} />
+        <Route path='/collection/men-home/shirts' component={ProductsContainer} />
+        <Route path='/collection/men-home/jeans' component={ProductsContainer} />
+        <Route path='/collection/men-home/shorts' component={ProductsContainer} />
+        <Route path='/collection/men-home/jackets' component={ProductsContainer} />
 
-        <Route path='/women-home' render={() => <WomenHome />} />
+        <Route exact path='/women-home' render={() => <WomenHome />} />
+        <Route path='/collection/women-home/t-shirts' component={ProductsContainer} />
+        <Route path='/collection/women-home/shorts' component={ProductsContainer} />
+        <Route path='/collection/women-home/hoodies' component={ProductsContainer} />
+        <Route path='/collection/women-home/skirts' component={ProductsContainer} />
+        <Route path='/collection/women-home/dresses' component={ProductsContainer} />
+
         <Route path='/kids-home' render={() => <KidsHome />} />
         <Route path='/client-account/login' render={() => <ClientAccount />} />
         <Route path='/client-account/register' render={() => <RegisterAccount />} />

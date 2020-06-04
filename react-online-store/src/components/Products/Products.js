@@ -4,6 +4,7 @@ import PortalList from "../PortalList/PortalList";
 import PortalMenTypes from "../MenHome/PortalMenTypes/PortalMenTypes";
 import Product from "./Product/Product";
 import { Container, Row, Col } from 'react-bootstrap';
+import PortalWomenTypes from "../WomenHome/PortalWomenTypes/PortalWomenTypes";
 
 
 const Products = (props) => {
@@ -23,14 +24,25 @@ const Products = (props) => {
           selectSize={props.selectSize}
           selectedSize={props.selectedSize}
           addQuantity={props.addQuantity}
-          // addedCount={props.addedCount}
+        // addedCount={props.addedCount}
         />
       </Col>
     ));
   return (
     <section>
-      <PortalList />
-      <PortalMenTypes />
+      <div onClick={`${props.onTestMen} ${props.onTestWomen}`}>
+        <PortalList />
+      </div>
+      {(props.isReady && state[0].categoryType === "men-home") &&
+        <div onClick={props.onTestMen}>
+          <PortalMenTypes />
+        </div>
+      }
+      {(props.isReady && state[0].categoryType === "women-home") &&
+        <div onClick={props.onTestWomen}>
+          <PortalWomenTypes />
+        </div>
+      }
       <Container>
         <Row>
           {productElements}

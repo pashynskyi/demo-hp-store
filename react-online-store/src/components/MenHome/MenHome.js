@@ -4,14 +4,13 @@ import PortalList from "../PortalList/PortalList";
 import PortalMenTypes from "./PortalMenTypes/PortalMenTypes";
 import menWidePhoto from '../../assets/images/men_wide_1.jpg';
 
-
 const MenHome = (props) => {
     return (
         <section>
             <PortalList />
             <PortalMenTypes />
             <div>
-                <img className={styles.menWidePhoto} src={menWidePhoto} alt="" />
+                <img className={styles.womenWidePhoto} src={menWidePhoto} alt="" />
             </div>
         </section>
     );

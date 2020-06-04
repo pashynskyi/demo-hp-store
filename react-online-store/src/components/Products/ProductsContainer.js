@@ -1,16 +1,41 @@
 import React from "react";
 import { connect } from 'react-redux';
 import Products from './Products';
-import { selectSize, requestMenTShirts } from "../../redux/reducers/productsReducer";
+import { selectSize, requestMenProducts, requestWomenProducts } from "../../redux/reducers/productsReducer";
 import { addToCart, removeFromCart, addQuantity } from "../../redux/reducers/cartProductReducer";
 
 class ProductsContainer extends React.Component {
 
+  // onTestMen() {
+  //   this.props.requestMenProducts('');
+  //   alert('Men')
+  // }
+  // onTestWomen() {
+  //   this.props.requestWomenProducts('');
+  //   alert('Women')
+  // }
+
   componentDidMount() {
-    if (this.props.location.pathname === '/men-home/t-shirts') {
-      this.props.requestMenTShirts();
-    } else if (this.props.location.pathname === '/men-home/shirts') {
-      this.props.requestMenTShirts();
+    if (this.props.location.pathname === '/collection/men-home/t-shirts') {
+      this.props.requestMenProducts('t-shirts');
+    } else if (this.props.location.pathname === '/collection/men-home/shirts') {
+      this.props.requestMenProducts('shirts');
+    } else if (this.props.location.pathname === '/collection/men-home/jeans') {
+      this.props.requestMenProducts('jeans');
+    } else if (this.props.location.pathname === '/collection/men-home/shorts') {
+      this.props.requestMenProducts('shorts');
+    } else if (this.props.location.pathname === '/collection/men-home/jackets') {
+      this.props.requestMenProducts('jackets');
+    } else if (this.props.location.pathname === '/collection/women-home/t-shirts') {
+      this.props.requestWomenProducts('t-shirts');
+    } else if (this.props.location.pathname === '/collection/women-home/shorts') {
+      this.props.requestWomenProducts('shorts');
+    } else if (this.props.location.pathname === '/collection/women-home/hoodies') {
+      this.props.requestWomenProducts('hoodies');
+    } else if (this.props.location.pathname === '/collection/women-home/skirts') {
+      this.props.requestWomenProducts('skirts');
+    } else if (this.props.location.pathname === '/collection/women-home/dresses') {
+      this.props.requestWomenProducts('dresses');
     }
 
     // productsAPI.getMenTShirts().then(response => {
@@ -22,16 +47,35 @@ class ProductsContainer extends React.Component {
     //     this.props.setProducts(response.data);
     //   });
   }
+
+  // componentDidUpdate(prevProps) {
+  //   // Популярный пример (не забудьте сравнить пропсы):
+  //   if (this.props.location.pathname !== prevProps.location.pathname) {
+  //       // (this.onTestMen() || this.onTestWomen())
+  //     }
+  //   }
+
+  // componentWillUnmount() {
+  //   if (!this.props.requestMenProducts) {
+  //     this.onTestMen()
+  //   }
+  //   else { this.onTestWomen() }
+  // }
+
   render() {
-    return <Products products={this.props.products}
-      isReady={this.props.isReady}
-      addToCart={this.props.addToCart}
-      removeFromCart={this.props.removeFromCart}
-      selectSize={this.props.selectSize}
-      selectedSize={this.props.selectedSize}
-      addQuantity={this.props.addQuantity}
-    // addedCount={this.props.addedCount}
-    />
+    return (
+      !this.props.isReady ? 'Loading...' :
+        <Products products={this.props.products}
+          isReady={this.props.isReady}
+          addToCart={this.props.addToCart}
+          removeFromCart={this.props.removeFromCart}
+          selectSize={this.props.selectSize}
+          selectedSize={this.props.selectedSize}
+          addQuantity={this.props.addQuantity}
+          onTestMen={this.props.onTestMen}
+          onTestWomen={this.props.onTestWomen}
+        // addedCount={this.props.addedCount}
+        />)
   }
 }
 
@@ -52,5 +96,6 @@ export default connect(mapStateToProps,
     removeFromCart,
     selectSize,
     addQuantity,
-    requestMenTShirts
+    requestMenProducts,
+    requestWomenProducts
   })(ProductsContainer);
