@@ -18,7 +18,7 @@ const PortalWomenTypes = () => {
         </li>
         <li>
           <NavLink to="/collection/women-home/hoodies" activeClassName={styles.activeLink}>
-            Фуди
+            Худи
           </NavLink>
         </li>
         <li>

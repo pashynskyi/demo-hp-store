@@ -1,0 +1,24 @@
+.productContainer {
+    overflow: hidden;
+    height: 400px;
+    margin-bottom: 15px;
+    /*Анимация*/
+    -webkit-transition: .1s ease-out;
+    -webkit-transition-delay: 0.5s;
+    -o-transition: .1s ease-out;
+    -o-transition-delay: 0.5s;
+    -moz-transition: .1s ease-out;
+    -moz-transition-delay: 0.5s;
+    transition: .1s ease-out;
+    transition-delay: 0.5s;
+}
+
+.productContainer:hover {
+    border: 2px solid gray;
+    background: whitesmoke;
+    margin-bottom: 10px;
+    box-shadow: 10px 5px 5px gray;
+    overflow: visible;
+    height: auto;
+    top: 0; 
+}

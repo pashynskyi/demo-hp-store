@@ -12,9 +12,11 @@ const ProductInfo = (props) => {
 
   return (
     <div className={styles.containerInfo}>
-      <div>{props.productPrice} грн</div>
-      <div>{props.productDescription}</div>
-      <div>Состав: <span>{props.productMaterial}</span></div>
+      <div className={styles.descriptionBox}>
+        <div className={styles.price}>{props.productPrice} грн</div>
+        <div className={styles.description}>{props.productDescription}</div>
+        <div><b>Состав: </b><span>{props.productMaterial}</span></div>
+      </div>
       <FormSelectSize
         newProductSizes={newProductSizes}
         selectSize={props.selectSize}

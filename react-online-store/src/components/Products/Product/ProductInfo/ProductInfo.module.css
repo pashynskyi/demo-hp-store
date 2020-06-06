@@ -1,3 +1,19 @@
 .containerInfo {
-    background: aquamarine;
+    height: 160px;
+    padding: 5px;
+}
+
+.descriptionBox {
+    height: 120px;
+}
+
+.description {
+    height: 70px;
+    text-align: center;
+}
+
+.price {
+    text-align: center;
+    color: red;
+    font-size: 15px;
 }

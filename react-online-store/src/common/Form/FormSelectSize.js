@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form } from "react-bootstrap";
 import ProductButton from '../Button/ProductButton';
+import styles from "./FormSelectSize.module.css";
 
 
 class FormSelectSize extends React.Component {
@@ -40,10 +41,10 @@ class FormSelectSize extends React.Component {
 
   render() {
     return (
-      <>
+      <div className={styles.formContainer}>
         <Form onBlur={this.defaultSize}>
           <Form.Group controlId="exampleForm.SelectCustom">
-            <Form.Label>Размеры(INT):</Form.Label>
+            <Form.Label><b>Размеры(INT):</b></Form.Label>
             <Form.Control as="select" custom value={this.state.value} onChange={this.selectSize}>
               <option>Выберите размер</option>
               {this.props.newProductSizes}
@@ -54,7 +55,7 @@ class FormSelectSize extends React.Component {
           onRemoveFromCart={this.onRemoveFromCart}
           currentValue={this.state.value}
         />
-      </>
+      </div>
     )
   }
 }

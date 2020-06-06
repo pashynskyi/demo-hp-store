@@ -12,7 +12,7 @@ const Products = (props) => {
   let state = props.products;
   let productElements = !props.isReady ? 'Загрузка...'
     : state.map((p) => (
-      <Col xs="12" sm="6" md="4" lg="3" xl="3" key={p.productId}>
+      <Col className={styles.productContainer} xs="12" sm="6" md="4" lg="4" xl="3" key={p.productId}>
         <Product
           productId={p.productId}
           pictureUrl={p.pictureUrl}
