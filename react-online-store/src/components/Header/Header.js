@@ -9,7 +9,6 @@ const Header = (props) => {
             <MainHeaderContainer />
             <NavHeader />
         </header>
-
     );
 }
 

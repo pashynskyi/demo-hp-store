@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Products.module.css";
-import PortalList from "../PortalList/PortalList";
 import PortalMenTypes from "../MenHome/PortalMenTypes/PortalMenTypes";
 import Product from "./Product/Product";
 import { Container, Row, Col } from 'react-bootstrap';
@@ -31,7 +30,6 @@ const Products = (props) => {
     ));
   return (
     <section>
-      <PortalList />
       {(props.isReady && state[0].categoryType === "men-home") &&
         <PortalMenTypes />
       }

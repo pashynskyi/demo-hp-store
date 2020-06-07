@@ -1,0 +1,26 @@
+ul.womenDropMenu {
+  position: relative;
+}
+
+.womenDropMenu ul.submenu {
+  width: 160px;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: -60px;
+  left: 170px;
+  visibility: hidden;
+  font-weight: 100;
+  transition: 0.5s cubic-bezier(.1, -1.5, .1, 2.5);
+}
+
+.womenDropMenu:hover .submenu {
+  z-index: 5;
+  visibility: visible;
+  width: 200px;
+}
+
+.item .activeLink {
+  color: white;
+  text-decoration: underline;
+  font-weight: bold;
+}

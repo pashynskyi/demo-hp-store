@@ -1,4 +1,4 @@
-.mainHeader {
+div.mainHeader {
   height: 70px;
   width: 100%;
   max-width: 1440px;
@@ -6,17 +6,30 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-.logo {
+div.logoContainer {
   width: 70px;
-  margin-right: 50px;
 }
 
-h3 {
-  margin: 0px 30px;
+img.logo {
+  width: 100%;
 }
 
-.count {
+div.userIconContainer {
+  color: black;
+}
+
+div.cartIconContainer {
+  margin-right: 30px;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+span.count {
   color: red;
+  font-weight: bold;
+  font-size: 20px;
 }

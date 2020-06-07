@@ -3,32 +3,30 @@
 }
 
 .dropDownMenu ul {
-  width: 150px;
-  margin-top: 105px;
-  background: grey;
+  width: 140px;
+  margin-top: 60px;
+  background: rgba(0, 0, 0, 0.9);
   position: absolute;
-  display: none;
+  visibility: hidden;
+  transition: 1s cubic-bezier(.1, -1.5, .1, 2.5) width;
 }
 
 .dropDownMenu:hover ul {
   display: block;
-  z-index: 5;
+  z-index: 6;
+  visibility: visible;
+  top: 0;
+  width: 170px;
 }
 
 .dropDownMenu ul li {
   height: 50px;
 }
 
-.item a {
-    color: white;
-    text-decoration: none;
-}
-
 .item .activeLink {
-    color: black;
-    text-decoration: underline;
+  color: white;
+  text-decoration: underline;
 }
 
-.item a:hover {
-    color: gold;
-}
+
+
