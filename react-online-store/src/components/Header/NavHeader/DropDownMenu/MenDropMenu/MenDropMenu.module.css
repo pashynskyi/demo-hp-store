@@ -10,7 +10,7 @@ ul.menDropMenu {
   top: -60px;
   left: 170px;
   font-weight: 100;
-  transition: 0.5s cubic-bezier(.1, -1.5, .1, 2.5);
+  transition: width 0.5s cubic-bezier(.1, -1.5, .1, 2.5);
 }
 
 .menDropMenu:hover .submenu {
