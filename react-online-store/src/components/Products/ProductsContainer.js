@@ -4,6 +4,7 @@ import Products from './Products';
 import { selectSize, requestMenProducts, requestWomenProducts } from "../../redux/reducers/productsReducer";
 import { addToCart, removeFromCart, addQuantity } from "../../redux/reducers/cartProductReducer";
 import orderBy from "lodash/orderBy";
+import { Spinner } from "react-bootstrap";
 
 class ProductsContainer extends React.Component {
 
@@ -42,7 +43,7 @@ class ProductsContainer extends React.Component {
 
   render() {
     return (
-      !this.props.isReady ? 'Загрузка...' :
+      !this.props.isReady ? <Spinner animation="border" /> :
         <Products products={this.props.products}
           isReady={this.props.isReady}
           addToCart={this.props.addToCart}

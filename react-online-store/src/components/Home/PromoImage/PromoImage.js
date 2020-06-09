@@ -4,7 +4,7 @@ import { Carousel, Button } from 'react-bootstrap';
 
 const PromoImage = () => {
   return (
-    <Carousel>
+    <Carousel className={styles.carousel}>
       <Carousel.Item>
         <img
           className="d-block w-100"

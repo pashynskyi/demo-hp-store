@@ -33,6 +33,5 @@ span.removeFromCart {
 }
 
 span.removeFromCart:hover {
-    color: white;
-    background: black;
+    color: black;
 }

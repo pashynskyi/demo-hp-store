@@ -1,5 +1,22 @@
 .footer {
-    height: 100px;
+    height: 120px;
     background: black;
     color: white;
+}
+
+div .container{
+    max-width: 1410px;
+    padding: 20px 0px;
+}
+
+.titleBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.title {
+    margin-left: 10px;
+    font-size: 15px;
 }

@@ -1,0 +1,51 @@
+h2 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  padding-bottom: 20px;
+  border-bottom: 1px solid black;
+}
+
+.lastContainer {
+  padding-top: 20px;
+  border-bottom: none;
+}
+
+.photoContainer {
+  width: 75%;
+  min-width: 40%;
+  position: relative;
+}
+
+.photoContainer img {
+  width: 100%;
+  height: 100%;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: 1s ease;
+}
+
+.btnContainer:hover {
+  opacity: 1;
+}
+
+.textContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 18px;
+}

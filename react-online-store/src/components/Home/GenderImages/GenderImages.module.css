@@ -1,12 +1,39 @@
+h2 {
+  text-align: center;
+}
+
 .container {
-    display: flex;
+  display: flex;
+  margin-bottom: 20px;
 }
 
 .genderBox {
-    width: 380px;
+  flex-grow: 1;
+  position: relative;
 }
 
 .genderBox img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
+}
+
+.photoTitle {
+  height: 15%;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 5px 10px -5px black;
+  opacity: 0;
+  transition: 1s ease;
+}
+
+.genderBox:hover .photoTitle {
+  opacity: 1;
 }
