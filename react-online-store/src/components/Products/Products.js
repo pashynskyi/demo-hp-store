@@ -11,25 +11,27 @@ const Products = (props) => {
   let state = props.products;
   let productElements = !props.isReady ? 'Загрузка...'
     : state.map((p) => (
-      <Col className={styles.productContainer} xs="12" sm="6" md="4" lg="4" xl="3" key={p.productId}>
-        <Product
-          productId={p.productId}
-          pictureUrl={p.pictureUrl}
-          productPrice={p.productPrice}
-          productDescription={p.productDescription}
-          productMaterial={p.productMaterial}
-          productSizes={p.productSizes}
-          addToCart={props.addToCart}
-          removeFromCart={props.removeFromCart}
-          selectSize={props.selectSize}
-          selectedSize={props.selectedSize}
-          addQuantity={props.addQuantity}
-        // addedCount={props.addedCount}
-        />
+      <Col className={styles.col} xs="12" sm="6" md="4" lg="4" xl="3" key={p.productId}>
+        <div className={styles.productContainer}>
+            <Product
+              productId={p.productId}
+              pictureUrl={p.pictureUrl}
+              productPrice={p.productPrice}
+              productDescription={p.productDescription}
+              productMaterial={p.productMaterial}
+              productSizes={p.productSizes}
+              addToCart={props.addToCart}
+              removeFromCart={props.removeFromCart}
+              selectSize={props.selectSize}
+              selectedSize={props.selectedSize}
+              addQuantity={props.addQuantity}
+            // addedCount={props.addedCount}
+            />
+        </div>
       </Col>
     ));
   return (
-    <section>
+    <section className={styles.productSection}>
       {(props.isReady && state[0].categoryType === "men-home") &&
         <PortalMenTypes />
       }

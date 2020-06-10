@@ -1,17 +1,30 @@
+.productSection {
+    height: 100%;
+    min-height: 1140px;
+}
+
+.col {
+    max-height: 415px;
+    margin-bottom: 20px;
+}
+
 .productContainer {
     overflow: hidden;
     height: 400px;
     margin-bottom: 15px;
-    transition: 0.2s ease-out;
+    transition: box-shadow 0.2s ease-out;
     transition-delay: 0.5s;
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
 }
 
 .productContainer:hover {
+    z-index: 5;
     border: 2px solid gray;
     background: whitesmoke;
     margin-bottom: 20px;
     box-shadow: 10px 5px 5px gray;
-    height: auto;
+    height: 630px;
 }
-
-
