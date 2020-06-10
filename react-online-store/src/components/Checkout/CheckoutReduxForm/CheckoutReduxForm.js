@@ -10,50 +10,33 @@ const maxLength20 = maxLengthCreator(20);
 const CheckoutForm = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
+      <div>Эл. почта:
+        <Field name="email"
+          component={Input}
+          type="email"
+          validate={[required, maxLength50,]}
+          placeholder="Эл. почта" />
+      </div>
       <div>Имя и фамилия:
-        <Field name="fullName"
+        <Field name="name"
           component={Input}
           type="text"
-          validate={[ required, maxLength100,]}
+          validate={[required, maxLength100,]}
           placeholder="Имя и фамилия" />
       </div>
       <div>Мобильный телефон:
         <Field name="phone"
           component={Input}
           type="text"
-          validate={[ required, maxLength20,]}
+          validate={[required, maxLength20,]}
           placeholder="Мобильный телефон" />
       </div>
-      <div>Эл. почта:
-        <Field name="email"
-          component={Input}
-          type="email"
-          validate={[ required, maxLength50,]}
-          placeholder="Эл. почта" />
-      </div>
-      <div>Город:
-        <Field name="city"
-          component={Input}
-          type="text"
-          validate={[ required, maxLength50,]}
-          placeholder="Город" />
-      </div>
       <div> Адрес:
-        <Field name="street"
+        <Field name="address"
           component={Input}
           type="text"
-          validate={[ required, maxLength50,]}
-          placeholder="Улица" />
-        <Field name="house"
-          component={Input}
-          type="text"
-          validate={[ required, maxLength20,]}
-          placeholder="Дом" />
-        <Field name="apartment"
-          component={Input}
-          type="text"
-          validate={[ required, maxLength20,]}
-          placeholder="Квартира" />
+          validate={[required, maxLength50,]}
+          placeholder='Город, № отделение "Нова пошта"' />
       </div>
       <div>
         <button>Отправить заказ</button>

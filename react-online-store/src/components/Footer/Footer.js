@@ -27,16 +27,24 @@ const Footer = (props) => {
         </Row>
         <Row>
           <Col className={styles.titleBox} xs="3">
-            <Icon name="telegram plane" size='big' />
+            <a className={styles.socialLink} href="https://web.telegram.org/#/login" target="_blank" rel="noopener noreferrer">
+              <Icon className={styles.telegramIcon} name="telegram plane" size='big' />
+            </a>
           </Col>
           <Col className={styles.titleBox} xs="3">
-            <Icon name="instagram" size='big' />
+            <a className={styles.socialLink} href="https://www.instagram.com/?hl=uk" target="_blank" rel="noopener noreferrer">
+              <Icon className={styles.instagramIcon} name="instagram" size='big' />
+            </a>
           </Col>
           <Col className={styles.titleBox} xs="3">
-            <Icon name="facebook official" size='big' />
+            <a className={styles.socialLink} href="https://uk-ua.facebook.com/" target="_blank" rel="noopener noreferrer">
+              <Icon className={styles.facebookIcon} name="facebook official" size='big' />
+            </a>
           </Col>
           <Col className={styles.titleBox} xs="3">
-            <Icon name="viber" size='big' />
+            <a className={styles.socialLink} href="https://www.viber.com/ru/" target="_blank" rel="noopener noreferrer">
+              <Icon className={styles.viberIcon} name="viber" size='big' />
+            </a>
           </Col>
         </Row>
       </Container>

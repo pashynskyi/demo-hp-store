@@ -16,6 +16,6 @@ const checkoutReducer = (state = initialState, action) => {
   }
 }
 
-export const sendOrder = (formData, selectedItems) => ({ type: SEND_ORDER, payload: {formData, selectedItems} })
+export const sendOrder = (quickOrderForm, selectedItems) => ({ type: SEND_ORDER, payload: {quickOrderForm, selectedItems} })
 
 export default checkoutReducer;

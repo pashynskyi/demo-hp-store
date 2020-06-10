@@ -3,10 +3,28 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background: pink;
+    list-style-type: none;
+}
+
+.typeLink {
+    color: black;
+    font-size: 17px;
+    padding: 10px;
+    transition: 0.5s linear;
+}
+
+.typeLink:hover {
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    box-shadow: 1px 5px 10px -5px black;
 }
 
 .activeLink {
-    text-decoration: underline;
-    color: brown;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    color: white;
+    box-shadow: 1px 5px 10px -5px black;
 }

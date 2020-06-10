@@ -7,22 +7,33 @@ import { NavLink, Redirect } from "react-router-dom";
 const Checkout = (props) => {
 
   const data = props.selectedItems[0];
+  const products = data.obj;
+  for (let i = 0; i < products.length; i++) 
+    delete products[i].productPrice;
+  const totalPrice = data.totalPrice;
+//   let iterator = products.entries();
+//   const newObj = {};
+//   for (let item of iterator) { // проходим циклом по объекту
+    
+//     console.log( item ); // выводим пары ключ/значение 
+// }
 
-  const onSubmit = (formData) => {
-    props.sendOrder(formData, data);
-    axios.post('http://localhost:8000/checkout', { formData, data })
-      .then(response => {
-        if (response.data.resultCode === 0) {
-          console.log('success')
-        }
-      }).catch(console.log('fault'));
+  const onSubmit = (quickOrderForm) => {
+    // props.sendOrder(quickOrderForm, products);
+    axios.post('http://localhost:8000/quickOrder', {products, quickOrderForm, totalPrice} )
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
   const onResetOrder = () => {
     props.resetOrder();
   }
-  
-  if (!data) return <Redirect to="/cart" />;
+
+  if (!products) return <Redirect to="/cart" />;
   return (
     <div>
       <h1>Оформление заказа</h1>
@@ -43,3 +54,4 @@ const Checkout = (props) => {
 }
 
 export default Checkout;
+

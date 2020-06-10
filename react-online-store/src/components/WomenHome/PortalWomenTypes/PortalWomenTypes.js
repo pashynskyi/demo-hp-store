@@ -7,19 +7,29 @@ const PortalWomenTypes = () => {
     <div>
       <ul className={styles.portalType}>
         <li>
-          <NavLink to="/collection/women-home/t-shirts" activeClassName={styles.activeLink}>Футболки</NavLink>
+          <NavLink className={styles.typeLink} to="/collection/women-home/t-shirts" activeClassName={styles.activeLink}>
+            Футболки
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/collection/women-home/shorts" activeClassName={styles.activeLink}>Шорты</NavLink>
+          <NavLink className={styles.typeLink} to="/collection/women-home/shorts" activeClassName={styles.activeLink}>
+            Шорты
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/collection/women-home/hoodies" activeClassName={styles.activeLink}>Худи</NavLink>
+          <NavLink className={styles.typeLink} to="/collection/women-home/hoodies" activeClassName={styles.activeLink}>
+            Худи
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/collection/women-home/skirts" activeClassName={styles.activeLink}>Юбки</NavLink>
+          <NavLink className={styles.typeLink} to="/collection/women-home/skirts" activeClassName={styles.activeLink}>
+            Юбки
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/collection/women-home/dresses" activeClassName={styles.activeLink}>Платья</NavLink>
+          <NavLink className={styles.typeLink} to="/collection/women-home/dresses" activeClassName={styles.activeLink}>
+            Платья
+          </NavLink>
         </li>
       </ul>
     </div>
