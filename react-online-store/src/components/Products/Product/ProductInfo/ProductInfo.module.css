@@ -1,19 +1,29 @@
 .containerInfo {
-    height: 160px;
-    padding: 5px;
-}
-
-.descriptionBox {
-    height: 120px;
+    padding: 10px;
 }
 
 .description {
-    height: 70px;
     text-align: center;
+    margin-bottom: 40px;
 }
 
 .price {
     text-align: center;
     color: red;
     font-size: 15px;
+}
+
+.sizesContainer {
+    margin-top: 15px;
+}
+
+.titleSize {
+    font-weight: bold;
+}
+
+.rowSize {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
 }

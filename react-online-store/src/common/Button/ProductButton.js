@@ -7,6 +7,22 @@ class ProductButton extends React.Component {
     editMode: false
   }
 
+  onAddToCart = () => {
+    this.props.addToCart(
+      this.props.productSize,
+      this.props.productId,
+      this.props.productPrice,
+      this.props.productDescription,
+      this.props.productMaterial,
+      this.props.pictureUrl
+      );
+    this.props.addQuantity(this.props.productId, this.state.value, 1, this.props.productPrice);
+  }
+
+    onRemoveFromCart = () => {
+    this.props.removeFromCart(this.props.productId)
+  }
+
   activateEditMode = () => {
     this.setState({
       editMode: true
@@ -21,16 +37,17 @@ class ProductButton extends React.Component {
 
   render() {
     console.log(this.props.currentValue)
+    debugger;
     return (
       <>
-        {(!this.state.editMode && this.props.currentValue.length < 5 ) &&
+        {!this.state.editMode &&
           <div onClick={this.activateEditMode}>
-            <Button className={styles.productBtn} variant="success" onClick={() => this.props.onAddToCart()}>Добавить в корзину</Button>
+            <Button className={styles.productBtn} variant="success" onClick={() => this.onAddToCart()}>Добавить в корзину</Button>
           </div>
         }
         {this.state.editMode &&
           <div onClick={this.deactivateEditMode}>
-            <Button className={styles.productBtn} variant="danger" onClick={() => this.props.onRemoveFromCart()}>Удалить из корзины</Button>
+            <Button className={styles.productBtn} variant="danger" onClick={() => this.onRemoveFromCart()}>Удалить из корзины</Button>
           </div>
         }
       </>

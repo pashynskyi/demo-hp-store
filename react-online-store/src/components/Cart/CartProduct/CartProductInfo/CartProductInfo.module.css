@@ -9,6 +9,7 @@
 
 .photoContainer {
     max-width: 400px;
+    min-width: 155px;
 }
 
 .photoContainer img {
@@ -28,8 +29,8 @@
 span.removeFromCart {
     cursor: pointer;
     color: red;
-    margin-right: 20px;
     font-weight: bold;
+    font-size: 20px;
 }
 
 span.removeFromCart:hover {

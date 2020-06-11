@@ -1,8 +1,8 @@
-.productPhoto {
-    width: 100%;
-    height: 100%;
-}
-
 .containerPhoto {
     height: 310px;
+    text-align: center;
+}
+
+.productPhoto {
+    height: 100%;
 }

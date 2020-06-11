@@ -2,14 +2,14 @@ import { productsAPI } from "../../api/api";
 
 const SET_MEN_TSHIRTS = 'SET_MEN_TSHIRTS';
 const SET_IS_READY = 'SET_IS_READY';
-const SELECTED_SIZE = 'SELECTED_SIZE';
 const SET_FILTER = 'SET_FILTER';
+const SET_SIZE = 'SET_SIZE';
 
 let initialState = {
   isReady: false,
   products: null,
-  selectedSize: null,
-  filterBy: 'all'
+  filterBy: 'all',
+  productSize: 'S'
 };
 
 const productsReducer = (state = initialState, action) => {
@@ -25,31 +25,24 @@ const productsReducer = (state = initialState, action) => {
         ...state,
         isReady: action.payload
       };
-    case SELECTED_SIZE:
-      return {
-        ...state,
-        selectedSize: action.payload
-      };
     case SET_FILTER:
       return {
         ...state,
         filterBy: action.payload
       };
+      case SET_SIZE:
+        return {
+          ...state,
+          productSize: action.payload
+        };
     default:
       return state;
   }
 }
 
 export const setProducts = (products) => ({ type: SET_MEN_TSHIRTS, payload: products })
-export const selectSize = (
-  productSize,
-  productId,
-  productPrice,
-  productDescription,
-  productMaterial,
-  pictureUrl
-) => ({ type: SELECTED_SIZE, payload: { productSize, productId, productPrice, productDescription, productMaterial, pictureUrl } })
 export const setFilter = (filter) => ({ type: SET_FILTER, payload: filter })
+export const setSize = (size) => ({type: SET_SIZE, payload: size})
 
 
 export const requestMenProducts = (type) => {

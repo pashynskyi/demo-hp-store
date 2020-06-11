@@ -27,7 +27,7 @@ const CartProductInfo = (props) => {
           subQuantity={props.subQuantity} />
       </div>
       <div>
-        <span className={styles.removeFromCart} onClick={onRemoveFromCart}>X</span>
+        <span className={styles.removeFromCart} onClick={onRemoveFromCart}>&times;</span>
       </div>
     </div>
   );

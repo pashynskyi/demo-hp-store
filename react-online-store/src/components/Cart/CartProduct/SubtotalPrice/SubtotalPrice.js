@@ -12,10 +12,10 @@ const SubtotalPrice = (props) => {
 
   return (
     <div className={styles.subtotalPrice}>
-      <div>ИТОГО: <span>{props.totalPrice}</span></div>
+      <div>ИТОГО: <span className={styles.totalPrice}>{props.totalPrice}&nbsp;грн</span></div>
       <div>Количество: <span>{props.totalCount}</span></div>
       {props.confirmedQuantityProducts.length >= 1 &&
-        <Button variant="success" onClick={onClickBtn}>Оформить заказ</Button>
+        <Button className={styles.cartBtn} variant="success" onClick={onClickBtn}>Оформить заказ</Button>
       }
     </div>
   );

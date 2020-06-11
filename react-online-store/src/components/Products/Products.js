@@ -11,7 +11,7 @@ const Products = (props) => {
   let state = props.products;
   let productElements = !props.isReady ? 'Загрузка...'
     : state.map((p) => (
-      <Col className={styles.col} xs="12" sm="6" md="4" lg="4" xl="3" key={p.productId}>
+      <Col className={styles.col} xs="12" sm="6" md="6" lg="4" xl="3" key={p.productId}>
         <div className={styles.productContainer}>
             <Product
               productId={p.productId}
@@ -25,7 +25,6 @@ const Products = (props) => {
               selectSize={props.selectSize}
               selectedSize={props.selectedSize}
               addQuantity={props.addQuantity}
-            // addedCount={props.addedCount}
             />
         </div>
       </Col>

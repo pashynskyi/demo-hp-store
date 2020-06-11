@@ -1,0 +1,14 @@
+.subtotalPrice {
+  border-left: 1px solid black;
+  padding-left: 20px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.totalPrice {
+    color: #28a745;
+}
+
+.cartBtn {
+    margin-top: 10px;
+}

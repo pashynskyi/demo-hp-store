@@ -15,10 +15,11 @@ let initialState = {
 const cartProductReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PRODUCT:
+      debugger;
       return {
         ...state,
         items: [
-          ...state.items.filter(e => e.productId  !== action.payload.productId), action.payload
+          ...state.items.filter(e => e.productId !== action.payload.productId), action.payload
         ]
       };
     case REMOVE_PRODUCT:
@@ -57,7 +58,16 @@ const cartProductReducer = (state = initialState, action) => {
 }
 
 
-export const addToCart = (obj) => ({ type: ADD_PRODUCT, payload: obj })
+export const addToCart = (productSize, productId, productPrice, productDescription, productMaterial, pictureUrl) => ({
+  type: ADD_PRODUCT, payload: {
+    productSize,
+    productId,
+    productPrice,
+    productDescription,
+    productMaterial,
+    pictureUrl
+  }
+})
 export const removeFromCart = (productId) => ({ type: REMOVE_PRODUCT, payload: productId })
 export const addQuantity = (productId, productSize, quantity, productPrice) => ({ type: ADD_QUANTITY, payload: { productId, productSize, quantity, productPrice } })
 export const subQuantity = (productId, productSize, quantity, productPrice) => ({ type: SUB_QUANTITY, payload: { productId, productSize, quantity, productPrice } })

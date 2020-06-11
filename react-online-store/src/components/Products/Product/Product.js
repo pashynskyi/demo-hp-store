@@ -4,7 +4,6 @@ import ProductPhoto from "./ProductPhoto/ProductPhoto";
 import ProductInfo from "./ProductInfo/ProductInfo";
 
 const Product = (props) => {
-
   return (
     <div className={styles.item}>
       <ProductPhoto pictureUrl={props.pictureUrl} />

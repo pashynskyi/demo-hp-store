@@ -25,6 +25,9 @@ const CartProduct = (props) => {
   return (
     <div className={styles.conteiner}>
       <div className={styles.productContainer}>
+        {state.length < 1 &&
+          <div className={styles.emptyCart}>Добавьте товар в корзину.</div>
+        }
         {productElements}
       </div>
       <SubtotalPrice

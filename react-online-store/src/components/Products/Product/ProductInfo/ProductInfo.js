@@ -1,15 +1,11 @@
 import React from "react";
 import styles from "./ProductInfo.module.css";
-import FormSelectSize from "../../../../common/Form/FormSelectSize";
+import SelectSizeContainer from "../../../SelectSize/SelectSizeContainer";
+import ProductButtonContainer from "../../../../common/Button/ProductButtonContainer";
 
 
 const ProductInfo = (props) => {
-
   let splitProductSizes = props.productSizes.split(', ');
-  let newProductSizes = splitProductSizes.map((item, index) => (
-    <option key={index} value={item}>{item}</option>
-  ));
-
   return (
     <div className={styles.containerInfo}>
       <div className={styles.descriptionBox}>
@@ -17,18 +13,19 @@ const ProductInfo = (props) => {
         <div className={styles.description}>{props.productDescription}</div>
         <div><b>Состав: </b><span>{props.productMaterial}</span></div>
       </div>
-      <FormSelectSize
-        newProductSizes={newProductSizes}
-        selectSize={props.selectSize}
-        productId={props.productId}
-        productPrice={props.productPrice}
-        productDescription={props.productDescription}
-        productMaterial={props.productMaterial}
-        pictureUrl={props.pictureUrl}
-        addToCart={props.addToCart}
-        removeFromCart={props.removeFromCart}
-        selectedSize={props.selectedSize}
-        addQuantity={props.addQuantity} />
+      <div className={styles.sizesContainer}>
+        <div className={styles.titleSize}>Выберите размер:</div>
+        <div className={styles.rowSize}>
+          <SelectSizeContainer splitProductSizes={splitProductSizes} />
+        </div>
+        <ProductButtonContainer
+          productId={props.productId}
+          productPrice={props.productPrice}
+          productDescription={props.productDescription}
+          productMaterial={props.productMaterial}
+          pictureUrl={props.pictureUrl}
+        />
+      </div>
     </div>
   );
 }
