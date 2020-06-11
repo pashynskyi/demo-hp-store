@@ -17,8 +17,6 @@ const Product = (props) => {
         addToCart={props.addToCart}
         removeFromCart={props.removeFromCart}
         selectSize={props.selectSize}
-        selectedSize={props.selectedSize}
-        addQuantity={props.addQuantity}
       />
     </div>
   );

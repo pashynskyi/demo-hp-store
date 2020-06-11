@@ -11,12 +11,6 @@ const Checkout = (props) => {
   for (let i = 0; i < products.length; i++) 
     delete products[i].productPrice;
   const totalPrice = data.totalPrice;
-//   let iterator = products.entries();
-//   const newObj = {};
-//   for (let item of iterator) { // проходим циклом по объекту
-    
-//     console.log( item ); // выводим пары ключ/значение 
-// }
 
   const onSubmit = (quickOrderForm) => {
     // props.sendOrder(quickOrderForm, products);

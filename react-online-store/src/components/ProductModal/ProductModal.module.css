@@ -1,0 +1,14 @@
+.zoomIcon {
+    color: white;
+}
+
+.zoomIcon:hover {
+    color: gold;
+    cursor: pointer;
+}
+
+.modalContainer {
+    top: auto !important;
+    left: auto !important;
+    height: auto !important;
+}
