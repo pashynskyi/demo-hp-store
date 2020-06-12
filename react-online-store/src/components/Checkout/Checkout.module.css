@@ -1,0 +1,17 @@
+.container button {
+    width: 140px;
+}
+
+.totalInfoContainer {
+    margin: 15px;
+    font-size: 15px;
+}
+
+.totalInfo div {
+    margin: 10px 0px;
+    font-weight: bold;
+}
+
+.price {
+    color: #28a745;
+}

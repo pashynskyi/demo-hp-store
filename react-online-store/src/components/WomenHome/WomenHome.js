@@ -10,7 +10,7 @@ const WomenHome = (props) => {
             <PortalList />
             <PortalWomenTypes />
             <div>
-                <img className={styles.menWidePhoto} src={womenWidePhoto} alt="" />
+                <img className={styles.widePhoto} src={womenWidePhoto} alt="" />
             </div>
         </section>
     );

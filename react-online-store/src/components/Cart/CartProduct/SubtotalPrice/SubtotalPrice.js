@@ -12,8 +12,8 @@ const SubtotalPrice = (props) => {
 
   return (
     <div className={styles.subtotalPrice}>
-      <div>ИТОГО: <span className={styles.totalPrice}>{props.totalPrice}&nbsp;грн</span></div>
-      <div>Количество: <span>{props.totalCount}</span></div>
+      <div>ИТОГО:&nbsp;<span className={styles.totalPrice}>{props.totalPrice}&nbsp;грн</span></div>
+      <div>Количество:&nbsp;<span>{props.totalCount}</span></div>
       {props.confirmedQuantityProducts.length >= 1 &&
         <Button className={styles.cartBtn} variant="success" onClick={onClickBtn}>Оформить заказ</Button>
       }

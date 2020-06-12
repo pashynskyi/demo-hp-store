@@ -1,22 +1,32 @@
-.portalWrapper {
-  background: gray;
-}
-
 .portalList {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
+  margin: 5px 0px 20px;
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  background: honeydew;
+  justify-content: space-around;
+  list-style-type: none;
+  border-bottom: 1px solid black;
+  padding-bottom: 20px;
 }
 
-a {
-  text-decoration: none;
+.typeLink {
+  color: black;
+  font-size: 17px;
+  padding: 10px;
+  transition: 0.5s linear;
+}
+
+.typeLink:hover {
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  box-shadow: 1px 5px 10px -5px black;
 }
 
 .activeLink {
-  color: red;
-  text-decoration: underline;
+  padding: 10px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  color: white;
+  box-shadow: 1px 5px 10px -5px black;
 }

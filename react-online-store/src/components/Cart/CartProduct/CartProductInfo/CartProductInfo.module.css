@@ -20,6 +20,11 @@
 .infoContainer {
     width: 100%;
     margin-left: 70px;
+    font-size: 15px;
+}
+
+.infoContainer div {
+    margin: 10px 0px;
 }
 
 .size {

@@ -9,9 +9,9 @@ const ProductInfo = (props) => {
   return (
     <div className={styles.containerInfo}>
       <div className={styles.descriptionBox}>
-        <div className={styles.price}>{props.productPrice} грн</div>
+        <div className={styles.price}>{props.productPrice}&nbsp;грн</div>
         <div className={styles.description}>{props.productDescription}</div>
-        <div><b>Состав: </b><span>{props.productMaterial}</span></div>
+        <div><b>Состав:&nbsp;</b><span>{props.productMaterial}</span></div>
       </div>
       <div className={styles.sizesContainer}>
         <div className={styles.titleSize}>Выберите размер:</div>

@@ -16,9 +16,9 @@ const CartProductInfo = (props) => {
       </div>
       <div className={styles.infoContainer}>
         <div>{props.productDescription}</div>
-        <div>Состав: <span>{props.productMaterial}</span></div>
-        <div>Размер: <span>{props.productSize}</span></div>
-        <div>Цена: {props.productPrice} грн</div>
+        <div>Состав:&nbsp;<span>{props.productMaterial}</span></div>
+        <div>Размер:&nbsp;<span>{props.productSize}</span></div>
+        <div>Цена:&nbsp;{props.productPrice} грн</div>
         <CounterButton
           productId={props.productId}
           productSize={props.productSize}
