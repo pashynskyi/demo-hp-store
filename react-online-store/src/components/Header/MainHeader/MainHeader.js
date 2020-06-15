@@ -20,7 +20,7 @@ const MainHeader = (props) => {
         <div><Icon name='phone' />+380804626648</div>
         <div><Icon name='phone' />+380804626659</div>
       </div>
-      <NavLink to="/client-account/login">
+      <NavLink to="/login">
         <div className={styles.userIconContainer}>
           <Icon name='user circle' size='big' />
           Client account

@@ -6,12 +6,12 @@ import Home from "./components/Home/Home";
 import MenHome from "./components/MenHome/MenHome";
 import WomenHome from "./components/WomenHome/WomenHome";
 import KidsHome from "./components/KidsHome/KidsHome";
-import ClientAccount from "./components/ClientAccount/ClientAccount";
-import RegisterAccount from "./components/RegisterAccount/RegisterAccount";
 import ProductsContainer from "./components/Products/ProductsContainer";
 import { Route } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
 import CheckoutContainer from "./components/Checkout/CheckoutContainer";
+import RegisterContainer from "./components/Register/RegisterContainer";
+import LoginContainer from "./components/Login/LoginContainer";
 
 const App = (props) => {
   return (
@@ -35,8 +35,8 @@ const App = (props) => {
         <Route path='/collection/women-home/dresses' component={ProductsContainer} />
 
         <Route path='/kids-home' render={() => <KidsHome />} />
-        <Route path='/client-account/login' render={() => <ClientAccount />} />
-        <Route path='/client-account/register' render={() => <RegisterAccount />} />
+        <Route path='/login' render={() => <LoginContainer />} />
+        <Route path='/register' render={() => <RegisterContainer />} />
         <Route path='/cart' render={() => <Cart />} />
         <Route path='/checkout' render={() => <CheckoutContainer />} />
       </main>
