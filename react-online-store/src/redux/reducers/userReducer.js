@@ -1,7 +1,7 @@
 const LOGIN_USER = 'LOGIN_USER';
 
 const initialState = {
-  currentUser: {}
+  currentUser: ''
 }
 
 const userReducer = (state = initialState, action) => {

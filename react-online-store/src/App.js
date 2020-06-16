@@ -12,6 +12,7 @@ import Cart from "./components/Cart/Cart";
 import CheckoutContainer from "./components/Checkout/CheckoutContainer";
 import RegisterContainer from "./components/Register/RegisterContainer";
 import LoginContainer from "./components/Login/LoginContainer";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
 const App = (props) => {
   return (
@@ -37,6 +38,7 @@ const App = (props) => {
         <Route path='/kids-home' render={() => <KidsHome />} />
         <Route path='/login' render={() => <LoginContainer />} />
         <Route path='/register' render={() => <RegisterContainer />} />
+        <Route path='/profile' render={() => <ProfileContainer />} />
         <Route path='/cart' render={() => <Cart />} />
         <Route path='/checkout' render={() => <CheckoutContainer />} />
       </main>

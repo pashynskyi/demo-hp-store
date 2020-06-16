@@ -3,7 +3,7 @@ import styles from "./Login.module.css";
 import { LoginReduxForm } from "./LoginReduxForm/LoginReduxForm";
 import { Container, Row, Col } from "react-bootstrap";
 import * as axios from 'axios';
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 
 const Login = (props) => {
   const onSubmit = (login) => {
@@ -11,13 +11,15 @@ const Login = (props) => {
     axios.post('http://localhost:8000/login', { ...login })
       .then(function (response) {
         console.log(response);
-        console.log(response.data.account)
+        console.log(response.data.token);
+        props.setUser(response.data);
       })
       .catch(function (error) {
         console.log(error);
-      })
+      });
   }
 
+  // if(!props.currentUser === {}) return <Redirect to="/profile" />;
 
   return (
     <div>
