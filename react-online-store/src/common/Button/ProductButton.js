@@ -36,8 +36,6 @@ class ProductButton extends React.Component {
   }
 
   render() {
-    console.log(this.props.currentValue)
-    debugger;
     return (
       <>
         {!this.state.editMode &&

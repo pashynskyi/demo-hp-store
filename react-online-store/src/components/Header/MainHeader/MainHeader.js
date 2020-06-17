@@ -23,7 +23,12 @@ const MainHeader = (props) => {
       <NavLink to="/profile">
         <div className={styles.userIconContainer}>
           <Icon name='user circle' size='big' />
-          Client account
+          {!props.userName &&
+            <span>Client account</span>
+          }
+          {props.userName &&
+            <span>{props.userName}</span>
+          }
         </div>
       </NavLink>
       <NavLink to="/cart">

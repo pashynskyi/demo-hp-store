@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import Login from './Login';
-import { setUser } from '../../redux/reducers/userReducer';
+import { setUser } from '../../redux/reducers/loginReducer';
 import * as axios from 'axios';
 import { Redirect } from "react-router-dom";
 
@@ -26,7 +26,7 @@ class LoginContainer extends React.Component {
 
 let mapStateToProps = (state) => {
   return {
-    currentUser: state.userPage.currentUser
+    currentUser: state.loginPage.currentUser
   }
 }
 

@@ -9,12 +9,12 @@ const Login = (props) => {
   const onSubmit = (login) => {
     // props.sendOrder(quickOrderForm, products);
     axios.post('http://localhost:8000/login', { ...login })
-      .then(function (response) {
+      .then(response => {
         console.log(response);
         console.log(response.data.token);
         props.setUser(response.data);
       })
-      .catch(function (error) {
+      .catch(error => {
         console.log(error);
       });
   }

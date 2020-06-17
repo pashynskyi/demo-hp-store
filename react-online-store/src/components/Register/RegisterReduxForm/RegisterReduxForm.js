@@ -15,7 +15,7 @@ const RegisterForm = (props) => {
         <div className={styles.titleField}>Логин:</div>
         <Field
           className={styles.field}
-          name="username"
+          name="email"
           component={Input}
           type="email"
           validate={[required, maxLength50]}

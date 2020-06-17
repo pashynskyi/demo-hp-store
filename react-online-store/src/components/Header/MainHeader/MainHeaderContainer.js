@@ -6,13 +6,14 @@ import { connect } from 'react-redux';
 
 class MainHeaderContainer extends React.Component {
   render() {
-    return <MainHeader totalCount={this.props.totalCount} />
+    return <MainHeader totalCount={this.props.totalCount} userName={this.props.userName} />
   }
 }
 
 let mapStateToProps = (state) => {
   return {
-    totalCount: state.cartProductPage.items.length + (state.cartProductPage.quantityItem.reduce((total, quantityItem) => (total + quantityItem.quantity - 1), 0))
+    totalCount: state.cartProductPage.items.length + (state.cartProductPage.quantityItem.reduce((total, quantityItem) => (total + quantityItem.quantity - 1), 0)),
+    userName: state.loginPage.currentUser.name
   }
 }
 

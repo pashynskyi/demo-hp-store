@@ -4,10 +4,13 @@ const initialState = {
   currentUser: ''
 }
 
-const userReducer = (state = initialState, action) => {
+const loginReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_USER:
-      return { ...state, currentUser: action.payload }
+      return {
+        ...state,
+        currentUser: action.payload,
+      }
     default:
       return state;
   }
@@ -15,4 +18,4 @@ const userReducer = (state = initialState, action) => {
 
 export const setUser = (data) => ({ type: LOGIN_USER, payload: data })
 
-export default userReducer;
+export default loginReducer;

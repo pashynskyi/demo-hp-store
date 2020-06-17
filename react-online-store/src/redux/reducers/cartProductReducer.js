@@ -15,7 +15,6 @@ let initialState = {
 const cartProductReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PRODUCT:
-      debugger;
       return {
         ...state,
         items: [
@@ -46,7 +45,6 @@ const cartProductReducer = (state = initialState, action) => {
         selectedItems: [action.payload]
       };
     case RESET_ORDER:
-      debugger;
       return {
         ...state,
         selectedItems: action.payload,

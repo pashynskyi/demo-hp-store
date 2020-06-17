@@ -6,8 +6,10 @@ import * as axios from 'axios';
 
 const Register = (props) => {
   const onSubmit = (register) => {
+    let active = true;
+    let role = "ROLE_CUSTOMER";
     // props.sendOrder(quickOrderForm, products);
-    axios.post('http://localhost:8000/register', { ...register })
+    axios.post('http://localhost:8000/register', { ...register, active, role})
       .then(function (response) {
         console.log(response);
       })
