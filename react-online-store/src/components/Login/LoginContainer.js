@@ -6,13 +6,13 @@ import { Redirect } from "react-router-dom";
 
 class LoginContainer extends React.Component {
 
-  onSubmit = (login) => {
-    this.onLogin(login)
+  onSubmit = (loginData) => {
+    this.onLogin(loginData)
   }
 
   componentDidMount() {
-    this.onLogin = (login) => {
-      this.props.login(login)
+    this.onLogin = (loginData) => {
+      this.props.login(loginData)
     }
   }
 

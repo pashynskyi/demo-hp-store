@@ -3,7 +3,6 @@ import styles from "./Profile.module.css";
 import { Container, Row, Col } from "react-bootstrap";
 
 const Profile = ({userProfile}) => {
-  console.log(userProfile);
   return (
     <div>
       <h2>Профиль</h2>

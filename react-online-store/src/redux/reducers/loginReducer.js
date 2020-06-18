@@ -22,9 +22,9 @@ const loginReducer = (state = initialState, action) => {
 
 export const setUser = (data) => ({ type: LOGIN_USER, payload: data })
 
-export const login = (login) => {
+export const login = (loginData) => {
   return (dispatch) => {
-    authAPI.login(login).then(response => {
+    authAPI.login(loginData).then(response => {
       dispatch(setUser(response.data))
     });
   }

@@ -4,9 +4,9 @@ import cartProductReducer from "./reducers/cartProductReducer";
 import checkoutReducer from "./reducers/checkoutReducer";
 import loginReducer from "./reducers/loginReducer";
 import profileReducer from "./reducers/profileReducer";
+import registerReducer from "./reducers/registerReducer";
 import { reducer as formReducer } from "redux-form";
 import thunkMiddleware from "redux-thunk";
-
 
 
 let reducers = combineReducers({
@@ -15,6 +15,7 @@ let reducers = combineReducers({
     checkoutPage: checkoutReducer,
     loginPage: loginReducer,
     profilePage: profileReducer,
+    registerPage: registerReducer,
     form: formReducer
 });
 

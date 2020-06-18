@@ -1,30 +1,32 @@
 import React from "react";
 import { connect } from 'react-redux';
 import Register from './Register';
-import * as axios from 'axios';
+import {registerUser} from './../../redux/reducers/registerReducer';
+import { Redirect } from "react-router-dom";
+
 
 class RegisterContainer extends React.Component {
-    componentDidMount() {
-      // const order = this.props.order
-      // if (order.length >= 1) {
-      //   axios.post('http://localhost:8000/checkout', { order })
-      //     .then(response => {
-      //       if (response.data.resultCode === 0) {
-      //         console.log('success')
-      //       }
-      //     }).catch(console.log('fault'));
+
+  onSubmit = (registerData) => {
+    this.onRegister(registerData)
+  }
+
+  componentDidMount() {
+    this.onRegister = (registerData) => {
+      this.props.registerUser(registerData)
     }
+  }
   
     render() {
-      return <Register />
+      if (this.props.isRegistered) return <Redirect to="/login" />;
+      return <Register onSubmit={this.onSubmit} />
     }
   }
   
   let mapStateToProps = (state) => {
     return {
-      selectedItems: state.cartProductPage.selectedItems,
-      order: state.checkoutPage.order
+      isRegistered: state.registerPage.isRegistered
     }
   }
   
-  export default connect(mapStateToProps, {})(RegisterContainer);
+  export default connect(mapStateToProps, {registerUser})(RegisterContainer);

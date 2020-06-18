@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import Products from './Products';
-import { requestMenProducts, requestWomenProducts } from "../../redux/reducers/productsReducer";
+import { requestMenProducts, requestWomenProducts} from "../../redux/reducers/productsReducer";
 import { addToCart, removeFromCart, addQuantity } from "../../redux/reducers/cartProductReducer";
 import orderBy from "lodash/orderBy";
 import { Spinner } from "react-bootstrap";

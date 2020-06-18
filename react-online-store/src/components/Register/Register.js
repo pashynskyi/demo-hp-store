@@ -2,29 +2,15 @@ import React from "react";
 import styles from "./Register.module.css";
 import { RegisterReduxForm } from "./RegisterReduxForm/RegisterReduxForm";
 import { Container, Row, Col} from "react-bootstrap";
-import * as axios from 'axios';
 
 const Register = (props) => {
-  const onSubmit = (register) => {
-    let active = true;
-    let role = "ROLE_CUSTOMER";
-    // props.sendOrder(quickOrderForm, products);
-    axios.post('http://localhost:8000/register', { ...register, active, role})
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
-
   return (
     <div>
       <h2>Регистрация</h2>
       <Container className={styles.container}>
         <Row>
           <Col>
-            <RegisterReduxForm onSubmit={onSubmit} />
+            <RegisterReduxForm onSubmit={props.onSubmit} />
           </Col>
         </Row>
       </Container>
