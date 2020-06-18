@@ -1,7 +1,8 @@
 const LOGIN_USER = 'LOGIN_USER';
 
 const initialState = {
-  currentUser: ''
+  currentUser: '',
+  isAuth: false
 }
 
 const loginReducer = (state = initialState, action) => {
@@ -10,6 +11,7 @@ const loginReducer = (state = initialState, action) => {
       return {
         ...state,
         currentUser: action.payload,
+        isAuth: true
       }
     default:
       return state;

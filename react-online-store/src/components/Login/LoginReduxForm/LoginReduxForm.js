@@ -29,6 +29,7 @@ const LoginForm = (props) => {
           validate={[required, maxLength50]}
           placeholder="Пароль" />
       </div>
+      <Field name="rememberMe" component={"input"} type={"checkbox"} /> remember me
       <div>
         <button>Авторизироваться</button>
       </div>
@@ -36,4 +37,4 @@ const LoginForm = (props) => {
   );
 }
 
-export const LoginReduxForm = reduxForm({ form: 'order' })(LoginForm);
+export const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm);

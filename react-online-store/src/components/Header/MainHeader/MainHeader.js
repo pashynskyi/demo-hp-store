@@ -23,10 +23,10 @@ const MainHeader = (props) => {
       <NavLink to="/profile">
         <div className={styles.userIconContainer}>
           <Icon name='user circle' size='big' />
-          {!props.userName &&
+          {!props.isAuth &&
             <span>Client account</span>
           }
-          {props.userName &&
+          {props.isAuth &&
             <span>{props.userName}</span>
           }
         </div>
