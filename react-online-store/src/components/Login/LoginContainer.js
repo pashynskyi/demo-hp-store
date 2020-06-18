@@ -1,26 +1,27 @@
 import React from "react";
 import { connect } from 'react-redux';
 import Login from './Login';
-import { setUser } from '../../redux/reducers/loginReducer';
-import * as axios from 'axios';
+import { setUser, login } from '../../redux/reducers/loginReducer';
 import { Redirect } from "react-router-dom";
 
 class LoginContainer extends React.Component {
 
+  onSubmit = (login) => {
+    this.onLogin(login)
+  }
+
   componentDidMount() {
-    // const order = this.props.order
-    // if (order.length >= 1) {
-    //   axios.post('http://localhost:8000/checkout', { order })
-    //     .then(response => {
-    //       if (response.data.resultCode === 0) {
-    //         console.log('success')
-    //       }
-    //     }).catch(console.log('fault'));
+    this.onLogin = (login) => {
+      this.props.login(login)
+    }
   }
 
   render() {
     if (this.props.currentUser !== '') return <Redirect to="/profile" />;
-    return <Login setUser={this.props.setUser} currentUser={this.props.currentUser} />
+    return <Login
+      setUser={this.props.setUser}
+      currentUser={this.props.currentUser}
+      onSubmit={this.onSubmit} />
   }
 }
 
@@ -30,4 +31,4 @@ let mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { setUser })(LoginContainer);
+export default connect(mapStateToProps, { setUser, login })(LoginContainer);

@@ -1,3 +1,5 @@
+import { authAPI } from "../../api/api";
+
 const LOGIN_USER = 'LOGIN_USER';
 
 const initialState = {
@@ -19,5 +21,14 @@ const loginReducer = (state = initialState, action) => {
 }
 
 export const setUser = (data) => ({ type: LOGIN_USER, payload: data })
+
+export const login = (login) => {
+  return (dispatch) => {
+    authAPI.login(login).then(response => {
+      dispatch(setUser(response.data))
+    });
+  }
+}
+
 
 export default loginReducer;

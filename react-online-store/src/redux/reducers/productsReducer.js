@@ -1,6 +1,6 @@
 import { productsAPI } from "../../api/api";
 
-const SET_MEN_TSHIRTS = 'SET_MEN_TSHIRTS';
+const SET_PRODUCTS = 'SET_PRODUCTS';
 const SET_IS_READY = 'SET_IS_READY';
 const SET_FILTER = 'SET_FILTER';
 const SET_SIZE = 'SET_SIZE';
@@ -14,7 +14,7 @@ let initialState = {
 
 const productsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_MEN_TSHIRTS:
+    case SET_PRODUCTS:
       return {
         ...state,
         products: action.payload,
@@ -40,7 +40,7 @@ const productsReducer = (state = initialState, action) => {
   }
 }
 
-export const setProducts = (products) => ({ type: SET_MEN_TSHIRTS, payload: products })
+export const setProducts = (products) => ({ type: SET_PRODUCTS, payload: products })
 export const setFilter = (filter) => ({ type: SET_FILTER, payload: filter })
 export const setSize = (size) => ({type: SET_SIZE, payload: size})
 

@@ -19,6 +19,12 @@ export const productsAPI = {
   },
 }
 
+export const authAPI = {
+  login(login) {
+    return instance.post('login', { ...login })
+  }
+}
+
 // export const profileAPI = {
 //   getProfile(email) {
 //     return instance.get(`profile/${email}`)
