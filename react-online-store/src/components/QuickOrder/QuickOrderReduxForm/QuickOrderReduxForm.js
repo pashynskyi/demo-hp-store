@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./CheckoutReduxForm.module.css";
+import styles from "./QuickOrderReduxForm.module.css";
 import { reduxForm, Field } from "redux-form";
 import { required, maxLengthCreator } from "../../../utils/validators/validators";
 import { Input } from "../../../common/FormsControls/FormsControls";
@@ -8,7 +8,7 @@ const maxLength100 = maxLengthCreator(100);
 const maxLength50 = maxLengthCreator(50);
 const maxLength20 = maxLengthCreator(20);
 
-const CheckoutForm = (props) => {
+const QuickOrderForm = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
       <div className={styles.fieldContainer}>
@@ -58,4 +58,4 @@ const CheckoutForm = (props) => {
   );
 }
 
-export const CheckoutReduxForm = reduxForm({ form: 'order' })(CheckoutForm)
+export const QuickOrderReduxForm = reduxForm({ form: 'order' })(QuickOrderForm)

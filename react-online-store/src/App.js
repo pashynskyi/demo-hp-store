@@ -9,7 +9,7 @@ import KidsHome from "./components/KidsHome/KidsHome";
 import ProductsContainer from "./components/Products/ProductsContainer";
 import { Route } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
-import CheckoutContainer from "./components/Checkout/CheckoutContainer";
+import QuickOrderContainer from "./components/QuickOrder/QuickOrderContainer";
 import RegisterContainer from "./components/Register/RegisterContainer";
 import LoginContainer from "./components/Login/LoginContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
@@ -40,7 +40,7 @@ const App = (props) => {
         <Route path='/register' render={() => <RegisterContainer />} />
         <Route path='/profile' render={() => <ProfileContainer />} />
         <Route path='/cart' render={() => <Cart />} />
-        <Route path='/checkout' render={() => <CheckoutContainer />} />
+        <Route path='/quickOrder' render={() => <QuickOrderContainer />} />
       </main>
       <Footer />
     </div>

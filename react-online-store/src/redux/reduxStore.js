@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import productsReducer from "./reducers/productsReducer";
 import cartProductReducer from "./reducers/cartProductReducer";
-import checkoutReducer from "./reducers/checkoutReducer";
+import quickOrderReducer from "./reducers/quickOrderReducer";
 import loginReducer from "./reducers/loginReducer";
 import profileReducer from "./reducers/profileReducer";
 import registerReducer from "./reducers/registerReducer";
@@ -12,7 +12,7 @@ import thunkMiddleware from "redux-thunk";
 let reducers = combineReducers({
     productsPage: productsReducer,
     cartProductPage: cartProductReducer,
-    checkoutPage: checkoutReducer,
+    quickOrderPage: quickOrderReducer,
     loginPage: loginReducer,
     profilePage: profileReducer,
     registerPage: registerReducer,

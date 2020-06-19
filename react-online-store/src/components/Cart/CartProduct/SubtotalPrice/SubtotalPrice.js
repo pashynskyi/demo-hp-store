@@ -8,7 +8,7 @@ const SubtotalPrice = (props) => {
     props.orderProduct(props.totalPrice, props.totalCount, props.confirmedQuantityProducts);
   }
 
-  if (props.selectedProducts.length >= 1) return <Redirect to="/checkout" />;
+  if (props.selectedProducts.length >= 1) return <Redirect to="/quickOrder" />;
 
   return (
     <div className={styles.subtotalPrice}>

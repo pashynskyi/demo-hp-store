@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "./Checkout.module.css";
-import { CheckoutReduxForm } from "./CheckoutReduxForm/CheckoutReduxForm";
+import styles from "./QuickOrder.module.css";
+import { QuickOrderReduxForm } from "./QuickOrderReduxForm/QuickOrderReduxForm";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import * as axios from 'axios';
 import { NavLink, Redirect } from "react-router-dom";
 
-const Checkout = (props) => {
-
+const QuickOrder = (props) => {
+  debugger;
   const data = props.selectedItems[0];
   const products = data.obj;
   for (let i = 0; i < products.length; i++)
@@ -14,14 +14,7 @@ const Checkout = (props) => {
   const totalPrice = data.totalPrice;
 
   const onSubmit = (quickOrderForm) => {
-    // props.sendOrder(quickOrderForm, products);
-    axios.post('http://localhost:8000/quickOrder', { products, quickOrderForm, totalPrice })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    props.onQuickOrder(products, quickOrderForm, totalPrice);
   }
 
   const onResetOrder = () => {
@@ -35,7 +28,7 @@ const Checkout = (props) => {
       <Container className={styles.container}>
         <Row>
           <Col>
-            <CheckoutReduxForm onSubmit={onSubmit} />
+            <QuickOrderReduxForm onSubmit={onSubmit} />
           </Col>
           <div className={styles.totalInfoContainer}>
             <div>
@@ -52,5 +45,5 @@ const Checkout = (props) => {
   );
 }
 
-export default Checkout;
+export default QuickOrder;
 
