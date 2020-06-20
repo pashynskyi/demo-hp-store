@@ -2,11 +2,9 @@ import React from "react";
 import styles from "./QuickOrder.module.css";
 import { QuickOrderReduxForm } from "./QuickOrderReduxForm/QuickOrderReduxForm";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import * as axios from 'axios';
 import { NavLink, Redirect } from "react-router-dom";
 
 const QuickOrder = (props) => {
-  debugger;
   const data = props.selectedItems[0];
   const products = data.obj;
   for (let i = 0; i < products.length; i++)

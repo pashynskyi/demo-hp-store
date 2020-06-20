@@ -4,18 +4,15 @@ import QuickOrder from './QuickOrder';
 import { Redirect } from "react-router-dom";
 import { sendOrder, quickOrder } from "../../redux/reducers/quickOrderReducer";
 import { resetOrder } from "../../redux/reducers/cartProductReducer";
-import * as axios from 'axios';
 
 class QuickOrderContainer extends React.Component {
 
   onQuickOrder = (products, quickOrderForm, totalPrice) => {
-    alert('1');
-    this.test(products, quickOrderForm, totalPrice)
+    this.callback(products, quickOrderForm, totalPrice)
   }
 
   componentDidMount() {
-    this.test = (products, quickOrderForm, totalPrice) => {
-      alert('2');
+    this.callback = (products, quickOrderForm, totalPrice) => {
       this.props.quickOrder(products, quickOrderForm, totalPrice)
     }
   }

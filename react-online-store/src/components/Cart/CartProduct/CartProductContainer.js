@@ -8,9 +8,14 @@ import {
   subQuantity,
   orderProduct
 } from "../../../redux/reducers/cartProductReducer";
+import * as axios from 'axios';
 
 class CartProductContainer extends React.Component {
   componentDidMount() {
+    this.props.isAuth && axios.get('http://localhost:8000/cart', { headers: { "Authorization": `Bearer ${this.props.token}` } })
+      .then(response => {
+        console.log(response.data);
+      })
   }
   render() {
     return <CartProduct
@@ -35,7 +40,9 @@ let mapStateToProps = (state) => {
       state.cartProductPage.items.reduce((total, item) => total + item.productPrice, 0)),
     totalCount: state.cartProductPage.items.length + (state.cartProductPage.quantityItem.reduce((total, quantityItem) => (total + quantityItem.quantity - 1), 0)),
     confirmedQuantityProducts: state.cartProductPage.quantityItem,
-    selectedProducts: state.cartProductPage.selectedItems
+    selectedProducts: state.cartProductPage.selectedItems,
+    isAuth: state.loginPage.isAuth,
+    token: state.loginPage.currentUser.token
   }
 }
 

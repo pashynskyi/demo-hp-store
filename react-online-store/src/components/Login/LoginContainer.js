@@ -6,13 +6,19 @@ import { Redirect } from "react-router-dom";
 
 class LoginContainer extends React.Component {
 
-  onSubmit = (loginData) => {
-    this.onLogin(loginData)
+  onSubmit = ({ email, password, rememberMe = false }) => {
+    this.onLogin(email, password, rememberMe);
+    sessionStorage.setItem('rememberMe', rememberMe);
+    sessionStorage.setItem('email', rememberMe ? email : '');
+    sessionStorage.setItem('password', rememberMe ? password : '');
+    alert(sessionStorage.email);
+    alert(sessionStorage.password);
+    alert(sessionStorage.rememberMe);
   }
 
   componentDidMount() {
-    this.onLogin = (loginData) => {
-      this.props.login(loginData)
+    this.onLogin = (email, password, rememberMe) => {
+      this.props.login(email, password, rememberMe);
     }
   }
 

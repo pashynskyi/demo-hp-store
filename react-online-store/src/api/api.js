@@ -1,6 +1,7 @@
 import * as axios from 'axios';
 
 const instance = axios.create({
+  withCredentials: true,
   baseURL: 'http://localhost:8000/'
 })
 
@@ -20,8 +21,8 @@ export const productsAPI = {
 }
 
 export const authAPI = {
-  login(loginData) {
-    return instance.post('login', { ...loginData })
+  login(email, password, rememberMe) {
+    return instance.post('login', { email, password, rememberMe })
   },
 }
 
@@ -53,3 +54,4 @@ export const orderAPI = {
       });
   }
 }
+

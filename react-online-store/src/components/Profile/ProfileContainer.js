@@ -7,7 +7,7 @@ import {setUserProfile, requestProfile} from "../../redux/reducers/profileReduce
 class ProfileContainer extends React.Component {
 
   componentDidMount() {
-    this.props.requestProfile(this.props.currentUser.account, this.props.currentUser.token);
+    this.props.requestProfile(this.props.currentUser.email, this.props.currentUser.token);
   }
 
   render() {
