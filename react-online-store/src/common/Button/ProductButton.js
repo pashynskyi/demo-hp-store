@@ -16,7 +16,8 @@ class ProductButton extends React.Component {
       this.props.productMaterial,
       this.props.pictureUrl
       );
-    this.props.addQuantity(this.props.productId, this.state.value, 1, this.props.productPrice);
+    this.props.addQuantity(this.props.productId, this.props.productSize, 1, this.props.productPrice);
+    this.props.onAddtoAuthCart(this.props.productId, this.props.productSize)
   }
 
     onRemoveFromCart = () => {

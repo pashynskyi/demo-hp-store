@@ -5,6 +5,7 @@ import { Redirect } from "react-router-dom";
 
 const SubtotalPrice = (props) => {
   const onClickBtn = () => {
+    debugger;
     props.orderProduct(props.totalPrice, props.totalCount, props.confirmedQuantityProducts);
   }
 

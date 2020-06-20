@@ -1,8 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import Products from './Products';
-import { requestMenProducts, requestWomenProducts} from "../../redux/reducers/productsReducer";
-import { addToCart, removeFromCart, addQuantity } from "../../redux/reducers/cartProductReducer";
+import { requestMenProducts, requestWomenProducts } from "../../redux/reducers/productsReducer";
 import orderBy from "lodash/orderBy";
 import { Spinner } from "react-bootstrap";
 
@@ -46,11 +45,8 @@ class ProductsContainer extends React.Component {
       !this.props.isReady ? <Spinner animation="border" /> :
         <Products products={this.props.products}
           isReady={this.props.isReady}
-          addToCart={this.props.addToCart}
-          removeFromCart={this.props.removeFromCart}
           selectSize={this.props.selectSize}
           selectedSize={this.props.selectedSize}
-          addQuantity={this.props.addQuantity}
         />)
   }
 }
@@ -78,9 +74,6 @@ let mapStateToProps = ({ productsPage }) => {
 
 export default connect(mapStateToProps,
   {
-    addToCart,
-    removeFromCart,
-    addQuantity,
     requestMenProducts,
     requestWomenProducts
   })(ProductsContainer);

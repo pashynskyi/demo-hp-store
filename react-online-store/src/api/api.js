@@ -24,6 +24,20 @@ export const authAPI = {
   login(email, password, rememberMe) {
     return instance.post('login', { email, password, rememberMe })
   },
+  addToAuthCart(productId, productSize, token ) {
+    debugger;
+    return instance.post('cart/add', {productId, productSize, quantity: 1}, { headers: { "Authorization": `Bearer ${token}` } } )
+    .then(response => {
+      return response.data;
+    });
+  },
+  getAuthCart(token) {
+    debugger;
+    return instance.get('cart', { headers: { "Authorization": `Bearer ${token}` } })
+    .then(response => {
+      return response.data;
+    }) 
+  }
 }
 
 export const profileAPI = {

@@ -9,13 +9,11 @@ import {
   orderProduct
 } from "../../../redux/reducers/cartProductReducer";
 import * as axios from 'axios';
+import { authAPI } from "../../../api/api";
 
 class CartProductContainer extends React.Component {
   componentDidMount() {
-    this.props.isAuth && axios.get('http://localhost:8000/cart', { headers: { "Authorization": `Bearer ${this.props.token}` } })
-      .then(response => {
-        console.log(response.data);
-      })
+    this.props.isAuth && authAPI.getAuthCart(this.props.token);
   }
   render() {
     return <CartProduct

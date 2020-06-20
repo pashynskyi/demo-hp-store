@@ -14,8 +14,6 @@ const Product = (props) => {
         productMaterial={props.productMaterial}
         productSizes={props.productSizes}
         pictureUrl={props.pictureUrl}
-        addToCart={props.addToCart}
-        removeFromCart={props.removeFromCart}
         selectSize={props.selectSize}
       />
     </div>

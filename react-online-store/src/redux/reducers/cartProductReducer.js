@@ -40,6 +40,7 @@ const cartProductReducer = (state = initialState, action) => {
         quantityItem: [...state.quantityItem.filter(e => e.productId !== action.payload.productId), action.payload]
       };
     case ORDER_PRODUCT:
+      debugger;
       return {
         ...state,
         selectedItems: [action.payload]
