@@ -24,6 +24,9 @@ export const authAPI = {
   login(email, password, rememberMe) {
     return instance.post('login', { email, password, rememberMe })
   },
+  // logout() {
+  //   return instance.post('login', { email: null, password: null, rememberMe: null })
+  // },
   addToAuthCart(productId, productSize, token ) {
     debugger;
     return instance.post('cart/add', {productId, productSize, quantity: 1}, { headers: { "Authorization": `Bearer ${token}` } } )

@@ -1,6 +1,7 @@
 import { authAPI } from "../../api/api";
 
 const LOGIN_USER = 'LOGIN_USER';
+const LOGOUT_USER = 'LOGOUT_USER';
 
 const initialState = {
   currentUser: '',
@@ -14,6 +15,13 @@ const loginReducer = (state = initialState, action) => {
         ...state,
         currentUser: action.payload,
         isAuth: true
+      };
+    case LOGOUT_USER:
+      debugger;
+      return {
+        ...state,
+        currentUser: '',
+        isAuth: false
       }
     default:
       return state;
@@ -21,6 +29,7 @@ const loginReducer = (state = initialState, action) => {
 }
 
 export const setUser = (data) => ({ type: LOGIN_USER, payload: data })
+export const resetUser = () => ({ type: LOGOUT_USER })
 
 export const login = (email, password, rememberMe) => {
   return (dispatch) => {
@@ -29,6 +38,14 @@ export const login = (email, password, rememberMe) => {
     });
   }
 }
+
+// export const logout = () => {
+//   return (dispatch) => {
+//     authAPI.logout().then(response => {
+//       dispatch(setUser(response.data))
+//     });
+//   }
+// }
 
 
 export default loginReducer;

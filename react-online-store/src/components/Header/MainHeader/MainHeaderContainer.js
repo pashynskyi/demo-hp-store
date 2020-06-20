@@ -10,8 +10,8 @@ import { login } from './../../../redux/reducers/loginReducer';
 class MainHeaderContainer extends React.Component {
 
   componentDidMount() {
-    if (sessionStorage.email && sessionStorage.password) {
-      this.props.login(sessionStorage.email, sessionStorage.password, sessionStorage.rememberMe)
+    if (localStorage.email && localStorage.password) {
+      this.props.login(localStorage.email, localStorage.password, localStorage.rememberMe)
     }
   }
 

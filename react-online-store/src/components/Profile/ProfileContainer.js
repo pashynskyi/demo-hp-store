@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Profile from './Profile';
 import { Redirect } from "react-router-dom";
 import {setUserProfile, requestProfile} from "../../redux/reducers/profileReducer";
+import {resetUser} from "../../redux/reducers/loginReducer";
 
 class ProfileContainer extends React.Component {
 
@@ -12,7 +13,7 @@ class ProfileContainer extends React.Component {
 
   render() {
     if (this.props.currentUser.length < 1) return <Redirect to="/login" />;
-    return <Profile currentUser={this.props.currentUser} userProfile={this.props.userProfile} />
+    return <Profile currentUser={this.props.currentUser} userProfile={this.props.userProfile} resetUser={this.props.resetUser} />
   }
 }
 
@@ -23,4 +24,4 @@ let mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {setUserProfile, requestProfile})(ProfileContainer);
+export default connect(mapStateToProps, {setUserProfile, requestProfile, resetUser})(ProfileContainer);

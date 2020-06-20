@@ -8,12 +8,12 @@ class LoginContainer extends React.Component {
 
   onSubmit = ({ email, password, rememberMe = false }) => {
     this.onLogin(email, password, rememberMe);
-    sessionStorage.setItem('rememberMe', rememberMe);
-    sessionStorage.setItem('email', rememberMe ? email : '');
-    sessionStorage.setItem('password', rememberMe ? password : '');
-    alert(sessionStorage.email);
-    alert(sessionStorage.password);
-    alert(sessionStorage.rememberMe);
+    localStorage.setItem('rememberMe', rememberMe);
+    localStorage.setItem('email', rememberMe ? email : '');
+    localStorage.setItem('password', rememberMe ? password : '');
+    alert(localStorage.email);
+    alert(localStorage.password);
+    alert(localStorage.rememberMe);
   }
 
   componentDidMount() {
