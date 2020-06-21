@@ -39,13 +39,4 @@ export const login = (email, password, rememberMe) => {
   }
 }
 
-// export const logout = () => {
-//   return (dispatch) => {
-//     authAPI.logout().then(response => {
-//       dispatch(setUser(response.data))
-//     });
-//   }
-// }
-
-
 export default loginReducer;

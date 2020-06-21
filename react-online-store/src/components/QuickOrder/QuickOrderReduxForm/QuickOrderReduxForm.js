@@ -3,6 +3,7 @@ import styles from "./QuickOrderReduxForm.module.css";
 import { reduxForm, Field } from "redux-form";
 import { required, maxLengthCreator } from "../../../utils/validators/validators";
 import { Input } from "../../../common/FormsControls/FormsControls";
+import { Button } from "react-bootstrap";
 
 const maxLength100 = maxLengthCreator(100);
 const maxLength50 = maxLengthCreator(50);
@@ -42,6 +43,16 @@ const QuickOrderForm = (props) => {
           placeholder="Мобильный телефон" />
       </div>
       <div className={styles.fieldContainer}>
+        <div className={styles.titleField}>Город:</div>
+        <Field
+          className={styles.field}
+          name="city"
+          component={Input}
+          type="text"
+          validate={[required, maxLength50,]}
+          placeholder='Город' />
+      </div>
+      <div className={styles.fieldContainer}>
         <div className={styles.titleField}>Адрес:</div>
         <Field
           className={styles.field}
@@ -49,10 +60,10 @@ const QuickOrderForm = (props) => {
           component={Input}
           type="text"
           validate={[required, maxLength50,]}
-          placeholder='Город, № отделение "Нова пошта"' />
+          placeholder='Адрес' />
       </div>
       <div>
-        <button variant="success">Отправить заказ</button>
+      <Button variant='success' type='submit'>Отправить заказ</Button>
       </div>
     </form>
   );

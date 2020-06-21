@@ -1,15 +1,13 @@
 .fieldContainer {
-  display: flex;
-  align-items: center;
   margin-bottom: 10px;
 }
 
 .titleField {
-  width: 150px;
+  font-size: 15px;
 }
 
 .field {
   width: 300px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 5px;
 }

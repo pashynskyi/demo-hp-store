@@ -3,6 +3,7 @@ import styles from "./RegisterReduxForm.module.css";
 import { reduxForm, Field } from "redux-form";
 import { required, maxLengthCreator } from "../../../utils/validators/validators";
 import { Input } from "../../../common/FormsControls/FormsControls";
+import { Button } from "react-bootstrap";
 
 const maxLength100 = maxLengthCreator(100);
 const maxLength50 = maxLengthCreator(50);
@@ -72,7 +73,7 @@ const RegisterForm = (props) => {
           placeholder="Адрес" />
       </div>
       <div>
-        <button>Зарегистрироваться</button>
+        <Button type='submit'>Зарегистрироваться</Button>
       </div>
     </form>
   );
