@@ -17,8 +17,6 @@ const CartProduct = (props) => {
       productSize={p.productSize}
       removeFromCart={props.removeFromCart}
       addToCart={props.addToCart}
-      addQuantity={props.addQuantity}
-      subQuantity={props.subQuantity}
     />
   ));
 
@@ -37,7 +35,7 @@ const CartProduct = (props) => {
         productPrice={props.productPrice}
         orderProduct={props.orderProduct}
         confirmedQuantityProducts={props.confirmedQuantityProducts}
-        selectedProducts={props.selectedProducts}
+        selectedItems={props.selectedItems}
       />
     </div>
 

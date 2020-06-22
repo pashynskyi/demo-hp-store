@@ -40,7 +40,6 @@ const cartProductReducer = (state = initialState, action) => {
         quantityItem: [...state.quantityItem.filter(e => e.productId !== action.payload.productId), action.payload]
       };
     case ORDER_PRODUCT:
-      debugger;
       return {
         ...state,
         selectedItems: [action.payload]
@@ -48,8 +47,8 @@ const cartProductReducer = (state = initialState, action) => {
     case RESET_ORDER:
       return {
         ...state,
-        selectedItems: action.payload,
-        quantityItem: [{ productId: '', productSize: '', quantity: 1, productPrice: 0 }]
+        selectedItems: [],
+        quantityItem: []
       };
     default:
       return state;
@@ -71,6 +70,6 @@ export const removeFromCart = (productId) => ({ type: REMOVE_PRODUCT, payload: p
 export const addQuantity = (productId, productSize, quantity, productPrice) => ({ type: ADD_QUANTITY, payload: { productId, productSize, quantity, productPrice } })
 export const subQuantity = (productId, productSize, quantity, productPrice) => ({ type: SUB_QUANTITY, payload: { productId, productSize, quantity, productPrice } })
 export const orderProduct = (totalPrice, totalCount, obj) => ({ type: ORDER_PRODUCT, payload: { totalPrice, totalCount, obj } })
-export const resetOrder = () => ({ type: RESET_ORDER, payload: {} })
+export const resetOrder = () => ({ type: RESET_ORDER })
 
 export default cartProductReducer;

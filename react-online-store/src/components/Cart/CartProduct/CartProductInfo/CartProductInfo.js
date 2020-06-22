@@ -1,10 +1,9 @@
 import React from "react";
 import styles from "./CartProductInfo.module.css";
-import CounterButton from "../../../../common/Button/CounterButton";
+import CounterButtonContainer from "../../../../common/Button/CounterButton/CounterButtonContainer";
 
 
 const CartProductInfo = (props) => {
-  console.log(props)
   const onRemoveFromCart = () => {
     props.removeFromCart(props.productId);
   }
@@ -19,12 +18,10 @@ const CartProductInfo = (props) => {
         <div>Состав:&nbsp;<span>{props.productMaterial}</span></div>
         <div>Размер:&nbsp;<span>{props.productSize}</span></div>
         <div>Цена:&nbsp;{props.productPrice} грн</div>
-        <CounterButton
+        <CounterButtonContainer
           productId={props.productId}
           productSize={props.productSize}
-          productPrice={props.productPrice}
-          addQuantity={props.addQuantity}
-          subQuantity={props.subQuantity} />
+          productPrice={props.productPrice} />
       </div>
       <div>
         <span className={styles.removeFromCart} onClick={onRemoveFromCart}>&times;</span>
