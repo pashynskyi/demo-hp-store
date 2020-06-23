@@ -6,6 +6,7 @@ import { Redirect } from "react-router-dom";
 const SubtotalPrice = (props) => {
   const onClickBtn = () => {
     props.orderProduct(props.totalPrice, props.totalCount, props.confirmedQuantityProducts);
+    props.onPostCheckout();
   }
 
   if (props.selectedItems.length >= 1) return <Redirect to="/quickOrder" />;

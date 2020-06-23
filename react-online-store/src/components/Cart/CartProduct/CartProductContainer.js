@@ -14,11 +14,19 @@ class CartProductContainer extends React.Component {
     this.deleteFromAuthCart.bind(this)(productId)
   }
 
+  onPostCheckout = () => {
+    this.postCheckout.bind(this)()
+  }
+
   componentDidMount() {
     this.props.isAuth && cartAPI.getCart(this.props.token);
     this.deleteFromAuthCart = (productId) => {
       this.props.isAuth && cartAPI.deleteFromCart(productId, this.props.token)
+    };
+    this.postCheckout = () => {
+      this.props.isAuth && cartAPI.postCheckout(this.props.token)
     }
+    
   }
   render() {
     return <CartProduct
@@ -31,6 +39,7 @@ class CartProductContainer extends React.Component {
       confirmedQuantityProducts={this.props.confirmedQuantityProducts}
       selectedItems={this.props.selectedItems}
       onDeleteFromAuthCart={this.onDeleteFromAuthCart}
+      onPostCheckout={this.onPostCheckout}
     />
   }
 }

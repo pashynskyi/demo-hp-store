@@ -36,6 +36,7 @@ const CartProduct = (props) => {
         orderProduct={props.orderProduct}
         confirmedQuantityProducts={props.confirmedQuantityProducts}
         selectedItems={props.selectedItems}
+        onPostCheckout={props.onPostCheckout}
       />
     </div>
 

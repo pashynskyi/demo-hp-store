@@ -52,7 +52,16 @@ export const cartAPI = {
   },
   putCurrentQuantity(productId, quantity, token) {
     return instance.put(`cart/${productId}`, { quantity }, principal(token))
-  }
+      .then(response => {
+        return response.data;
+      })
+  },
+  postCheckout(token) {
+    return instance.post('cart/checkout', principal(token))
+      .then(response => {
+        return response.data;
+      })
+  },
 }
 
 export const profileAPI = {
