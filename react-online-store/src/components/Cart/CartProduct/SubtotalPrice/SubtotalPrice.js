@@ -4,7 +4,6 @@ import { Button } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
 
 const SubtotalPrice = (props) => {
-  debugger;
   const onClickBtn = () => {
     props.orderProduct(props.totalPrice, props.totalCount, props.confirmedQuantityProducts);
   }

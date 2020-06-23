@@ -17,6 +17,7 @@ const CartProduct = (props) => {
       productSize={p.productSize}
       removeFromCart={props.removeFromCart}
       addToCart={props.addToCart}
+      onDeleteFromAuthCart={props.onDeleteFromAuthCart}
     />
   ));
 
@@ -32,7 +33,6 @@ const CartProduct = (props) => {
         totalPrice={props.totalPrice}
         totalCount={props.totalCount}
         productId={props.cartProducts}
-        productPrice={props.productPrice}
         orderProduct={props.orderProduct}
         confirmedQuantityProducts={props.confirmedQuantityProducts}
         selectedItems={props.selectedItems}

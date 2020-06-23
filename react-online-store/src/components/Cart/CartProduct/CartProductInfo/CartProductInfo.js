@@ -6,6 +6,7 @@ import CounterButtonContainer from "../../../../common/Button/CounterButton/Coun
 const CartProductInfo = (props) => {
   const onRemoveFromCart = () => {
     props.removeFromCart(props.productId);
+    props.onDeleteFromAuthCart(props.productId);
   }
 
   return (

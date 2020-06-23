@@ -1,5 +1,4 @@
 import * as axios from 'axios';
-import { forEach } from 'lodash';
 
 const instance = axios.create({
   withCredentials: true,
@@ -39,10 +38,15 @@ export const cartAPI = {
         return response.data;
       });
   },
+  deleteFromCart(productId, token) {
+    return instance.delete(`cart/${productId}`, principal(token))
+      .then(response => {
+        return response.data;
+      });
+  },
   getCart(token) {
     return instance.get('cart', principal(token))
       .then(response => {
-      response.data.products.forEach(element => console.log(element.productId, element.productPrice))
         return response.data;
       })
   },

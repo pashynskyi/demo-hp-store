@@ -17,11 +17,12 @@ class ProductButton extends React.Component {
       this.props.pictureUrl
       );
     this.props.addQuantity(this.props.productId, this.props.productSize, 1, this.props.productPrice);
-    this.props.onAddtoAuthCart(this.props.productId, this.props.productSize)
+    this.props.onAddToAuthCart(this.props.productId, this.props.productSize);
   }
 
     onRemoveFromCart = () => {
-    this.props.removeFromCart(this.props.productId)
+    this.props.removeFromCart(this.props.productId);
+    this.props.onDeleteFromAuthCart(this.props.productId);
   }
 
   activateEditMode = () => {

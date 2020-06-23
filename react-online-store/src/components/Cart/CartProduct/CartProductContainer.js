@@ -9,8 +9,16 @@ import {
 import { cartAPI } from "../../../api/api";
 
 class CartProductContainer extends React.Component {
+
+  onDeleteFromAuthCart = (productId) => {
+    this.deleteFromAuthCart.bind(this)(productId)
+  }
+
   componentDidMount() {
     this.props.isAuth && cartAPI.getCart(this.props.token);
+    this.deleteFromAuthCart = (productId) => {
+      this.props.isAuth && cartAPI.deleteFromCart(productId, this.props.token)
+    }
   }
   render() {
     return <CartProduct
@@ -22,6 +30,7 @@ class CartProductContainer extends React.Component {
       orderProduct={this.props.orderProduct}
       confirmedQuantityProducts={this.props.confirmedQuantityProducts}
       selectedItems={this.props.selectedItems}
+      onDeleteFromAuthCart={this.onDeleteFromAuthCart}
     />
   }
 }
