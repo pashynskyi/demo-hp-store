@@ -1,3 +1,11 @@
+img.productPhoto {
+  width: 120px;
+}
+
+tfoot {
+  font-weight: bold;
+}
+
 .tableContainer tr td {
   display: table-cell;
   vertical-align: middle;

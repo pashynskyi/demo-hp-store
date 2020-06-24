@@ -1,28 +1,26 @@
 import React from "react";
 import styles from "./Profile.module.css";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import Orders from "./Orders/Orders";
 
-const Profile = ({ userProfile, resetUser }) => {
-
-  const onResetUser = () => {
-    resetUser();
-    delete localStorage.rememberMe;
-    delete localStorage.email;
-    delete localStorage.password;
-  }
-
+const Profile = ({ userProfile, resetUser, orders, setOrderDetails }) => {
+  debugger;
   return (
     <div>
       <h2>Профиль</h2>
-      <Container className={styles.container}>
+      <Container fluid>
         <Row>
           <Col>
-            <div>Имя и фамилия:&nbsp;<span>{userProfile.name}</span></div>
-            <div>Логин:&nbsp;<span>{userProfile.email}</span></div>
-            <div>Мобильный телефон:&nbsp;<span>{userProfile.phone}</span></div>
-            <div>Город:&nbsp;<span>{userProfile.city}</span></div>
-            <div>Адрес:&nbsp;<span>{userProfile.address}</span></div>
-            <Button variant="danger" onClick={onResetUser}>Выйти из профиля</Button>
+            <ProfileInfo userProfile={userProfile} resetUser={resetUser} />
+          </Col>
+        </Row>
+      </Container>
+      <h2>История заказов</h2>
+      <Container fluid>
+        <Row>
+          <Col style={{ overflowY: "auto" }}>
+            <Orders orders={orders} setOrderDetails={setOrderDetails} />
           </Col>
         </Row>
       </Container>

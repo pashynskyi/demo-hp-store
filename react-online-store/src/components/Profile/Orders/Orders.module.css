@@ -1,3 +1,8 @@
+thead,
+tbody {
+  text-align: center;
+}
+
 .tableContainer tr td {
   display: table-cell;
   vertical-align: middle;

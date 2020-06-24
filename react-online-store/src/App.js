@@ -13,6 +13,8 @@ import QuickOrderContainer from "./components/QuickOrder/QuickOrderContainer";
 import RegisterContainer from "./components/Register/RegisterContainer";
 import LoginContainer from "./components/Login/LoginContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import OrderDetailsContainer from "./components/Profile/Orders/Order/OrderDetailsContainer";
+
 
 const App = (props) => {
   return (
@@ -41,6 +43,7 @@ const App = (props) => {
         <Route path='/profile' render={() => <ProfileContainer />} />
         <Route path='/cart' render={() => <Cart />} />
         <Route path='/quickOrder' render={() => <QuickOrderContainer />} />
+        <Route path='/order' render={() => <OrderDetailsContainer />} />
       </main>
       <Footer />
     </div>

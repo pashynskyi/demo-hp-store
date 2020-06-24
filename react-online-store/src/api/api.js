@@ -70,6 +70,13 @@ export const profileAPI = {
       .then(response => {
         return response.data;
       });
+  },
+  getOrders(token) {
+    return instance.get('order', principal(token))
+    .then(response => {
+      console.log(response.data.content)
+      return response.data.content;
+    });
   }
 }
 
