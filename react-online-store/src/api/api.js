@@ -95,6 +95,7 @@ export const orderAPI = {
   postQuickOrder(products, quickOrderForm, totalPrice) {
     return instance.post('quickOrder', { products, ...quickOrderForm, totalPrice })
       .then(response => {
+        if(response.data.orderStatus) alert("Заказ принят, ожидайте звонка")
         return response;
       });
   }

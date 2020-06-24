@@ -1,5 +1,6 @@
 const ADD_PRODUCT = 'ADD_CART_PRODUCTS';
 const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
+const RESET_CART = 'RESET_CART';
 const ADD_QUANTITY = 'ADD_QUANTITY';
 const SUB_QUANTITY = 'SUB_QUANTITY';
 const ORDER_PRODUCT = 'ORDER_PRODUCT';
@@ -27,6 +28,13 @@ const cartProductReducer = (state = initialState, action) => {
         items: state.items.filter(e => e.productId !== action.payload),
         quantityItem: state.quantityItem.filter(e => e.productId !== action.payload)
       };
+      case RESET_CART:
+        debugger;
+        return {
+          items: [],
+          selectedItems: [],
+          quantityItem: []
+        };
     case ADD_QUANTITY:
       return {
         ...state,
@@ -67,6 +75,7 @@ export const addToCart = (productSize, productId, productPrice, productDescripti
   }
 })
 export const removeFromCart = (productId) => ({ type: REMOVE_PRODUCT, payload: productId })
+export const resetCart = () => ({ type: RESET_CART })
 export const addQuantity = (productId, productSize, quantity, productPrice) => ({ type: ADD_QUANTITY, payload: { productId, productSize, quantity, productPrice } })
 export const subQuantity = (productId, productSize, quantity, productPrice) => ({ type: SUB_QUANTITY, payload: { productId, productSize, quantity, productPrice } })
 export const orderProduct = (totalPrice, totalCount, obj) => ({ type: ORDER_PRODUCT, payload: { totalPrice, totalCount, obj } })

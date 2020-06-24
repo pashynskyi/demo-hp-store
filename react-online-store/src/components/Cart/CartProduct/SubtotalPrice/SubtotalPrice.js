@@ -4,12 +4,17 @@ import { Button } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
 
 const SubtotalPrice = (props) => {
+  debugger;
   const onClickBtn = () => {
     props.orderProduct(props.totalPrice, props.totalCount, props.confirmedQuantityProducts);
     props.onPostCheckout();
   }
 
-  if (props.selectedItems.length >= 1) return <Redirect to="/quickOrder" />;
+  if ((props.selectedItems.length >= 1) && props.isAuth) {
+    return props.resetCart() && <Redirect to="/profile" />
+  } else if (props.selectedItems.length >= 1) {
+    return <Redirect to="/quickOrder" />
+  }
 
   return (
     <div className={styles.subtotalPrice}>

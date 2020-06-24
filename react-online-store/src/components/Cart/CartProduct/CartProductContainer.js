@@ -4,6 +4,7 @@ import CartProduct from './CartProduct';
 import {
   addToCart,
   removeFromCart,
+  resetCart,
   orderProduct
 } from "../../../redux/reducers/cartProductReducer";
 import { cartAPI } from "../../../api/api";
@@ -33,11 +34,12 @@ class CartProductContainer extends React.Component {
       cartProducts={this.props.cartProducts}
       totalPrice={this.props.totalPrice}
       totalCount={this.props.totalCount}
-      addToCart={this.props.addToCart}
       removeFromCart={this.props.removeFromCart}
       orderProduct={this.props.orderProduct}
       confirmedQuantityProducts={this.props.confirmedQuantityProducts}
       selectedItems={this.props.selectedItems}
+      isAuth={this.props.isAuth}
+      resetCart={this.props.resetCart}
       onDeleteFromAuthCart={this.onDeleteFromAuthCart}
       onPostCheckout={this.onPostCheckout}
     />
@@ -57,4 +59,4 @@ let mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { addToCart, removeFromCart, orderProduct })(CartProductContainer);
+export default connect(mapStateToProps, { addToCart, removeFromCart, resetCart, orderProduct,})(CartProductContainer);
