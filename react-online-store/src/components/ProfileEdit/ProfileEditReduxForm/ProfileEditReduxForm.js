@@ -4,7 +4,6 @@ import { reduxForm, Field } from "redux-form";
 import { required, maxLengthCreator } from "../../../utils/validators/validators";
 import { Input } from "../../../common/FormsControls/FormsControls";
 import { Button } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
 
 const maxLength100 = maxLengthCreator(100);
 const maxLength50 = maxLengthCreator(50);
@@ -13,6 +12,17 @@ const maxLength20 = maxLengthCreator(20);
 export const ProfileEditForm = ({ handleSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
+      <div className={styles.fieldContainer}>
+        <div className={styles.titleField}>Логин:</div>
+        <Field
+          disabled
+          className={styles.field}
+          name="email"
+          component={Input}
+          type="text"
+          validate={[required, maxLength50]}
+          placeholder="Логин" />
+      </div>
       <div className={styles.fieldContainer}>
         <div className={styles.titleField}>Имя и фамилия:</div>
         <Field
@@ -54,7 +64,7 @@ export const ProfileEditForm = ({ handleSubmit }) => {
           placeholder="Адрес" />
       </div>
       <div>
-          <Button type='submit'>Обновить профиль</Button>
+        <Button type='submit'>Обновить профиль</Button>
       </div>
     </form>
   );

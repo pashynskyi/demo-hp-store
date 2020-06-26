@@ -2,3 +2,13 @@
   margin-bottom: 140px;
 }
 
+.containerEdit {
+  display: flex;
+  justify-content: space-around;
+}
+
+.containerEdit a:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+

@@ -15,6 +15,7 @@ import LoginContainer from "./components/Login/LoginContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import OrderDetailsContainer from "./components/Profile/Orders/Order/OrderDetailsContainer";
 import ProfileEditContainer from "./components/ProfileEdit/ProfileEditContainer";
+import ProductEditContainer from "./components/ProductEdit/ProductEditContainer";
 
 
 const App = (props) => {
@@ -46,6 +47,7 @@ const App = (props) => {
         <Route path='/quickOrder' render={() => <QuickOrderContainer />} />
         <Route path='/order' render={() => <OrderDetailsContainer />} />
         <Route path='/profileEdit' render={() => <ProfileEditContainer />} />
+        <Route path='/productEdit' render={() => <ProductEditContainer />} />
       </main>
       <Footer />
     </div>

@@ -8,24 +8,16 @@ import FilterContainer from "../Filter/FilterContainer";
 
 
 const Products = (props) => {
+  debugger;
   let state = props.products;
   let productElements = !props.isReady ? 'Загрузка...'
-    : state.map((p) => (
-      <Col className={styles.col} xs="12" sm="6" md="6" lg="4" xl="3" key={p.productId}>
+    : state.map((product) => (
+      <Col className={styles.col} xs="12" sm="6" md="6" lg="4" xl="3" key={product.productId}>
         <div className={styles.productContainer}>
-            <Product
-              productId={p.productId}
-              pictureUrl={p.pictureUrl}
-              productPrice={p.productPrice}
-              productDescription={p.productDescription}
-              productMaterial={p.productMaterial}
-              productSizes={p.productSizes}
-              addToCart={props.addToCart}
-              removeFromCart={props.removeFromCart}
-              selectSize={props.selectSize}
-              selectedSize={props.selectedSize}
-              addQuantity={props.addQuantity}
-            />
+          <Product
+            product={product}
+            setCurrentProduct={props.setCurrentProduct}
+            role={props.role} />
         </div>
       </Col>
     ));

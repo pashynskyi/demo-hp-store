@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import Products from './Products';
-import { requestMenProducts, requestWomenProducts } from "../../redux/reducers/productsReducer";
+import { requestMenProducts, requestWomenProducts, setCurrentProduct } from "../../redux/reducers/productsReducer";
 import orderBy from "lodash/orderBy";
 import { Spinner } from "react-bootstrap";
 
@@ -45,9 +45,9 @@ class ProductsContainer extends React.Component {
       !this.props.isReady ? <Spinner animation="border" /> :
         <Products products={this.props.products}
           isReady={this.props.isReady}
-          selectSize={this.props.selectSize}
-          selectedSize={this.props.selectedSize}
-        />)
+          setCurrentProduct={this.props.setCurrentProduct}
+          role={this.props.role} />
+    )
   }
 }
 
@@ -64,16 +64,17 @@ const sortBy = (products, filterBy) => {
   }
 }
 
-let mapStateToProps = ({ productsPage }) => {
+let mapStateToProps = ({ productsPage, loginPage }) => {
   return {
     products: sortBy(productsPage.products, productsPage.filterBy),
     isReady: productsPage.isReady,
-    selectedSize: productsPage.selectedSize
+    role: loginPage.currentUser.role
   }
 }
 
 export default connect(mapStateToProps,
   {
     requestMenProducts,
-    requestWomenProducts
+    requestWomenProducts,
+    setCurrentProduct
   })(ProductsContainer);

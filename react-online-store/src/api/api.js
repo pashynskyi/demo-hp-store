@@ -110,4 +110,13 @@ export const orderAPI = {
   }
 }
 
+export const adminAPI = {
+  editProduct(product, token) {
+    return instance.put(`seller/product/${product.productId}/edit`, { ...product }, principal(token))
+      .then(response => {
+        return response;
+      });
+  }
+}
+
 

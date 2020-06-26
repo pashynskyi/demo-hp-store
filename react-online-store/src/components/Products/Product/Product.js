@@ -2,19 +2,29 @@ import React from "react";
 import styles from "./Product.module.css"
 import ProductPhoto from "./ProductPhoto/ProductPhoto";
 import ProductInfo from "./ProductInfo/ProductInfo";
+import { NavLink } from "react-router-dom";
 
-const Product = (props) => {
+const Product = ({ product, setCurrentProduct, role }) => {
+  const onSetProduct = () => {
+    setCurrentProduct(product)
+  }
   return (
     <div className={styles.item}>
-      <ProductPhoto pictureUrl={props.pictureUrl} />
+      {role === "ROLE_ADMIN" &&
+        <div className={styles.containerEdit}>
+          <NavLink onClick={onSetProduct} to="/productEdit">Edit</NavLink>
+          <div>Количество: {product.productStock}</div>
+        </div>
+      }
+      <ProductPhoto pictureUrl={product.pictureUrl} />
       <ProductInfo
-        productId={props.productId}
-        productPrice={props.productPrice}
-        productDescription={props.productDescription}
-        productMaterial={props.productMaterial}
-        productSizes={props.productSizes}
-        pictureUrl={props.pictureUrl}
-        selectSize={props.selectSize}
+        productId={product.productId}
+        productPrice={product.productPrice}
+        productDescription={product.productDescription}
+        productMaterial={product.productMaterial}
+        productSizes={product.productSizes}
+        pictureUrl={product.pictureUrl}
+        selectSize={product.selectSize}
       />
     </div>
   );

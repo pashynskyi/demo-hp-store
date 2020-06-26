@@ -1,13 +1,15 @@
-import { productsAPI } from "../../api/api";
+import { productsAPI, adminAPI } from "../../api/api";
 
 const SET_PRODUCTS = 'SET_PRODUCTS';
-const SET_IS_READY = 'SET_IS_READY';
+const RESET_IS_READY = 'SET_IS_READY';
+const SET_CURRENT_PRODUCT = 'SET_CURRENT_PRODUCT';
 const SET_FILTER = 'SET_FILTER';
 const SET_SIZE = 'SET_SIZE';
 
 let initialState = {
   isReady: false,
   products: null,
+  currentProduct: '',
   filterBy: 'all',
   productSize: 'S'
 };
@@ -20,11 +22,16 @@ const productsReducer = (state = initialState, action) => {
         products: action.payload,
         isReady: true
       };
-    case SET_IS_READY:
+    case RESET_IS_READY:
       return {
         ...state,
-        isReady: action.payload
+        isReady: false
       };
+      case SET_CURRENT_PRODUCT:
+        return {
+          ...state,
+          currentProduct: action.payload,
+        };
     case SET_FILTER:
       return {
         ...state,
@@ -41,8 +48,10 @@ const productsReducer = (state = initialState, action) => {
 }
 
 export const setProducts = (products) => ({ type: SET_PRODUCTS, payload: products })
+export const setCurrentProduct = (product) => ({type: SET_CURRENT_PRODUCT, payload: product})
 export const setFilter = (filter) => ({ type: SET_FILTER, payload: filter })
 export const setSize = (size) => ({type: SET_SIZE, payload: size})
+export const resetIsReady = () => ({type: RESET_IS_READY})
 
 
 export const requestMenProducts = (type) => {
@@ -58,6 +67,15 @@ export const requestWomenProducts = (type) => {
     productsAPI.getWomenProducts(type).then(response => {
       dispatch(setProducts(response));
     });
+  }
+}
+
+export const editCurrentProduct = (product, token) => {
+  return (dispatch) => {
+    adminAPI.editProduct(product, token).then(response => {
+      dispatch(setProducts(response));
+      dispatch(resetIsReady());
+    })
   }
 }
 
