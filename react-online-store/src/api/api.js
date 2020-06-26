@@ -28,6 +28,9 @@ export const productsAPI = {
 export const authAPI = {
   login(email, password, rememberMe) {
     return instance.post('login', { email, password, rememberMe })
+      .then(response => {
+        return response.data
+      })
   }
 }
 
@@ -71,12 +74,18 @@ export const profileAPI = {
         return response.data;
       });
   },
+  editProfile(profileEditData, token) {
+    return instance.put('profile', { ...profileEditData }, principal(token))
+      .then(response => {
+        return response.data;
+      })
+  },
   getOrders(token) {
     return instance.get('order', principal(token))
-    .then(response => {
-      console.log(response.data.content)
-      return response.data.content;
-    });
+      .then(response => {
+        console.log(response.data.content)
+        return response.data.content;
+      });
   }
 }
 
@@ -95,7 +104,7 @@ export const orderAPI = {
   postQuickOrder(products, quickOrderForm, totalPrice) {
     return instance.post('quickOrder', { products, ...quickOrderForm, totalPrice })
       .then(response => {
-        if(response.data.orderStatus) alert("Заказ принят, ожидайте звонка")
+        if (response.data.orderStatus) alert("Заказ принят, ожидайте звонка")
         return response;
       });
   }

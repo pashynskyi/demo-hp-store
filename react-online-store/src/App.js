@@ -14,6 +14,7 @@ import RegisterContainer from "./components/Register/RegisterContainer";
 import LoginContainer from "./components/Login/LoginContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import OrderDetailsContainer from "./components/Profile/Orders/Order/OrderDetailsContainer";
+import ProfileEditContainer from "./components/ProfileEdit/ProfileEditContainer";
 
 
 const App = (props) => {
@@ -44,6 +45,7 @@ const App = (props) => {
         <Route path='/cart' render={() => <Cart />} />
         <Route path='/quickOrder' render={() => <QuickOrderContainer />} />
         <Route path='/order' render={() => <OrderDetailsContainer />} />
+        <Route path='/profileEdit' render={() => <ProfileEditContainer />} />
       </main>
       <Footer />
     </div>

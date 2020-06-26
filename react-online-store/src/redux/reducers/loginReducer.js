@@ -31,12 +31,10 @@ const loginReducer = (state = initialState, action) => {
 export const setUser = (data) => ({ type: LOGIN_USER, payload: data })
 export const resetUser = () => ({ type: LOGOUT_USER })
 
-export const login = (email, password, rememberMe) => {
-  return (dispatch) => {
+export const login = (email, password, rememberMe) => (dispatch) => {
     authAPI.login(email, password, rememberMe).then(response => {
-      dispatch(setUser(response.data))
+        dispatch(setUser(response))
     });
   }
-}
 
 export default loginReducer;

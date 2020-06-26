@@ -7,7 +7,7 @@ const Register = (props) => {
   return (
     <div>
       <h2>Регистрация</h2>
-      <Container className={styles.container}>
+      <Container>
         <Row>
           <Col>
             <RegisterReduxForm onSubmit={props.onSubmit} />

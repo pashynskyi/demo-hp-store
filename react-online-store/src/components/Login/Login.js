@@ -6,6 +6,11 @@ import { NavLink } from "react-router-dom";
 
 const Login = (props) => {
   
+//  const onTest = () => {
+//    debugger;
+//     props.postTest()
+//   }
+
   return (
     <div>
       <h2>Авторизация</h2>
@@ -16,6 +21,7 @@ const Login = (props) => {
             <div>
               <NavLink to="/register">Зарегистрироваться</NavLink>
             </div>
+            {/* <button onClick={onTest}>Test</button> */}
           </Col>
         </Row>
       </Container>
