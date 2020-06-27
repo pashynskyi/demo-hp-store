@@ -1,7 +1,12 @@
 import React from "react";
 import { connect } from 'react-redux';
 import Products from './Products';
-import { requestMenProducts, requestWomenProducts, setCurrentProduct } from "../../redux/reducers/productsReducer";
+import {
+  requestMenProducts,
+  requestWomenProducts,
+  setCurrentProduct,
+  resetSize
+} from "../../redux/reducers/productsReducer";
 import orderBy from "lodash/orderBy";
 import { Spinner } from "react-bootstrap";
 
@@ -46,7 +51,8 @@ class ProductsContainer extends React.Component {
         <Products products={this.props.products}
           isReady={this.props.isReady}
           setCurrentProduct={this.props.setCurrentProduct}
-          role={this.props.role} />
+          role={this.props.role}
+          resetSize={this.props.resetSize} />
     )
   }
 }
@@ -76,5 +82,6 @@ export default connect(mapStateToProps,
   {
     requestMenProducts,
     requestWomenProducts,
-    setCurrentProduct
+    setCurrentProduct,
+    resetSize
   })(ProductsContainer);

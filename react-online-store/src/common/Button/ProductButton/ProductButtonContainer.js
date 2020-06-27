@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ProductButton from './ProductButton';
 import { addToCart, removeFromCart, addQuantity } from '../../../redux/reducers/cartProductReducer';
+import { resetSize } from '../../../redux/reducers/productsReducer';
 import { cartAPI } from '../../../api/api';
 
 class ProductButtonContainer extends React.Component {
@@ -36,4 +37,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { addToCart, removeFromCart, addQuantity })(ProductButtonContainer);
+export default connect(mapStateToProps, { addToCart, removeFromCart, addQuantity, resetSize })(ProductButtonContainer);

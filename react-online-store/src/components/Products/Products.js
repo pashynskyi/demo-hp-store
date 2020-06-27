@@ -9,11 +9,14 @@ import { NavLink } from "react-router-dom";
 
 
 const Products = (props) => {
+  const onResetSize = () => {
+    props.resetSize()
+  }
   let state = props.products;
   let productElements = !props.isReady ? 'Загрузка...'
     : state.map((product) => (
       <Col className={styles.col} xs="12" sm="6" md="6" lg="4" xl="3" key={product.productId}>
-        <div className={styles.productContainer}>
+        <div onPointerLeave={onResetSize} className={styles.productContainer}>
           <Product
             product={product}
             setCurrentProduct={props.setCurrentProduct}
