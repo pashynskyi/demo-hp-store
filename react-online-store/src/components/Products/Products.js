@@ -5,10 +5,10 @@ import Product from "./Product/Product";
 import { Container, Row, Col } from 'react-bootstrap';
 import PortalWomenTypes from "../WomenHome/PortalWomenTypes/PortalWomenTypes";
 import FilterContainer from "../Filter/FilterContainer";
+import { NavLink } from "react-router-dom";
 
 
 const Products = (props) => {
-  debugger;
   let state = props.products;
   let productElements = !props.isReady ? 'Загрузка...'
     : state.map((product) => (
@@ -29,7 +29,12 @@ const Products = (props) => {
       {(props.isReady && state[0].categoryType === "women-home") &&
         <PortalWomenTypes />
       }
-      <Container>
+      <Container className={styles.container}>
+        {props.role === "ROLE_ADMIN" &&
+          <div className={styles.containerAddProduct}>
+            <NavLink to="/productCreate">Добавить товар</NavLink>
+          </div>
+        }
         <FilterContainer />
         <Row>
           {productElements}

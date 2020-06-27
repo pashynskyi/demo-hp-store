@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./QuickOrderReduxForm.module.css";
 import { reduxForm, Field } from "redux-form";
-import { required, maxLengthCreator } from "../../../utils/validators/validators";
+import { required, maxLengthCreator, phoneNumber } from "../../../utils/validators/validators";
 import { Input } from "../../../common/FormsControls/FormsControls";
 import { Button } from "react-bootstrap";
 
@@ -39,7 +39,7 @@ const QuickOrderForm = (props) => {
           name="phone"
           component={Input}
           type="text"
-          validate={[required, maxLength20,]}
+          validate={[required, maxLength20, phoneNumber]}
           placeholder="Мобильный телефон" />
       </div>
       <div className={styles.fieldContainer}>

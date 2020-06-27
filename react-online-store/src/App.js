@@ -16,6 +16,7 @@ import ProfileContainer from "./components/Profile/ProfileContainer";
 import OrderDetailsContainer from "./components/Profile/Orders/Order/OrderDetailsContainer";
 import ProfileEditContainer from "./components/ProfileEdit/ProfileEditContainer";
 import ProductEditContainer from "./components/ProductEdit/ProductEditContainer";
+import ProductCreateContainer from "./components/ProductCreate/ProductCreateContainer";
 
 
 const App = (props) => {
@@ -48,6 +49,7 @@ const App = (props) => {
         <Route path='/order' render={() => <OrderDetailsContainer />} />
         <Route path='/profileEdit' render={() => <ProfileEditContainer />} />
         <Route path='/productEdit' render={() => <ProductEditContainer />} />
+        <Route path='/productCreate' render={() => <ProductCreateContainer />} />
       </main>
       <Footer />
     </div>

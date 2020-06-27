@@ -2,12 +2,12 @@
   margin-bottom: 140px;
 }
 
-.containerEdit {
+.containerEditProduct {
   display: flex;
   justify-content: space-around;
 }
 
-.containerEdit a:hover{
+.containerEditProduct a:hover{
   text-decoration: underline;
   cursor: pointer;
 }

@@ -11,7 +11,7 @@ const Product = ({ product, setCurrentProduct, role }) => {
   return (
     <div className={styles.item}>
       {role === "ROLE_ADMIN" &&
-        <div className={styles.containerEdit}>
+        <div className={styles.containerEditProduct}>
           <NavLink onClick={onSetProduct} to="/productEdit">Edit</NavLink>
           <div>Количество: {product.productStock}</div>
         </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ProfileEditReduxForm.module.css";
 import { reduxForm, Field } from "redux-form";
-import { required, maxLengthCreator } from "../../../utils/validators/validators";
+import { required, maxLengthCreator, phoneNumber } from "../../../utils/validators/validators";
 import { Input } from "../../../common/FormsControls/FormsControls";
 import { Button } from "react-bootstrap";
 
@@ -40,7 +40,7 @@ export const ProfileEditForm = ({ handleSubmit }) => {
           name="phone"
           component={Input}
           type="text"
-          validate={[required, maxLength20,]}
+          validate={[required, maxLength20, phoneNumber]}
           placeholder="Телефон" />
       </div>
       <div className={styles.fieldContainer}>
@@ -64,7 +64,7 @@ export const ProfileEditForm = ({ handleSubmit }) => {
           placeholder="Адрес" />
       </div>
       <div>
-        <Button type='submit'>Обновить профиль</Button>
+        <Button type='submit'>Редактировать профиль</Button>
       </div>
     </form>
   );

@@ -6,11 +6,11 @@ import { Container, Row, Col } from "react-bootstrap";
 const ProductEdit = ({ currentProduct, onSubmit }) => {
   return (
     <div>
-      <h2>Редактирование продукта</h2>
+      <h2>Редактирование товара</h2>
       <Container>
         <Row>
           <Col>
-            <ProductEditReduxForm initialValues={currentProduct} userProfile={currentProduct} onSubmit={onSubmit} />
+            <ProductEditReduxForm initialValues={currentProduct} onSubmit={onSubmit} />
           </Col>
         </Row>
       </Container>
