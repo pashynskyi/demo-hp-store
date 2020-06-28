@@ -11,14 +11,8 @@ const principal = (token) => {
 
 
 export const productsAPI = {
-  getMenProducts(type) {
-    return instance.get(`collection/men-home/${type}`)
-      .then(response => {
-        return response.data;
-      });
-  },
-  getWomenProducts(type) {
-    return instance.get(`collection/women-home/${type}`)
+  getProducts(categoryType, productType) {
+    return instance.get(`collection/${categoryType}/${productType}`)
       .then(response => {
         return response.data;
       });

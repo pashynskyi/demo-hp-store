@@ -2,8 +2,7 @@ import React from "react";
 import { connect } from 'react-redux';
 import Products from './Products';
 import {
-  requestMenProducts,
-  requestWomenProducts,
+  requestProducts,
   setCurrentProduct,
   resetSize,
   deleteCurrentProduct
@@ -11,6 +10,7 @@ import {
 import orderBy from "lodash/orderBy";
 import { Spinner } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
+import { helperRequestProducts } from "../../utils/helperRequestProducts";
 
 class ProductsContainer extends React.Component {
 
@@ -19,27 +19,7 @@ class ProductsContainer extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.location.pathname === '/collection/men-home/t-shirts') {
-      this.props.requestMenProducts('t-shirts');
-    } else if (this.props.location.pathname === '/collection/men-home/shirts') {
-      this.props.requestMenProducts('shirts');
-    } else if (this.props.location.pathname === '/collection/men-home/jeans') {
-      this.props.requestMenProducts('jeans');
-    } else if (this.props.location.pathname === '/collection/men-home/shorts') {
-      this.props.requestMenProducts('shorts');
-    } else if (this.props.location.pathname === '/collection/men-home/jackets') {
-      this.props.requestMenProducts('jackets');
-    } else if (this.props.location.pathname === '/collection/women-home/t-shirts') {
-      this.props.requestWomenProducts('t-shirts');
-    } else if (this.props.location.pathname === '/collection/women-home/shorts') {
-      this.props.requestWomenProducts('shorts');
-    } else if (this.props.location.pathname === '/collection/women-home/hoodies') {
-      this.props.requestWomenProducts('hoodies');
-    } else if (this.props.location.pathname === '/collection/women-home/skirts') {
-      this.props.requestWomenProducts('skirts');
-    } else if (this.props.location.pathname === '/collection/women-home/dresses') {
-      this.props.requestWomenProducts('dresses');
-    }
+    helperRequestProducts(this.props.location.pathname, this.props.requestProducts)
 
     // productsAPI.getMenTShirts().then(response => {
     //   this.props.setProducts(response);
@@ -54,27 +34,7 @@ class ProductsContainer extends React.Component {
   componentDidUpdate(prevProps) {
     if (prevProps.isReady !== this.props.isReady) {
       console.log("TESTING!")
-      if (this.props.location.pathname === '/collection/men-home/t-shirts') {
-        this.props.requestMenProducts('t-shirts');
-      } else if (this.props.location.pathname === '/collection/men-home/shirts') {
-        this.props.requestMenProducts('shirts');
-      } else if (this.props.location.pathname === '/collection/men-home/jeans') {
-        this.props.requestMenProducts('jeans');
-      } else if (this.props.location.pathname === '/collection/men-home/shorts') {
-        this.props.requestMenProducts('shorts');
-      } else if (this.props.location.pathname === '/collection/men-home/jackets') {
-        this.props.requestMenProducts('jackets');
-      } else if (this.props.location.pathname === '/collection/women-home/t-shirts') {
-        this.props.requestWomenProducts('t-shirts');
-      } else if (this.props.location.pathname === '/collection/women-home/shorts') {
-        this.props.requestWomenProducts('shorts');
-      } else if (this.props.location.pathname === '/collection/women-home/hoodies') {
-        this.props.requestWomenProducts('hoodies');
-      } else if (this.props.location.pathname === '/collection/women-home/skirts') {
-        this.props.requestWomenProducts('skirts');
-      } else if (this.props.location.pathname === '/collection/women-home/dresses') {
-        this.props.requestWomenProducts('dresses');
-      }
+      helperRequestProducts(this.props.location.pathname, this.props.requestProducts)
     }
   }
 
@@ -116,8 +76,7 @@ let mapStateToProps = ({ productsPage, loginPage }) => {
 
 export default connect(mapStateToProps,
   {
-    requestMenProducts,
-    requestWomenProducts,
+    requestProducts,
     setCurrentProduct,
     resetSize,
     deleteCurrentProduct

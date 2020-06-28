@@ -62,17 +62,9 @@ export const resetSize = () => ({ type: RESET_SIZE })
 
 
 
-export const requestMenProducts = (type) => {
+export const requestProducts = (categoryType, productType) => {
   return (dispatch) => {
-    productsAPI.getMenProducts(type).then(response => {
-      dispatch(setProducts(response));
-    });
-  }
-}
-
-export const requestWomenProducts = (type) => {
-  return (dispatch) => {
-    productsAPI.getWomenProducts(type).then(response => {
+    productsAPI.getProducts(categoryType, productType).then(response => {
       dispatch(setProducts(response));
     });
   }
