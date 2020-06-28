@@ -7,8 +7,12 @@
   justify-content: space-around;
 }
 
-.containerEditProduct a:hover{
+.deteleProduct:hover,
+.containerEditProduct a:hover {
   text-decoration: underline;
   cursor: pointer;
 }
 
+.deteleProduct {
+  color: red;
+}

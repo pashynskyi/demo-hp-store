@@ -12,15 +12,17 @@ const Products = (props) => {
   const onResetSize = () => {
     props.resetSize()
   }
+
   let state = props.products;
   let productElements = !props.isReady ? 'Загрузка...'
     : state.map((product) => (
       <Col className={styles.col} xs="12" sm="6" md="6" lg="4" xl="3" key={product.productId}>
-        <div onPointerLeave={onResetSize} className={styles.productContainer}>
+        <div className={styles.productContainer} onPointerLeave={onResetSize}>
           <Product
             product={product}
             setCurrentProduct={props.setCurrentProduct}
-            role={props.role} />
+            role={props.role}
+            deleteProduct={props.deleteProduct} />
         </div>
       </Col>
     ));

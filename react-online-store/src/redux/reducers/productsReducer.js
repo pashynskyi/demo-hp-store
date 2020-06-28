@@ -28,37 +28,37 @@ const productsReducer = (state = initialState, action) => {
         ...state,
         isReady: false
       };
-      case SET_CURRENT_PRODUCT:
-        return {
-          ...state,
-          currentProduct: action.payload,
-        };
+    case SET_CURRENT_PRODUCT:
+      return {
+        ...state,
+        currentProduct: action.payload,
+      };
     case SET_FILTER:
       return {
         ...state,
         filterBy: action.payload
       };
-      case SET_SIZE:
-        return {
-          ...state,
-          productSize: action.payload
-        };
-        case RESET_SIZE:
-          return {
-            ...state,
-            productSize: ''
-          };
+    case SET_SIZE:
+      return {
+        ...state,
+        productSize: action.payload
+      };
+    case RESET_SIZE:
+      return {
+        ...state,
+        productSize: ''
+      };
     default:
       return state;
   }
 }
 
 export const setProducts = (products) => ({ type: SET_PRODUCTS, payload: products })
-export const resetIsReady = () => ({type: RESET_IS_READY})
-export const setCurrentProduct = (product) => ({type: SET_CURRENT_PRODUCT, payload: product})
+export const resetIsReady = () => ({ type: RESET_IS_READY })
+export const setCurrentProduct = (product) => ({ type: SET_CURRENT_PRODUCT, payload: product })
 export const setFilter = (filter) => ({ type: SET_FILTER, payload: filter })
-export const setSize = (size) => ({type: SET_SIZE, payload: size})
-export const resetSize = () => ({type: RESET_SIZE})
+export const setSize = (size) => ({ type: SET_SIZE, payload: size })
+export const resetSize = () => ({ type: RESET_SIZE })
 
 
 
@@ -78,13 +78,31 @@ export const requestWomenProducts = (type) => {
   }
 }
 
-export const editCurrentProduct = (product, token) => {
+export const createNewProduct = (product, token) => {
   return (dispatch) => {
-    adminAPI.editProduct(product, token).then(response => {
+    adminAPI.postProduct(product, token).then(response => {
       dispatch(setProducts(response));
       dispatch(resetIsReady());
     })
   }
 }
+
+export const editCurrentProduct = (product, token) => {
+  return (dispatch) => {
+    adminAPI.putProduct(product, token).then(response => {
+      dispatch(setProducts(response));
+      dispatch(resetIsReady());
+    })
+  }
+}
+
+export const deleteCurrentProduct = (productId, token) => {
+  return (dispatch) => {
+    adminAPI.deleteProduct(productId, token).then(response => {
+      dispatch(resetIsReady());
+    })
+  }
+}
+
 
 export default productsReducer;

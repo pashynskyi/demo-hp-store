@@ -111,8 +111,22 @@ export const orderAPI = {
 }
 
 export const adminAPI = {
-  editProduct(product, token) {
+  postProduct(product, token) {
+    let productStatus = 1;
+    return instance.post('seller/product/new', { ...product, productStatus }, principal(token))
+      .then(response => {
+        return response;
+      });
+  },
+  putProduct(product, token) {
     return instance.put(`seller/product/${product.productId}/edit`, { ...product }, principal(token))
+      .then(response => {
+        return response;
+      });
+  },
+  deleteProduct(productId, token) {
+    debugger;
+    return instance.delete(`seller/product/${productId}/delete`, principal(token))
       .then(response => {
         return response;
       });

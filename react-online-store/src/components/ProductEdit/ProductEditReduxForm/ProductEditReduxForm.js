@@ -10,6 +10,7 @@ const maxLength150 = maxLengthCreator(150);
 const maxLength50 = maxLengthCreator(50);
 const maxLength20 = maxLengthCreator(20);
 const minValue0 = minValue(0);
+const minValue1 = minValue(1);
 
 export const ProductEditForm = ({ handleSubmit }) => {
   return (
@@ -32,7 +33,7 @@ export const ProductEditForm = ({ handleSubmit }) => {
           name="pictureUrl"
           component={Input}
           type="text"
-          validate={[required, maxLength150]}
+          validate={[required, maxLength200]}
           placeholder="photo link" />
       </div>
       <div className={styles.fieldContainer}>
@@ -41,8 +42,8 @@ export const ProductEditForm = ({ handleSubmit }) => {
           className={styles.field}
           name="productPrice"
           component={Input}
-          type="text"
-          validate={[required, maxLength20,]}
+          type="number"
+          validate={[required, maxLength20, minValue1]}
           placeholder="price" />
       </div>
       <div className={styles.fieldContainer}>

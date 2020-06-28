@@ -1,15 +1,14 @@
 import React from "react";
 import { connect } from 'react-redux';
 import ProductCreate from './ProductCreate';
-import { editCurrentProduct } from './../../redux/reducers/productsReducer';
+import { createNewProduct } from './../../redux/reducers/productsReducer';
 import * as axios from 'axios';
 
 
 class ProductCreateContainer extends React.Component {
 
   onSubmit = (productCreateData) => {
-      console.log(productCreateData)
-    // this.props.editCurrentProduct(productCreateData, this.props.token)
+    this.props.createNewProduct(productCreateData, this.props.token)
   }
 
   componentDidMount() {
@@ -28,4 +27,4 @@ let mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { editCurrentProduct })(ProductCreateContainer);
+export default connect(mapStateToProps, { createNewProduct })(ProductCreateContainer);

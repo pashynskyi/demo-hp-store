@@ -9,13 +9,13 @@ const maxLength200 = maxLengthCreator(200);
 const maxLength150 = maxLengthCreator(150);
 const maxLength50 = maxLengthCreator(50);
 const maxLength20 = maxLengthCreator(20);
-const minValue0 = minValue(0);
+const minValue1 = minValue(1);
 
 export const ProductCreateForm = ({ handleSubmit, productCreate }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className={styles.fieldContainer}>
-        <div className={styles.titleField}>Pruduct id</div>
+        <div className={styles.titleField}>Pruduct id:</div>
         <Field
           className={styles.field}
           name="productId"
@@ -42,13 +42,13 @@ export const ProductCreateForm = ({ handleSubmit, productCreate }) => {
           component={Select}
           validate={[required]} >
           <option value="">Select type</option>
-          <option value="men-type">Man</option>
-          <option value="women-type">Woman</option>
+          <option value="men-home">Man</option>
+          <option value="women-home">Woman</option>
         </Field>
       </div>
       {!productCreate ? undefined
         : !productCreate.values ? undefined
-          : productCreate.values.categoryType === "men-type" ?
+          : productCreate.values.categoryType === "men-home" ?
             <div className={styles.fieldContainer}>
               <div className={styles.titleField}>Product type:</div>
               <Field
@@ -64,7 +64,7 @@ export const ProductCreateForm = ({ handleSubmit, productCreate }) => {
                 <option value="jackets">Jacket</option>
               </Field>
             </div>
-            : productCreate.values.categoryType === "women-type" ?
+            : productCreate.values.categoryType === "women-home" ?
               <div className={styles.fieldContainer}>
                 <div className={styles.titleField}>Product type:</div>
                 <Field
@@ -102,7 +102,7 @@ export const ProductCreateForm = ({ handleSubmit, productCreate }) => {
           placeholder="material" />
       </div>
       <div className={styles.fieldContainer}>
-        <div className={styles.titleField}>Sizes</div>
+        <div className={styles.titleField}>Sizes:</div>
         <Field
           className={styles.field}
           name="productSizes"
@@ -117,18 +117,18 @@ export const ProductCreateForm = ({ handleSubmit, productCreate }) => {
           className={styles.field}
           name="productPrice"
           component={Input}
-          type="text"
-          validate={[required, maxLength20,]}
+          type="number"
+          validate={[required, maxLength20, minValue1]}
           placeholder="price" />
       </div>
       <div className={styles.fieldContainer}>
-        <div className={styles.titleField}>Stock</div>
+        <div className={styles.titleField}>Stock:</div>
         <Field
           className={styles.field}
           name="productStock"
           component={Input}
           type="number"
-          validate={[required, minValue0]}
+          validate={[required, minValue1]}
           placeholder="stock" />
       </div>
       <div>
