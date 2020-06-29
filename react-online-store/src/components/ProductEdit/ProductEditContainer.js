@@ -2,16 +2,23 @@ import React from "react";
 import { connect } from 'react-redux';
 import ProductEdit from './ProductEdit';
 import { editCurrentProduct } from './../../redux/reducers/productsReducer';
-import * as axios from 'axios';
-
 
 class ProductEditContainer extends React.Component {
+
+  goBack = this.goBack.bind(this);
+
+  goBack() {
+    this.props.history.goBack();
+  }
 
   onSubmit = (productEditData) => {
     this.props.editCurrentProduct(productEditData, this.props.token)
   }
 
-  componentDidMount() {
+  componentDidUpdate(prevProps) {
+    if (prevProps.isReady !== this.props.isReady) {
+      this.goBack()
+    }
   }
 
   render() {
@@ -23,7 +30,8 @@ let mapStateToProps = (state) => {
   return {
     currentProduct: state.productsPage.currentProduct,
     isAuth: state.loginPage.isAuth,
-    token: state.loginPage.currentUser.token
+    token: state.loginPage.currentUser.token,
+    isReady: state.productsPage.isReady
   }
 }
 

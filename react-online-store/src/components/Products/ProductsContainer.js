@@ -5,11 +5,11 @@ import {
   requestProducts,
   setCurrentProduct,
   resetSize,
-  deleteCurrentProduct
+  deleteCurrentProduct,
+  resetCurrentPage
 } from "../../redux/reducers/productsReducer";
 import orderBy from "lodash/orderBy";
 import { Spinner } from "react-bootstrap";
-import { Redirect } from "react-router-dom";
 import { helperRequestProducts } from "../../utils/helperRequestProducts";
 
 class ProductsContainer extends React.Component {
@@ -19,8 +19,23 @@ class ProductsContainer extends React.Component {
   }
 
   componentDidMount() {
-    helperRequestProducts(this.props.location.pathname, this.props.requestProducts)
-
+    debugger;
+    if (this.props.currentPage !== 1) {
+      helperRequestProducts(
+        this.props.location.pathname,
+        this.props.requestProducts,
+        1,
+        this.props.pageSize
+      );
+      this.props.resetCurrentPage()
+    } else {
+      helperRequestProducts(
+        this.props.location.pathname,
+        this.props.requestProducts,
+        this.props.currentPage,
+        this.props.pageSize
+      )
+    }
     // productsAPI.getMenTShirts().then(response => {
     //   this.props.setProducts(response);
     // });
@@ -32,13 +47,24 @@ class ProductsContainer extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.isReady !== this.props.isReady) {
-      console.log("TESTING!")
-      helperRequestProducts(this.props.location.pathname, this.props.requestProducts)
+    debugger;
+    if (prevProps.isReady !== this.props.isReady || prevProps.currentPage !== this.props.currentPage) {
+      console.log("UPDATINGTEST!!!")//нужно чистить currentPage (redux)
+      helperRequestProducts(
+        this.props.location.pathname,
+        this.props.requestProducts,
+        this.props.currentPage,
+        this.props.pageSize
+      );
+      // this.props.resetCurrentPage();
     }
   }
 
   render() {
+    // if (this.props.isReady && this.props.totalPages !== 0) {
+    //   debugger;
+    //   this.props.resetCurrentPage();
+    // }
     return (
       !this.props.isReady ? <Spinner animation="border" /> :
         <Products
@@ -47,7 +73,8 @@ class ProductsContainer extends React.Component {
           setCurrentProduct={this.props.setCurrentProduct}
           role={this.props.role}
           resetSize={this.props.resetSize}
-          deleteProduct={this.deleteProduct} />
+          deleteProduct={this.deleteProduct}
+          locationPathname={this.props.location.pathname} />
     )
   }
 }
@@ -69,6 +96,9 @@ let mapStateToProps = ({ productsPage, loginPage }) => {
   return {
     products: sortBy(productsPage.products, productsPage.filterBy),
     isReady: productsPage.isReady,
+    currentPage: productsPage.currentPage,
+    totalPages: productsPage.totalPages,
+    pageSize: productsPage.pageSize,
     token: loginPage.currentUser.token,
     role: loginPage.currentUser.role
   }
@@ -79,5 +109,6 @@ export default connect(mapStateToProps,
     requestProducts,
     setCurrentProduct,
     resetSize,
-    deleteCurrentProduct
+    deleteCurrentProduct,
+    resetCurrentPage
   })(ProductsContainer);

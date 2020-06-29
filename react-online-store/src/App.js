@@ -48,8 +48,8 @@ const App = (props) => {
         <Route path='/quickOrder' render={() => <QuickOrderContainer />} />
         <Route path='/order' render={() => <OrderDetailsContainer />} />
         <Route path='/profileEdit' render={() => <ProfileEditContainer />} />
-        <Route path='/productEdit' render={() => <ProductEditContainer />} />
-        <Route path='/productCreate' render={() => <ProductCreateContainer />} />
+        <Route path='/productEdit' component={ProductEditContainer} />
+        <Route path='/productCreate' component={ProductCreateContainer} />
       </main>
       <Footer />
     </div>

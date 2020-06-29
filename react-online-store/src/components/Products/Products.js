@@ -6,6 +6,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import PortalWomenTypes from "../WomenHome/PortalWomenTypes/PortalWomenTypes";
 import FilterContainer from "../Filter/FilterContainer";
 import { NavLink } from "react-router-dom";
+import PaginatorContainer from "../../common/Paginator/PaginatorContainer";
 
 
 const Products = (props) => {
@@ -26,6 +27,7 @@ const Products = (props) => {
         </div>
       </Col>
     ));
+
   return (
     <section className={styles.productSection}>
       {(props.isReady && state[0].categoryType === "men-home") &&
@@ -43,6 +45,7 @@ const Products = (props) => {
         <FilterContainer />
         <Row>
           {productElements}
+          <PaginatorContainer locationPathname={props.locationPathname} />
         </Row>
       </Container>
     </section>

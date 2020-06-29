@@ -2,16 +2,23 @@ import React from "react";
 import { connect } from 'react-redux';
 import ProductCreate from './ProductCreate';
 import { createNewProduct } from './../../redux/reducers/productsReducer';
-import * as axios from 'axios';
-
 
 class ProductCreateContainer extends React.Component {
+
+  goBack = this.goBack.bind(this);
+
+  goBack() {
+    this.props.history.goBack();
+  }
 
   onSubmit = (productCreateData) => {
     this.props.createNewProduct(productCreateData, this.props.token)
   }
 
-  componentDidMount() {
+  componentDidUpdate(prevProps) {
+    if (prevProps.isReady !== this.props.isReady) {
+      this.goBack()
+    }
   }
 
   render() {
@@ -23,7 +30,8 @@ let mapStateToProps = (state) => {
   return {
     productCreate: state.form.productCreate,
     isAuth: state.loginPage.isAuth,
-    token: state.loginPage.currentUser.token
+    token: state.loginPage.currentUser.token,
+    isReady: state.productsPage.isReady,
   }
 }
 

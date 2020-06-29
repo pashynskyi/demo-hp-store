@@ -6,13 +6,19 @@ const SET_CURRENT_PRODUCT = 'SET_CURRENT_PRODUCT';
 const SET_FILTER = 'SET_FILTER';
 const SET_SIZE = 'SET_SIZE';
 const RESET_SIZE = 'RESET_SIZE';
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const RESET_CURRENT_PAGE = 'RESET_CURRENT_PAGE';
+const SET_TOTAL_PAGES = 'SET_TOTAL_PAGES';
 
 let initialState = {
   isReady: false,
   products: null,
   currentProduct: '',
   filterBy: 'all',
-  productSize: ''
+  productSize: '',
+  pageSize: 12,
+  totalPages: 0,
+  currentPage: 1
 };
 
 const productsReducer = (state = initialState, action) => {
@@ -24,6 +30,7 @@ const productsReducer = (state = initialState, action) => {
         isReady: true
       };
     case RESET_IS_READY:
+      debugger;
       return {
         ...state,
         isReady: false
@@ -48,6 +55,22 @@ const productsReducer = (state = initialState, action) => {
         ...state,
         productSize: ''
       };
+    case SET_CURRENT_PAGE:
+      return {
+        ...state,
+        currentPage: action.payload
+      };
+      case RESET_CURRENT_PAGE:
+        debugger;
+      return {
+        ...state,
+        currentPage: 1
+      };
+    case SET_TOTAL_PAGES:
+      return {
+        ...state,
+        totalPages: action.payload
+      };
     default:
       return state;
   }
@@ -59,13 +82,18 @@ export const setCurrentProduct = (product) => ({ type: SET_CURRENT_PRODUCT, payl
 export const setFilter = (filter) => ({ type: SET_FILTER, payload: filter })
 export const setSize = (size) => ({ type: SET_SIZE, payload: size })
 export const resetSize = () => ({ type: RESET_SIZE })
+export const setCurrentPage = (pageNumber) => ({ type: SET_CURRENT_PAGE, payload: pageNumber })
+export const resetCurrentPage = () => ({ type: RESET_CURRENT_PAGE })
+export const setTotalPages = (totalPagesCount) => ({ type: SET_TOTAL_PAGES, payload: totalPagesCount })
 
 
 
-export const requestProducts = (categoryType, productType) => {
+export const requestProducts = (categoryType, productType, currentPage, pageSize) => {
   return (dispatch) => {
-    productsAPI.getProducts(categoryType, productType).then(response => {
-      dispatch(setProducts(response));
+    debugger;
+    productsAPI.getProducts(categoryType, productType, currentPage, pageSize).then(response => {
+      dispatch(setProducts(response.content));
+      dispatch(setTotalPages(response.totalPages));
     });
   }
 }
@@ -73,7 +101,6 @@ export const requestProducts = (categoryType, productType) => {
 export const createNewProduct = (product, token) => {
   return (dispatch) => {
     adminAPI.postProduct(product, token).then(response => {
-      dispatch(setProducts(response));
       dispatch(resetIsReady());
     })
   }
@@ -82,7 +109,6 @@ export const createNewProduct = (product, token) => {
 export const editCurrentProduct = (product, token) => {
   return (dispatch) => {
     adminAPI.putProduct(product, token).then(response => {
-      dispatch(setProducts(response));
       dispatch(resetIsReady());
     })
   }
