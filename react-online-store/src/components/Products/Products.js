@@ -45,8 +45,8 @@ const Products = (props) => {
         <FilterContainer />
         <Row>
           {productElements}
-          <PaginatorContainer locationPathname={props.locationPathname} />
         </Row>
+        <PaginatorContainer locationPathname={props.locationPathname} />
       </Container>
     </section>
   );

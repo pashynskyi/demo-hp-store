@@ -1,17 +1,22 @@
 import React from 'react';
 import styles from './Paginator.module.css';
+import { Pagination, Icon } from 'semantic-ui-react';
 
 const Paginator = ({ totalPages, currentPage, onPageChanged }) => {
-  let pages = [];
-  for (let i = 1; i <= totalPages; i++) {
-    pages.push(i);
-  }
+
+  const handlePaginationChange = (e, { activePage }) => onPageChanged(activePage)
+
   return (
     <div>
-      {pages.map(p => {
-        return <span className={currentPage === p && styles.selectedPage}
-          onClick={() => { onPageChanged(p) }}>{p}</span>
-      })}
+      <Pagination
+        onPageChange={handlePaginationChange}
+        activePage={currentPage}
+        ellipsisItem={{ content: <Icon name='ellipsis horizontal' />, icon: true }}
+        firstItem={{ content: <Icon name='angle double left' />, icon: true }}
+        lastItem={{ content: <Icon name='angle double right' />, icon: true }}
+        prevItem={{ content: <Icon name='angle left' />, icon: true }}
+        nextItem={{ content: <Icon name='angle right' />, icon: true }}
+        totalPages={totalPages} />
     </div>
   )
 }
