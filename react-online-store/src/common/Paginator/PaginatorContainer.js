@@ -13,12 +13,17 @@ class PaginatorContainer extends React.Component {
       this.props.locationPathname,
       this.props.requestProducts,
       pageNumber,
-      this.props.pageSize
+      this.props.pageSize,
+      this.props.sortBy
     );
-    //  this.props.resetCurrentPage()
-    
-    // this.props.resetIsReady()
   }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.sortBy !== this.props.sortBy) {
+      this.props.resetCurrentPage()
+    }
+  }
+
 
   render() {
     return <Paginator {...this.props} onPageChanged={this.onPageChanged} />
@@ -30,6 +35,7 @@ const mapStateToProps = (state) => {
     pageSize: state.productsPage.pageSize,
     totalPages: state.productsPage.totalPages,
     currentPage: state.productsPage.currentPage,
+    sortBy: state.productsPage.sortBy,
     isAuth: state.loginPage.isAuth,
     token: state.loginPage.currentUser.token,
   }

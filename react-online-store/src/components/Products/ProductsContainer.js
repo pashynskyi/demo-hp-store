@@ -8,7 +8,6 @@ import {
   deleteCurrentProduct,
   resetCurrentPage
 } from "../../redux/reducers/productsReducer";
-import orderBy from "lodash/orderBy";
 import { Spinner } from "react-bootstrap";
 import { helperRequestProducts } from "../../utils/helperRequestProducts";
 
@@ -19,13 +18,13 @@ class ProductsContainer extends React.Component {
   }
 
   componentDidMount() {
-    debugger;
     if (this.props.currentPage !== 1) {
       helperRequestProducts(
         this.props.location.pathname,
         this.props.requestProducts,
         1,
-        this.props.pageSize
+        this.props.pageSize,
+        this.props.sortBy
       );
       this.props.resetCurrentPage()
     } else {
@@ -33,7 +32,8 @@ class ProductsContainer extends React.Component {
         this.props.location.pathname,
         this.props.requestProducts,
         this.props.currentPage,
-        this.props.pageSize
+        this.props.pageSize,
+        this.props.sortBy
       )
     }
     // productsAPI.getMenTShirts().then(response => {
@@ -49,22 +49,17 @@ class ProductsContainer extends React.Component {
   componentDidUpdate(prevProps) {
     debugger;
     if (prevProps.isReady !== this.props.isReady || prevProps.currentPage !== this.props.currentPage) {
-      console.log("UPDATINGTEST!!!")//нужно чистить currentPage (redux)
       helperRequestProducts(
         this.props.location.pathname,
         this.props.requestProducts,
         this.props.currentPage,
-        this.props.pageSize
+        this.props.pageSize,
+        this.props.sortBy
       );
-      // this.props.resetCurrentPage();
     }
   }
 
   render() {
-    // if (this.props.isReady && this.props.totalPages !== 0) {
-    //   debugger;
-    //   this.props.resetCurrentPage();
-    // }
     return (
       !this.props.isReady ? <Spinner animation="border" /> :
         <Products
@@ -79,26 +74,14 @@ class ProductsContainer extends React.Component {
   }
 }
 
-const sortBy = (products, filterBy) => {
-  switch (filterBy) {
-    case 'all':
-      return products;
-    case 'price_high':
-      return orderBy(products, 'productPrice', 'desc');
-    case 'price_low':
-      return orderBy(products, 'productPrice', 'asc');
-    default:
-      return products;
-  }
-}
-
 let mapStateToProps = ({ productsPage, loginPage }) => {
   return {
-    products: sortBy(productsPage.products, productsPage.filterBy),
+    products: productsPage.products,
     isReady: productsPage.isReady,
     currentPage: productsPage.currentPage,
     totalPages: productsPage.totalPages,
     pageSize: productsPage.pageSize,
+    sortBy: productsPage.sortBy,
     token: loginPage.currentUser.token,
     role: loginPage.currentUser.role
   }

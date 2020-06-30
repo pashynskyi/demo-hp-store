@@ -11,8 +11,9 @@ const principal = (token) => {
 
 
 export const productsAPI = {
-  getProducts(categoryType, productType, currentPage, pageSize) {
-    return instance.get(`collection/${categoryType}/${productType}?page=${currentPage}&size=${pageSize}`)
+  getProducts(categoryType, productType, currentPage, pageSize, sortBy) {
+    debugger;
+    return instance.get(`collection/${categoryType}/${productType}?page=${currentPage}&size=${pageSize}&sort=${sortBy}`)
       .then(response => {
         return response.data;
       });

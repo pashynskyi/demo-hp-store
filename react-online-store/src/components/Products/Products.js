@@ -4,7 +4,7 @@ import PortalMenTypes from "../MenHome/PortalMenTypes/PortalMenTypes";
 import Product from "./Product/Product";
 import { Container, Row, Col } from 'react-bootstrap';
 import PortalWomenTypes from "../WomenHome/PortalWomenTypes/PortalWomenTypes";
-import FilterContainer from "../Filter/FilterContainer";
+import SortContainer from "../Sort/SortContainer";
 import { NavLink } from "react-router-dom";
 import PaginatorContainer from "../../common/Paginator/PaginatorContainer";
 
@@ -42,7 +42,7 @@ const Products = (props) => {
             <NavLink to="/productCreate">Добавить товар</NavLink>
           </div>
         }
-        <FilterContainer />
+        <SortContainer locationPathname={props.locationPathname} />
         <Row>
           {productElements}
         </Row>

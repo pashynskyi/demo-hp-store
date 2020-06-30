@@ -3,7 +3,7 @@ import { productsAPI, adminAPI } from "../../api/api";
 const SET_PRODUCTS = 'SET_PRODUCTS';
 const RESET_IS_READY = 'SET_IS_READY';
 const SET_CURRENT_PRODUCT = 'SET_CURRENT_PRODUCT';
-const SET_FILTER = 'SET_FILTER';
+const SET_SORT = 'SET_SORT';
 const SET_SIZE = 'SET_SIZE';
 const RESET_SIZE = 'RESET_SIZE';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
@@ -14,7 +14,7 @@ let initialState = {
   isReady: false,
   products: null,
   currentProduct: '',
-  filterBy: 'all',
+  sortBy: '',
   productSize: '',
   pageSize: 12,
   totalPages: 0,
@@ -40,10 +40,10 @@ const productsReducer = (state = initialState, action) => {
         ...state,
         currentProduct: action.payload,
       };
-    case SET_FILTER:
+    case SET_SORT:
       return {
         ...state,
-        filterBy: action.payload
+        sortBy: action.payload
       };
     case SET_SIZE:
       return {
@@ -79,7 +79,7 @@ const productsReducer = (state = initialState, action) => {
 export const setProducts = (products) => ({ type: SET_PRODUCTS, payload: products })
 export const resetIsReady = () => ({ type: RESET_IS_READY })
 export const setCurrentProduct = (product) => ({ type: SET_CURRENT_PRODUCT, payload: product })
-export const setFilter = (filter) => ({ type: SET_FILTER, payload: filter })
+export const setSort = (sort) => ({ type: SET_SORT, payload: sort })
 export const setSize = (size) => ({ type: SET_SIZE, payload: size })
 export const resetSize = () => ({ type: RESET_SIZE })
 export const setCurrentPage = (pageNumber) => ({ type: SET_CURRENT_PAGE, payload: pageNumber })
@@ -88,10 +88,10 @@ export const setTotalPages = (totalPagesCount) => ({ type: SET_TOTAL_PAGES, payl
 
 
 
-export const requestProducts = (categoryType, productType, currentPage, pageSize) => {
+export const requestProducts = (categoryType, productType, currentPage, pageSize, sortBy) => {
   return (dispatch) => {
     debugger;
-    productsAPI.getProducts(categoryType, productType, currentPage, pageSize).then(response => {
+    productsAPI.getProducts(categoryType, productType, currentPage, pageSize, sortBy).then(response => {
       dispatch(setProducts(response.content));
       dispatch(setTotalPages(response.totalPages));
     });
