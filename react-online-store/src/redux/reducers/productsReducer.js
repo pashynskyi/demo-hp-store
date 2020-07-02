@@ -61,7 +61,6 @@ const productsReducer = (state = initialState, action) => {
         currentPage: action.payload
       };
       case RESET_CURRENT_PAGE:
-        debugger;
       return {
         ...state,
         currentPage: 1
@@ -90,7 +89,6 @@ export const setTotalPages = (totalPagesCount) => ({ type: SET_TOTAL_PAGES, payl
 
 export const requestProducts = (categoryType, productType, currentPage, pageSize, sortBy) => {
   return (dispatch) => {
-    debugger;
     productsAPI.getProducts(categoryType, productType, currentPage, pageSize, sortBy).then(response => {
       dispatch(setProducts(response.content));
       dispatch(setTotalPages(response.totalPages));

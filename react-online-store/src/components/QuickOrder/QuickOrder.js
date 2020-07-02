@@ -3,6 +3,7 @@ import styles from "./QuickOrder.module.css";
 import { QuickOrderReduxForm } from "./QuickOrderReduxForm/QuickOrderReduxForm";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { NavLink, Redirect } from "react-router-dom";
+import OrderResponseContainer from "../OrderResponse/OrderResponseContainer";
 
 const QuickOrder = (props) => {
   const data = props.selectedItems[0];
@@ -17,7 +18,8 @@ const QuickOrder = (props) => {
   }
 
   const onResetOrder = () => {
-    props.resetOrder();
+    // props.resetOrder();
+    props.resetCart()
   }
 
   if (!products) return <Redirect to="/cart" />;
@@ -39,6 +41,7 @@ const QuickOrder = (props) => {
             </div>
           </div>
         </Row>
+        <OrderResponseContainer />
       </Container>
     </div>
   );

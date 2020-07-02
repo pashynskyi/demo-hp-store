@@ -1,0 +1,42 @@
+.container {
+  background: rgba(44, 46, 44, 0.4);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.responseContainer {
+  background: white;
+  width: 60%;
+  min-width: 400px;
+  padding: 10px;
+  border: 3px solid green;
+  font-size: 15px
+}
+
+.responseHeader {
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0px;
+  margin-bottom: 10px;
+}
+
+.responseHeader h3 {
+  margin: 0;
+  color: green;
+}
+
+.responseFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

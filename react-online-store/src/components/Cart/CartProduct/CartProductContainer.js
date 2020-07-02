@@ -7,7 +7,9 @@ import {
   resetCart,
   orderProduct
 } from "../../../redux/reducers/cartProductReducer";
+import { postCheckout } from "../../../redux/reducers/quickOrderReducer";
 import { cartAPI } from "../../../api/api";
+import { fromPairs } from "lodash";
 
 class CartProductContainer extends React.Component {
 
@@ -15,19 +17,11 @@ class CartProductContainer extends React.Component {
     this.deleteFromAuthCart.bind(this)(productId)
   }
 
-  onPostCheckout = () => {
-    this.postCheckout.bind(this)()
-  }
-
   componentDidMount() {
     this.props.isAuth && cartAPI.getCart(this.props.token);
     this.deleteFromAuthCart = (productId) => {
       this.props.isAuth && cartAPI.deleteFromCart(productId, this.props.token)
     };
-    this.postCheckout = () => {
-      this.props.isAuth && cartAPI.postCheckout(this.props.token)
-    }
-    
   }
   render() {
     return <CartProduct
@@ -41,7 +35,8 @@ class CartProductContainer extends React.Component {
       isAuth={this.props.isAuth}
       resetCart={this.props.resetCart}
       onDeleteFromAuthCart={this.onDeleteFromAuthCart}
-      onPostCheckout={this.onPostCheckout}
+      postCheckout={this.props.postCheckout}
+      token={this.props.token}
     />
   }
 }
@@ -59,4 +54,4 @@ let mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { addToCart, removeFromCart, resetCart, orderProduct,})(CartProductContainer);
+export default connect(mapStateToProps, { addToCart, removeFromCart, resetCart, orderProduct, postCheckout })(CartProductContainer);

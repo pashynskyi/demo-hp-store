@@ -37,7 +37,8 @@ const CartProduct = (props) => {
         selectedItems={props.selectedItems}
         isAuth={props.isAuth}
         resetCart={props.resetCart}
-        onPostCheckout={props.onPostCheckout}
+        postCheckout={props.postCheckout}
+        token={props.token}
       />
     </div>
 

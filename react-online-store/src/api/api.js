@@ -12,7 +12,6 @@ const principal = (token) => {
 
 export const productsAPI = {
   getProducts(categoryType, productType, currentPage, pageSize, sortBy) {
-    debugger;
     return instance.get(`collection/${categoryType}/${productType}?page=${currentPage}&size=${pageSize}&sort=${sortBy}`)
       .then(response => {
         return response.data;
@@ -50,12 +49,6 @@ export const cartAPI = {
   },
   putCurrentQuantity(productId, quantity, token) {
     return instance.put(`cart/${productId}`, { quantity }, principal(token))
-      .then(response => {
-        return response.data;
-      })
-  },
-  postCheckout(token) {
-    return instance.post('cart/checkout', principal(token))
       .then(response => {
         return response.data;
       })
@@ -99,10 +92,15 @@ export const orderAPI = {
   postQuickOrder(products, quickOrderForm, totalPrice) {
     return instance.post('quickOrder', { products, ...quickOrderForm, totalPrice })
       .then(response => {
-        if (response.data.orderStatus) alert("Заказ принят, ожидайте звонка")
-        return response;
+        return response.data;
       });
-  }
+  },
+  postCheckout(token) {
+    return instance.post('cart/checkout', principal(token))
+      .then(response => {
+        return response.data;
+      })
+  },
 }
 
 export const adminAPI = {

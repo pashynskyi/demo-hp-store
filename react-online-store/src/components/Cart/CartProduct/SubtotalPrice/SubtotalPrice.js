@@ -4,10 +4,9 @@ import { Button } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
 
 const SubtotalPrice = (props) => {
-  debugger;
   const onClickBtn = () => {
     props.orderProduct(props.totalPrice, props.totalCount, props.confirmedQuantityProducts);
-    props.onPostCheckout();
+    props.isAuth && props.postCheckout(props.token);
   }
 
   if ((props.selectedItems.length >= 1) && props.isAuth) {

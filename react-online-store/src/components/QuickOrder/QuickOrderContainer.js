@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from 'react-redux';
 import QuickOrder from './QuickOrder';
 import { Redirect } from "react-router-dom";
-import { sendOrder, quickOrder } from "../../redux/reducers/quickOrderReducer";
+import { setOrder, quickOrder } from "../../redux/reducers/quickOrderReducer";
 import { resetOrder, resetCart } from "../../redux/reducers/cartProductReducer";
 
 class QuickOrderContainer extends React.Component {
@@ -21,7 +21,7 @@ class QuickOrderContainer extends React.Component {
     if (this.props.selectedItems.length < 1) return <Redirect to="/cart" />;
     return <QuickOrder
       selectedItems={this.props.selectedItems}
-      sendOrder={this.props.sendOrder}
+      setOrder={this.props.setOrder}
       order={this.props.order}
       resetOrder={this.props.resetOrder}
       resetCart={this.props.resetCart}
@@ -36,4 +36,4 @@ let mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { sendOrder, resetOrder, quickOrder, resetCart })(QuickOrderContainer);
+export default connect(mapStateToProps, { setOrder, resetOrder, quickOrder, resetCart })(QuickOrderContainer);

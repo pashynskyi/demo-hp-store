@@ -29,7 +29,6 @@ const cartProductReducer = (state = initialState, action) => {
         quantityItem: state.quantityItem.filter(e => e.productId !== action.payload)
       };
       case RESET_CART:
-        debugger;
         return {
           items: [],
           selectedItems: [],
