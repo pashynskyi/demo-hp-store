@@ -14,7 +14,7 @@ const QuickOrder = (props) => {
 
   const onSubmit = (quickOrderForm) => {
     props.onQuickOrder(products, quickOrderForm, totalPrice);
-    props.resetCart()
+    // props.resetCart()
   }
 
   const onResetOrder = () => {

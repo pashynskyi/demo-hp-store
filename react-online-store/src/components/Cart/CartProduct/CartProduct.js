@@ -41,7 +41,6 @@ const CartProduct = (props) => {
         token={props.token}
       />
     </div>
-
   );
 }
 

@@ -16,3 +16,22 @@
 .deteleProduct {
   color: red;
 }
+
+.disabledContainer {
+  background: rgba(98, 99, 104, 0.3);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.disabledContainer div {
+  text-shadow: 1px 1px 2px black, 0 0 1em red;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}

@@ -9,7 +9,6 @@ import {
 } from "../../../redux/reducers/cartProductReducer";
 import { postCheckout } from "../../../redux/reducers/quickOrderReducer";
 import { cartAPI } from "../../../api/api";
-import { fromPairs } from "lodash";
 
 class CartProductContainer extends React.Component {
 
@@ -50,7 +49,7 @@ let mapStateToProps = (state) => {
     confirmedQuantityProducts: state.cartProductPage.quantityItem,
     selectedItems: state.cartProductPage.selectedItems,
     isAuth: state.loginPage.isAuth,
-    token: state.loginPage.currentUser.token
+    token: state.loginPage.currentUser.token,
   }
 }
 

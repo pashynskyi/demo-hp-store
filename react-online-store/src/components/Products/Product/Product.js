@@ -31,6 +31,9 @@ const Product = ({ product, setCurrentProduct, role, deleteProduct }) => {
         pictureUrl={product.pictureUrl}
         selectSize={product.selectSize}
       />
+      {product.productStatus === 0 && <div className={styles.disabledContainer}>
+        <div>Нет в наличии</div>
+      </div>}
     </div>
   );
 }
