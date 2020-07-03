@@ -17,6 +17,11 @@ import OrderDetailsContainer from "./components/Profile/Orders/Order/OrderDetail
 import ProfileEditContainer from "./components/ProfileEdit/ProfileEditContainer";
 import ProductEditContainer from "./components/ProductEdit/ProductEditContainer";
 import ProductCreateContainer from "./components/ProductCreate/ProductCreateContainer";
+import AboutUs from "./components/AboutUs/AboutUs";
+import ContactUs from "./components/ContactUs/ContactUs";
+import Delivery from "./components/Delivery/Delivery";
+import Payment from "./components/Payment/Payment";
+import Gallery from "./components/Gallery/Gallery";
 
 
 const App = (props) => {
@@ -50,6 +55,12 @@ const App = (props) => {
         <Route path='/profileEdit' render={() => <ProfileEditContainer />} />
         <Route path='/productEdit' component={ProductEditContainer} />
         <Route path='/productCreate' component={ProductCreateContainer} />
+
+        <Route path='/about-us' render={() => <AboutUs />} />
+        <Route path='/contact-us' render={() => <ContactUs />} />
+        <Route path='/delivery' render={() => <Delivery />} />
+        <Route path='/payment' render={() => <Payment />} />
+        <Route path='/gallery' render={() => <Gallery />} />
       </main>
       <Footer />
     </div>

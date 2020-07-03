@@ -7,7 +7,7 @@ const Paginator = ({ totalPages, currentPage, onPageChanged }) => {
   const handlePaginationChange = (e, { activePage }) => onPageChanged(activePage)
 
   return (
-    <div>
+    <div className={styles.container}>
       <Pagination
         onPageChange={handlePaginationChange}
         activePage={currentPage}

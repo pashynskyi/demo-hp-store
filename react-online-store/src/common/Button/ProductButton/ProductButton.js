@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Button} from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import styles from "./ProductButton.module.css";
 
 class ProductButton extends React.Component {
@@ -41,16 +41,16 @@ class ProductButton extends React.Component {
   render() {
     return (
       <Fragment>
-        {!this.state.editMode && !this.props.productSize &&
+        {((!this.state.editMode && !this.props.productSize) || this.props.productStatus === 0) &&
           <div onClick={this.activateEditMode}>
             <Button disabled className={styles.productBtn} variant="success" onClick={() => this.onAddToCart()}>Добавить в корзину</Button>
           </div>
         }
-        {this.state.editMode &&
+        {(this.state.editMode && this.props.productStatus !== 0) &&
           <div onClick={this.deactivateEditMode}>
             <Button className={styles.productBtn} variant="danger" onClick={() => this.onRemoveFromCart()}>Удалить из корзины</Button>
           </div>}
-        {this.props.productSize &&
+        {(this.props.productSize && this.props.productStatus !== 0) &&
           <div onClick={this.activateEditMode}>
             <Button className={styles.productBtn} variant="success" onClick={() => this.onAddToCart()}>Добавить в корзину</Button>
           </div>

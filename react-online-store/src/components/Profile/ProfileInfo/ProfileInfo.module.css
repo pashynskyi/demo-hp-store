@@ -1,0 +1,13 @@
+.profileInfo div {
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.profileInfo span {
+  font-weight: 100;
+}
+
+.btnContainer {
+  margin-top: 10px;
+}

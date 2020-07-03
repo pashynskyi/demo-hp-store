@@ -2,11 +2,13 @@
   height: 120px;
   background: black;
   color: white;
+  display: flex;
+  align-items: center;
 }
 
 div .container {
   max-width: 1410px;
-  padding: 20px 0px;
+  padding: 20px 10px;
 }
 
 .titleBox {
@@ -38,9 +40,33 @@ div .container {
 }
 
 a.socialLink {
-    color: white;
+  color: white;
 }
 
 a.socialLink:hover {
-    color: white;
+  color: white;
+}
+
+@media screen and (max-width: 1206px) {
+  .footer{
+    height: 140px;
+  }
+}
+
+@media screen and (max-width: 818px) {
+  .footer{
+    height: 155px;
+  }
+}
+
+@media screen and (max-width: 606px) {
+  .footer{
+    height: 175px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .footer{
+    height: 230px;
+  }
 }

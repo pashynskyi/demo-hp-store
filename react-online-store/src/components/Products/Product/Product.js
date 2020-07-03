@@ -21,7 +21,7 @@ const Product = ({ product, setCurrentProduct, role, deleteProduct }) => {
           <div className={styles.deteleProduct} onClick={onDeteteProduct} >Delete</div>
           <div>Количество:&nbsp;{product.productStock}</div>
         </div>}
-      <ProductPhoto pictureUrl={product.pictureUrl} />
+      <ProductPhoto pictureUrl={product.pictureUrl} productStatus={product.productStatus} />
       <ProductInfo
         productId={product.productId}
         productPrice={product.productPrice}
@@ -30,10 +30,8 @@ const Product = ({ product, setCurrentProduct, role, deleteProduct }) => {
         productSizes={product.productSizes}
         pictureUrl={product.pictureUrl}
         selectSize={product.selectSize}
+        productStatus={product.productStatus}
       />
-      {product.productStatus === 0 && <div className={styles.disabledContainer}>
-        <div>Нет в наличии</div>
-      </div>}
     </div>
   );
 }

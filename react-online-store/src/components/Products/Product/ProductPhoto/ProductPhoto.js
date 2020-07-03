@@ -9,6 +9,9 @@ const ProductPhoto = (props) => {
             <div className={styles.containerModal}>
                 <ProductModal pictureUrl={props.pictureUrl} />
             </div>
+            {props.productStatus === 0 && <div className={styles.disabledContainer}>
+                <div>Нет в наличии</div>
+            </div>}
         </div>
     );
 }

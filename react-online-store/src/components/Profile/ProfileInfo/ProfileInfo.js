@@ -16,19 +16,19 @@ const ProfileInfo = ({ userProfile, resetUser, clearUserProfile }) => {
 
   return (
     <div>
-      <div>
+      <div className={styles.profileInfo}>
         <div>Имя и фамилия:&nbsp;<span>{userProfile.name}</span></div>
         <div>Логин:&nbsp;<span>{userProfile.email}</span></div>
         <div>Мобильный телефон:&nbsp;<span>{userProfile.phone}</span></div>
         <div>Город:&nbsp;<span>{userProfile.city}</span></div>
         <div>Адрес:&nbsp;<span>{userProfile.address}</span></div>
       </div>
-      <div>
+      <div className={styles.btnContainer}>
         <NavLink to='/profileEdit'>
           <Button variant="secondary">Редактировать профиль</Button>
         </NavLink>
       </div>
-      <div>
+      <div className={styles.btnContainer}>
         <Button variant="danger" onClick={onResetUser}>Выйти из профиля</Button>
       </div>
     </div>

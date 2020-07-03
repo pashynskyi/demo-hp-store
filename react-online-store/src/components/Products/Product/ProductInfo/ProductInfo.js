@@ -24,6 +24,7 @@ const ProductInfo = (props) => {
           productDescription={props.productDescription}
           productMaterial={props.productMaterial}
           pictureUrl={props.pictureUrl}
+          productStatus={props.productStatus}
         />
       </div>
     </div>
