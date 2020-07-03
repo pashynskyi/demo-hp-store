@@ -4,9 +4,12 @@ ul.womenDropMenu {
 
 .womenDropMenu ul.submenu {
   width: 160px;
+  margin-top: 79px;
+  padding-top: 20px;
+  display: flex;
   background: rgba(0, 0, 0, 0.8);
   position: absolute;
-  top: -60px;
+  top: -80px;
   left: 170px;
   visibility: hidden;
   font-weight: 100;
@@ -23,4 +26,14 @@ ul.womenDropMenu {
   color: white;
   text-decoration: underline;
   font-weight: bold;
+}
+
+@media screen and (max-width: 750px) {
+  .womenDropMenu ul.submenu  {
+    display: none;
+  }
+
+  .womenDropMenu:hover ul.submenu {
+    display: flex;
+  }
 }

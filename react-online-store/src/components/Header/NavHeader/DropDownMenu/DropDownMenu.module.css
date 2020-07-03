@@ -1,14 +1,30 @@
 .dropDownMenu {
   position: relative;
+  color: white;
+  font-size: 17px;
 }
 
 .dropDownMenu ul {
   width: 100px;
-  margin-top: 60px;
+  margin-top: 20px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: rgba(0, 0, 0, 0.9);
   position: absolute;
   visibility: hidden;
   transition: width 0.5s ease-out;
+  list-style-type: none;
+}
+
+.dropDownMenu ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .dropDownMenu:hover ul {
@@ -28,5 +44,8 @@
   text-decoration: underline;
 }
 
-
-
+@media screen and (max-width: 750px) {
+  li.dropDownMenu {
+    display: none;
+  }
+}

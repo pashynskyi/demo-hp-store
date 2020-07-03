@@ -1,4 +1,4 @@
-.navHeader {
+/* .navHeader {
   height: 60px;
   background: black;
   color: white;
@@ -49,3 +49,118 @@ li a:hover {
   text-decoration: underline;
 }
 
+a.icon {
+  font-size: 30px;
+}
+
+.item:first-child {
+  display: none;
+  padding-left: 10px;
+}
+
+@media screen and (max-width: 750px) {
+  .topMenu li {
+    display: none;
+  }
+  .item:first-child {
+    display: flex;
+    justify-content: start;
+  }
+} */
+
+nav {
+  margin: auto;
+  max-width: 1440px;
+  width: 100%;
+}
+
+.navHeader label {
+  width: 100%;
+  margin: 0px;
+}
+
+#checkboxMenu,
+.toggle {
+  display: none;
+}
+
+.topMenu {
+  padding: 0;
+  margin: 0;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  background: black;
+}
+
+.topMenu li a {
+  color: white;
+  text-decoration: none;
+  align-self: center;
+  font-size: 17px;
+  padding: 10px;
+  transition: background 0.2s linear;
+  width: 100%;
+  text-align: center;
+}
+
+.topMenu li a:hover {
+  background: gray;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 750px) {
+  .toggle {
+    clear: both;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    width: 100%;
+    color: white;
+    background: black;
+    transition: all 0.1s lenear;
+  }
+
+  .toggle:hover {
+    background: gray;
+  }
+
+  #checkboxMenu:checked + label .touch li {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.7s linear;
+  }
+
+  #checkboxMenu:checked + label .touch {
+    height: 450px;
+  }
+
+  .topMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 0;
+    transition: height 0.3s linear;
+  }
+
+  .topMenu li {
+    padding: 0px 10px;
+    display: flex;
+    align-self: center;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .topMenu li a {
+    padding-left: 5px;
+    width: 100%;
+    align-self: center;
+    align-content: center;
+  }
+}

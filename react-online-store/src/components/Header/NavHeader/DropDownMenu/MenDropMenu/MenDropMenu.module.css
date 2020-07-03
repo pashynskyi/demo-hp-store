@@ -4,13 +4,16 @@ ul.menDropMenu {
 
 .menDropMenu ul.submenu {
   width: 170px;
+  margin-top: 79px;
+  padding-top: 20px;
+  display: flex;
   background: rgba(0, 0, 0, 0.8);
   position: absolute;
   visibility: hidden;
-  top: -60px;
+  top: -80px;
   left: 170px;
   font-weight: 100;
-  transition: width 0.5s cubic-bezier(.1, -1.5, .1, 2.5);
+  transition: width 0.5s cubic-bezier(0.1, -1.5, 0.1, 2.5);
 }
 
 .menDropMenu:hover .submenu {
@@ -23,4 +26,14 @@ ul.menDropMenu {
   color: white;
   text-decoration: underline;
   font-weight: bold;
+}
+
+@media screen and (max-width: 750px) {
+  .menDropMenu ul.submenu {
+    display: none;
+  }
+
+  .menDropMenu:hover ul.submenu {
+    display: block;
+  }
 }

@@ -47,7 +47,6 @@ class ProductsContainer extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    debugger;
     if (prevProps.isReady !== this.props.isReady || prevProps.currentPage !== this.props.currentPage) {
       helperRequestProducts(
         this.props.location.pathname,

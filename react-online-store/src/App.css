@@ -1,4 +1,4 @@
-.app-wrapper{
+.app-wrapper {
   padding-top: 130px;
 }
 
@@ -10,4 +10,10 @@
   margin: 0 auto;
   padding: 20px 0px;
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 750px) {
+  .app-wrapper {
+    padding-top: 110px;
+  }
 }

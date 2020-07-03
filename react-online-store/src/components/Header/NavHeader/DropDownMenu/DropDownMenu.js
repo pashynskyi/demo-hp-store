@@ -8,7 +8,7 @@ import WomenDropMenu from './WomenDropMenu/WomenDropMenu';
 const DropDownMenu = (props) => {
   return (
     <li className={styles.dropDownMenu}>
-      <Icon name='angle double down' />&nbsp;Каталог товаров
+      <Icon className={styles.icon} name='angle double down' />&nbsp;Каталог товаров
       <ul>
         <MenDropMenu className={styles.item} />
         <WomenDropMenu className={styles.item} />

@@ -13,15 +13,15 @@ const MainHeader = (props) => {
             alt="" />
         </div>
       </NavLink>
-      <div>
+      <div className={styles.title}>
         <h2>This is the main header!</h2>
       </div>
-      <div>
+      <div className={styles.contacts}>
         <div><Icon name='phone' />+380804626648</div>
         <div><Icon name='phone' />+380804626659</div>
       </div>
-      <NavLink to="/profile">
-        <div className={styles.userIconContainer}>
+      <div className={styles.userIconContainer}>
+        <NavLink to="/profile">
           <Icon name='user circle' size='big' />
           {!props.isAuth &&
             <span>Client account</span>
@@ -29,16 +29,16 @@ const MainHeader = (props) => {
           {props.isAuth &&
             <span>{props.userName}</span>
           }
-        </div>
-      </NavLink>
-      <NavLink to="/cart">
-        <div className={styles.cartIconContainer}>
+        </NavLink>
+      </div>
+      <div className={styles.cartIconContainer}>
+        <NavLink to="/cart">
           <Icon name='cart' size='big' />
           {props.totalCount >= 1 &&
             <span className={styles.count}>{props.totalCount}</span>
           }
-        </div>
-      </NavLink>
+        </NavLink>
+      </div>
     </div>
   );
 }

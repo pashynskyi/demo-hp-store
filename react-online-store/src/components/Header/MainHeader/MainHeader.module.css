@@ -17,11 +17,11 @@ img.logo {
   width: 100%;
 }
 
-div.userIconContainer {
+div.userIconContainer a {
   color: black;
 }
 
-div.cartIconContainer {
+div.cartIconContainer a {
   margin-right: 30px;
   color: black;
   display: flex;
@@ -32,4 +32,14 @@ span.count {
   color: red;
   font-weight: bold;
   font-size: 20px;
+}
+
+@media screen and (max-width: 750px) {
+  .contacts {
+    display: none;
+  }
+
+  .title h2 {
+    font-size: 16px;
+  }
 }
