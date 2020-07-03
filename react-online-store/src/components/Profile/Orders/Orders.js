@@ -20,7 +20,6 @@ const Orders = ({ orders, setOrderDetails }) => {
           <td>{o.buyerAddress}</td>
           <td>{o.orderAmount}</td>
           <td>{o.createTime}</td>
-          {/* <td>{o.orderStatus}</td> */}
           <td>{o.orderStatus === 0 ? "новый" : "завершенный"}</td>
           <td><NavLink to="/order" onClick={() => onClickLink(o.products)}>посмотреть</NavLink></td>
         </tr>

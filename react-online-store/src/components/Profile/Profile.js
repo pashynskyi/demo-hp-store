@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Profile.module.css";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import Orders from "./Orders/Orders";
 

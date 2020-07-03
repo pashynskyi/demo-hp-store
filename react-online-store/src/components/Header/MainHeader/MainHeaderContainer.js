@@ -1,9 +1,6 @@
 import React from 'react';
-import styles from './MainHeader.module.css';
-import { NavLink } from 'react-router-dom';
 import MainHeader from './MainHeader';
 import { connect } from 'react-redux';
-import * as axios from 'axios';
 import { login } from './../../../redux/reducers/loginReducer';
 
 

@@ -30,7 +30,6 @@ const productsReducer = (state = initialState, action) => {
         isReady: true
       };
     case RESET_IS_READY:
-      debugger;
       return {
         ...state,
         isReady: false

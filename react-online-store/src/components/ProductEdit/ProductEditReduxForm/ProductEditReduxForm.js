@@ -6,7 +6,6 @@ import { Input } from "../../../common/FormsControls/FormsControls";
 import { Button } from "react-bootstrap";
 
 const maxLength200 = maxLengthCreator(200);
-const maxLength150 = maxLengthCreator(150);
 const maxLength50 = maxLengthCreator(50);
 const maxLength20 = maxLengthCreator(20);
 const minValue0 = minValue(0);

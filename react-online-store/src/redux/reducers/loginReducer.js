@@ -17,7 +17,6 @@ const loginReducer = (state = initialState, action) => {
         isAuth: true
       };
     case LOGOUT_USER:
-      debugger;
       return {
         ...state,
         currentUser: '',
