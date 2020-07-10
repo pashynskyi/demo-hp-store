@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 const GenderImages = () => {
   return (
     <div>
-      <h2>Выбирите интересующий вас раздел</h2>
+      <h2>Выберите интересующий вас раздел</h2>
       <div className={styles.container}>
         <NavLink to="/men-home">
           <div className={styles.genderBox}>
