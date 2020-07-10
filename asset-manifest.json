@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/demo-hp-store/static/css/main.cb49bae3.chunk.css",
-    "main.js": "/demo-hp-store/static/js/main.54a7fefb.chunk.js",
-    "main.js.map": "/demo-hp-store/static/js/main.54a7fefb.chunk.js.map",
+    "main.css": "/demo-hp-store/static/css/main.c60b95de.chunk.css",
+    "main.js": "/demo-hp-store/static/js/main.d32462e2.chunk.js",
+    "main.js.map": "/demo-hp-store/static/js/main.d32462e2.chunk.js.map",
     "runtime-main.js": "/demo-hp-store/static/js/runtime-main.95cc686f.js",
     "runtime-main.js.map": "/demo-hp-store/static/js/runtime-main.95cc686f.js.map",
     "static/css/2.cebb7d75.chunk.css": "/demo-hp-store/static/css/2.cebb7d75.chunk.css",
-    "static/js/2.f303edbc.chunk.js": "/demo-hp-store/static/js/2.f303edbc.chunk.js",
-    "static/js/2.f303edbc.chunk.js.map": "/demo-hp-store/static/js/2.f303edbc.chunk.js.map",
+    "static/js/2.09796dbb.chunk.js": "/demo-hp-store/static/js/2.09796dbb.chunk.js",
+    "static/js/2.09796dbb.chunk.js.map": "/demo-hp-store/static/js/2.09796dbb.chunk.js.map",
     "index.html": "/demo-hp-store/index.html",
-    "precache-manifest.280d5c669a2f3720f1260e5dff24f0c7.js": "/demo-hp-store/precache-manifest.280d5c669a2f3720f1260e5dff24f0c7.js",
+    "precache-manifest.30a6ea64fd9c4ed867defcfaae3382c0.js": "/demo-hp-store/precache-manifest.30a6ea64fd9c4ed867defcfaae3382c0.js",
     "service-worker.js": "/demo-hp-store/service-worker.js",
     "static/css/2.cebb7d75.chunk.css.map": "/demo-hp-store/static/css/2.cebb7d75.chunk.css.map",
-    "static/css/main.cb49bae3.chunk.css.map": "/demo-hp-store/static/css/main.cb49bae3.chunk.css.map",
-    "static/js/2.f303edbc.chunk.js.LICENSE.txt": "/demo-hp-store/static/js/2.f303edbc.chunk.js.LICENSE.txt",
+    "static/css/main.c60b95de.chunk.css.map": "/demo-hp-store/static/css/main.c60b95de.chunk.css.map",
+    "static/js/2.09796dbb.chunk.js.LICENSE.txt": "/demo-hp-store/static/js/2.09796dbb.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/demo-hp-store/static/media/outline-icons.ef60a4f6.woff",
     "static/media/kidPhoto.jpg": "/demo-hp-store/static/media/kidPhoto.622aad2c.jpg",
     "static/media/manPhoto.jpg": "/demo-hp-store/static/media/manPhoto.4806ac01.jpg",
@@ -24,8 +24,8 @@
   "entrypoints": [
     "static/js/runtime-main.95cc686f.js",
     "static/css/2.cebb7d75.chunk.css",
-    "static/js/2.f303edbc.chunk.js",
-    "static/css/main.cb49bae3.chunk.css",
-    "static/js/main.54a7fefb.chunk.js"
+    "static/js/2.09796dbb.chunk.js",
+    "static/css/main.c60b95de.chunk.css",
+    "static/js/main.d32462e2.chunk.js"
   ]
 }
