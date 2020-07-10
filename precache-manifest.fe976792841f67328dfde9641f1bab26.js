@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "55e78c9d4df520c01547d77dd722e670",
+    "revision": "bee8c967775ec17de2ea4d4edd4bfb94",
     "url": "/demo-hp-store/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/demo-hp-store/static/css/2.cebb7d75.chunk.css"
   },
   {
-    "revision": "a2457c002396ea781eab",
+    "revision": "c6209b0a77783a852853",
     "url": "/demo-hp-store/static/css/main.c60b95de.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/demo-hp-store/static/js/2.09796dbb.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a2457c002396ea781eab",
-    "url": "/demo-hp-store/static/js/main.ecff0af6.chunk.js"
+    "revision": "c6209b0a77783a852853",
+    "url": "/demo-hp-store/static/js/main.873f553a.chunk.js"
   },
   {
     "revision": "7c5d730d066c2fb5db4e",
