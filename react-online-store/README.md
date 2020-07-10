@@ -1,12 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
-
 ### Live Demo
 
 https://pashynskyi.github.io/demo-hp-store/
+
+## Available Scripts
+
+In the project directory, you can run:
 
 ### `npm start`
 
