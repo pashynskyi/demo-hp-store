@@ -3,6 +3,8 @@ import * as axios from 'axios';
 const instance = axios.create({
   withCredentials: true,
   baseURL: 'http://localhost:8000/'
+  // baseURL: 'https://hp-store-api.herokuapp.com/'
+  // baseURL: 'https://hp-store-test.herokuapp.com/'
 })
 
 const principal = (token) => {
@@ -96,7 +98,7 @@ export const orderAPI = {
       });
   },
   postCheckout(token) {
-    return instance.post('cart/checkout', principal(token))
+    return instance.post('cart/checkout', {}, principal(token))
       .then(response => {
         return response.data;
       })

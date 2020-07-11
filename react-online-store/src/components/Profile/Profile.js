@@ -3,6 +3,7 @@ import styles from "./Profile.module.css";
 import { Container, Row, Col } from "react-bootstrap";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import Orders from "./Orders/Orders";
+import OrderResponseContainer from "../OrderResponse/OrderResponseContainer";
 
 const Profile = ({ userProfile, resetUser, orders, setOrderDetails, clearUserProfile }) => {
   return (

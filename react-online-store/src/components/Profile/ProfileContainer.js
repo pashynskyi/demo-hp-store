@@ -12,6 +12,12 @@ class ProfileContainer extends React.Component {
     this.props.isAuth && this.props.requestOrders(this.props.currentUser.token);
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.orders !== this.props.orders) {
+      requestOrders(this.props.currentUser.token);
+    }
+  }
+
   render() {
     if (this.props.currentUser.length < 1) return <Redirect to="/login" />;
     return <Profile

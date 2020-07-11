@@ -2,7 +2,7 @@
   "name": "react-online-store",
   "version": "0.1.0",
   "private": true,
-  "homepage": " https://pashynskyi.github.io/demo-hp-store/",
+  "homepage": " https://pashynskyi.github.io/demo-hp-store",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
