@@ -47,6 +47,11 @@ nav > div {
   border-radius: 3px;
 }
 
+li .activeLink {
+  background: gray;
+  border-radius: 3px;
+}
+
 @media screen and (max-width: 750px) {
   .toggle {
     clear: both;
