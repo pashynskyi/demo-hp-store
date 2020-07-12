@@ -1,0 +1,8 @@
+.container {
+  padding: 0px 15px;
+  font-size: 16px;
+}
+
+.container ol li {
+  margin: 5px 0px;
+}
