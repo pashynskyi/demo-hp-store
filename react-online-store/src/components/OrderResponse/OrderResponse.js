@@ -19,7 +19,7 @@ const OrderResponse = ({ order, clearOrder, resetCart }) => {
             <div>
               <h4>№ Заказа: {order.orderId}</h4>
               <p><b>{order.buyerName}</b>, спасибо что вы выбрали наш магазин!
-             Ожидайте звонка от нашего оператора для подтверждения заказа.
+              Мы отправили информацию о заказе на вашу почту.
             </p>
               <div className={styles.responseFooter}>
                 <span><b>Дата оформления: </b>{order.createTime}</span>
