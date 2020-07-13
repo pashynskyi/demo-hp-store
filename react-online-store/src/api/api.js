@@ -2,8 +2,8 @@ import * as axios from 'axios';
 
 const instance = axios.create({
   withCredentials: true,
-  baseURL: 'http://localhost:8000/'
-  // baseURL: 'https://hp-store-api.herokuapp.com/'
+  // baseURL: 'http://localhost:8000/'
+  baseURL: 'https://hp-store-api.herokuapp.com/'
   // baseURL: 'https://hp-store-test.herokuapp.com/'
 })
 
