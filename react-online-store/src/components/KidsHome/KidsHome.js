@@ -8,6 +8,7 @@ const KidsHome = (props) => {
             <div className={styles.portalWrapper}>
                 <PortalList />
             </div>
+            <h2>Soon(kids-home)</h2>
         </section>
     );
 }
