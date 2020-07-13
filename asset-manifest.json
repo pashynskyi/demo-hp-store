@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/demo-hp-store/static/css/main.7864f095.chunk.css",
-    "main.js": "/demo-hp-store/static/js/main.120e18ea.chunk.js",
-    "main.js.map": "/demo-hp-store/static/js/main.120e18ea.chunk.js.map",
+    "main.css": "/demo-hp-store/static/css/main.202cafad.chunk.css",
+    "main.js": "/demo-hp-store/static/js/main.2e87ba58.chunk.js",
+    "main.js.map": "/demo-hp-store/static/js/main.2e87ba58.chunk.js.map",
     "runtime-main.js": "/demo-hp-store/static/js/runtime-main.95cc686f.js",
     "runtime-main.js.map": "/demo-hp-store/static/js/runtime-main.95cc686f.js.map",
-    "static/css/2.cebb7d75.chunk.css": "/demo-hp-store/static/css/2.cebb7d75.chunk.css",
-    "static/js/2.b1f9b198.chunk.js": "/demo-hp-store/static/js/2.b1f9b198.chunk.js",
-    "static/js/2.b1f9b198.chunk.js.map": "/demo-hp-store/static/js/2.b1f9b198.chunk.js.map",
+    "static/css/2.e17169af.chunk.css": "/demo-hp-store/static/css/2.e17169af.chunk.css",
+    "static/js/2.c9640c18.chunk.js": "/demo-hp-store/static/js/2.c9640c18.chunk.js",
+    "static/js/2.c9640c18.chunk.js.map": "/demo-hp-store/static/js/2.c9640c18.chunk.js.map",
     "index.html": "/demo-hp-store/index.html",
-    "precache-manifest.bc661a9cba13baa4ee1a788753a1abc6.js": "/demo-hp-store/precache-manifest.bc661a9cba13baa4ee1a788753a1abc6.js",
+    "precache-manifest.2eda5c176366cd022f940eeedcb93124.js": "/demo-hp-store/precache-manifest.2eda5c176366cd022f940eeedcb93124.js",
     "service-worker.js": "/demo-hp-store/service-worker.js",
-    "static/css/2.cebb7d75.chunk.css.map": "/demo-hp-store/static/css/2.cebb7d75.chunk.css.map",
-    "static/css/main.7864f095.chunk.css.map": "/demo-hp-store/static/css/main.7864f095.chunk.css.map",
-    "static/js/2.b1f9b198.chunk.js.LICENSE.txt": "/demo-hp-store/static/js/2.b1f9b198.chunk.js.LICENSE.txt",
+    "static/css/2.e17169af.chunk.css.map": "/demo-hp-store/static/css/2.e17169af.chunk.css.map",
+    "static/css/main.202cafad.chunk.css.map": "/demo-hp-store/static/css/main.202cafad.chunk.css.map",
+    "static/js/2.c9640c18.chunk.js.LICENSE.txt": "/demo-hp-store/static/js/2.c9640c18.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/demo-hp-store/static/media/outline-icons.ef60a4f6.woff",
     "static/media/kidPhoto.jpg": "/demo-hp-store/static/media/kidPhoto.622aad2c.jpg",
     "static/media/manPhoto.jpg": "/demo-hp-store/static/media/manPhoto.4806ac01.jpg",
@@ -23,9 +23,9 @@
   },
   "entrypoints": [
     "static/js/runtime-main.95cc686f.js",
-    "static/css/2.cebb7d75.chunk.css",
-    "static/js/2.b1f9b198.chunk.js",
-    "static/css/main.7864f095.chunk.css",
-    "static/js/main.120e18ea.chunk.js"
+    "static/css/2.e17169af.chunk.css",
+    "static/js/2.c9640c18.chunk.js",
+    "static/css/main.202cafad.chunk.css",
+    "static/js/main.2e87ba58.chunk.js"
   ]
 }
