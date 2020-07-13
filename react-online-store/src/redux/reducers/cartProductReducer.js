@@ -6,7 +6,6 @@ const SUB_QUANTITY = 'SUB_QUANTITY';
 const ORDER_PRODUCT = 'ORDER_PRODUCT';
 const RESET_ORDER = 'RESET_ORDER';
 
-
 let initialState = {
   items: [],
   quantityItem: [],
