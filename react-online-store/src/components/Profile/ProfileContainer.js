@@ -25,7 +25,8 @@ class ProfileContainer extends React.Component {
       resetUser={this.props.resetUser}
       orders={this.props.orders}
       setOrderDetails={this.props.setOrderDetails}
-      clearUserProfile={this.props.clearUserProfile} />
+      clearUserProfile={this.props.clearUserProfile}
+    />
   }
 }
 

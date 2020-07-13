@@ -68,7 +68,8 @@ class ProductsContainer extends React.Component {
           role={this.props.role}
           resetSize={this.props.resetSize}
           deleteProduct={this.deleteProduct}
-          locationPathname={this.props.location.pathname} />
+          locationPathname={this.props.location.pathname}
+        />
     )
   }
 }

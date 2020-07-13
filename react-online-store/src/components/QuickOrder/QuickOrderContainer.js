@@ -25,7 +25,8 @@ class QuickOrderContainer extends React.Component {
       order={this.props.order}
       resetOrder={this.props.resetOrder}
       resetCart={this.props.resetCart}
-      onQuickOrder={this.onQuickOrder} />
+      onQuickOrder={this.onQuickOrder}
+    />
   }
 }
 

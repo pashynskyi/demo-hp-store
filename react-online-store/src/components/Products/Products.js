@@ -23,7 +23,8 @@ const Products = (props) => {
             product={product}
             setCurrentProduct={props.setCurrentProduct}
             role={props.role}
-            deleteProduct={props.deleteProduct} />
+            deleteProduct={props.deleteProduct}
+          />
         </div>
       </Col>
     ));

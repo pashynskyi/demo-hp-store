@@ -12,6 +12,9 @@ const NavHeader = (props) => {
           <ul className={`${styles.topMenu} ${styles.touch}`}>
             <DropDownMenu />
             <li className={styles.item}>
+              <NavLink to="/news-discounts" activeClassName={styles.activeLink}>Новости и скидки</NavLink>
+            </li>
+            <li className={styles.item}>
               <NavLink to="/about-us" activeClassName={styles.activeLink}>О компании</NavLink>
             </li>
             <li className={styles.item}>
@@ -22,9 +25,6 @@ const NavHeader = (props) => {
             </li>
             <li className={styles.item}>
               <NavLink to="/payment" activeClassName={styles.activeLink}>Оплата</NavLink>
-            </li>
-            <li className={styles.item}>
-              <NavLink to="/news-discounts" activeClassName={styles.activeLink}>Новости и скидки</NavLink>
             </li>
           </ul>
           <span className={styles.toggle}>&#9776;</span>
