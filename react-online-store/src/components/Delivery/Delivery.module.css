@@ -3,6 +3,10 @@
   font-size: 16px;
 }
 
+.container p {
+  margin-bottom: 15px;
+}
+
 .container ol li {
   margin: 5px 0px;
 }

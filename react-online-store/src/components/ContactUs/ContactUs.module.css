@@ -3,6 +3,10 @@
   font-size: 16px;
 }
 
+.container p {
+  margin-bottom: 15px;
+}
+
 .container table tbody tr {
   text-align: left;
   border-top: 1px solid gray;

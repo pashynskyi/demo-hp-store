@@ -9,7 +9,7 @@
 }
 
 .container p {
-  white-space: pre-line;
+  margin-bottom: 15px;
 }
 
 .container ul {
