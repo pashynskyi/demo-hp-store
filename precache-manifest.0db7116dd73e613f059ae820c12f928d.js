@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "27bcc6e7f960d4cbba3b52188e6e190d",
+    "revision": "6343c97aa9752072b1b87ac616eaeac8",
     "url": "/demo-hp-store/index.html"
   },
   {
-    "revision": "4daf5289043c57a0bfb1",
-    "url": "/demo-hp-store/static/css/2.e17169af.chunk.css"
+    "revision": "a325ad38d7b1b971d7d6",
+    "url": "/demo-hp-store/static/css/2.aad4ac02.chunk.css"
   },
   {
-    "revision": "f528716b19140e9d74c0",
+    "revision": "3ec3648a8fd673c80654",
     "url": "/demo-hp-store/static/css/main.202cafad.chunk.css"
   },
   {
-    "revision": "4daf5289043c57a0bfb1",
-    "url": "/demo-hp-store/static/js/2.c9640c18.chunk.js"
+    "revision": "a325ad38d7b1b971d7d6",
+    "url": "/demo-hp-store/static/js/2.735cb093.chunk.js"
   },
   {
     "revision": "4d47ffde3dc69784e8e23fd910817ef8",
-    "url": "/demo-hp-store/static/js/2.c9640c18.chunk.js.LICENSE.txt"
+    "url": "/demo-hp-store/static/js/2.735cb093.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f528716b19140e9d74c0",
-    "url": "/demo-hp-store/static/js/main.2e87ba58.chunk.js"
+    "revision": "3ec3648a8fd673c80654",
+    "url": "/demo-hp-store/static/js/main.acb18e8a.chunk.js"
   },
   {
     "revision": "7c5d730d066c2fb5db4e",
