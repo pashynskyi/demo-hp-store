@@ -24,7 +24,7 @@ const NavHeader = (props) => {
               <NavLink to="/payment" activeClassName={styles.activeLink}>Оплата</NavLink>
             </li>
             <li className={styles.item}>
-              <NavLink to="/gallery" activeClassName={styles.activeLink}>Галерея</NavLink>
+              <NavLink to="/news-discounts" activeClassName={styles.activeLink}>Новости и скидки</NavLink>
             </li>
           </ul>
           <span className={styles.toggle}>&#9776;</span>

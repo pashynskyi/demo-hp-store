@@ -21,7 +21,8 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import ContactUs from "./components/ContactUs/ContactUs";
 import Delivery from "./components/Delivery/Delivery";
 import Payment from "./components/Payment/Payment";
-import Gallery from "./components/Gallery/Gallery";
+import NewsDiscounts from "./components/NewsDiscounts/NewsDiscounts";
+
 
 
 const App = (props) => {
@@ -60,7 +61,7 @@ const App = (props) => {
         <Route path='/contact-us' render={() => <ContactUs />} />
         <Route path='/delivery' render={() => <Delivery />} />
         <Route path='/payment' render={() => <Payment />} />
-        <Route path='/gallery' render={() => <Gallery />} />
+        <Route path='/news-discounts' render={() => <NewsDiscounts />} />
       </main>
       <Footer />
     </div>
