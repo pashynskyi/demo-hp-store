@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 import { connect } from 'react-redux';
 import QuickOrder from './QuickOrder';
-import { Redirect } from "react-router-dom";
-import { setOrder, quickOrder } from "../../redux/reducers/quickOrderReducer";
-import { resetOrder, resetCart } from "../../redux/reducers/cartProductReducer";
+import { Redirect } from 'react-router-dom';
+import { setOrder, quickOrder } from '../../redux/reducers/quickOrderReducer';
+import { resetOrder, resetCart } from '../../redux/reducers/cartProductReducer';
 
 class QuickOrderContainer extends React.Component {
 

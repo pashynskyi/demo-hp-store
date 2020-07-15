@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { connect } from 'react-redux';
 import CartProduct from './CartProduct';
 import {
@@ -6,9 +6,9 @@ import {
   removeFromCart,
   resetCart,
   orderProduct
-} from "../../../redux/reducers/cartProductReducer";
-import { postCheckout } from "../../../redux/reducers/quickOrderReducer";
-import { cartAPI } from "../../../api/api";
+} from '../../../redux/reducers/cartProductReducer';
+import { postCheckout } from '../../../redux/reducers/quickOrderReducer';
+import { cartAPI } from '../../../api/api';
 
 class CartProductContainer extends React.Component {
 

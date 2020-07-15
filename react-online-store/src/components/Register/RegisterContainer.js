@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 import { connect } from 'react-redux';
 import Register from './Register';
 import {registerUser} from './../../redux/reducers/registerReducer';
-import { Redirect } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 
 
 class RegisterContainer extends React.Component {

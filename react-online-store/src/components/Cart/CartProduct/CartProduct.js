@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./CartProduct.module.css";
-import CartProductInfo from "./CartProductInfo/CartProductInfo";
-import SubtotalPrice from "./SubtotalPrice/SubtotalPrice";
+import React from 'react';
+import styles from './CartProduct.module.css';
+import CartProductInfo from './CartProductInfo/CartProductInfo';
+import SubtotalPrice from './SubtotalPrice/SubtotalPrice';
 
 const CartProduct = (props) => {
   let state = props.cartProducts;

@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./Register.module.css";
-import { RegisterReduxForm } from "./RegisterReduxForm/RegisterReduxForm";
-import { Container, Row, Col} from "react-bootstrap";
+import React from 'react';
+import styles from './Register.module.css';
+import { RegisterReduxForm } from './RegisterReduxForm/RegisterReduxForm';
+import { Container, Row, Col} from 'react-bootstrap';
 
 const Register = (props) => {
   return (

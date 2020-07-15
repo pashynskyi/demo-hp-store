@@ -1,24 +1,24 @@
-import React from "react";
-import "./App.css";
-import { Route } from "react-router-dom";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import Home from "./components/Home/Home";
-import MenHome from "./components/MenHome/MenHome";
-import WomenHome from "./components/WomenHome/WomenHome";
-import KidsHome from "./components/KidsHome/KidsHome";
-import ProductsContainer from "./components/Products/ProductsContainer";
-import Cart from "./components/Cart/Cart";
-import QuickOrderContainer from "./components/QuickOrder/QuickOrderContainer";
-import RegisterContainer from "./components/Register/RegisterContainer";
-import LoginContainer from "./components/Login/LoginContainer";
-import ProfileContainer from "./components/Profile/ProfileContainer";
-import OrderDetailsContainer from "./components/Profile/Orders/Order/OrderDetailsContainer";
-import ProfileEditContainer from "./components/ProfileEdit/ProfileEditContainer";
-import ProductEditContainer from "./components/ProductEdit/ProductEditContainer";
-import ProductCreateContainer from "./components/ProductCreate/ProductCreateContainer";
-import NewsDiscounts from "./components/NewsDiscounts/NewsDiscounts";
-import StaticPages from "./components/StaticPages/StaticPages";
+import React from 'react';
+import './App.css';
+import { Route } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Home from './components/Home/Home';
+import MenHome from './components/MenHome/MenHome';
+import WomenHome from './components/WomenHome/WomenHome';
+import KidsHome from './components/KidsHome/KidsHome';
+import ProductsContainer from './components/Products/ProductsContainer';
+import Cart from './components/Cart/Cart';
+import QuickOrderContainer from './components/QuickOrder/QuickOrderContainer';
+import RegisterContainer from './components/Register/RegisterContainer';
+import LoginContainer from './components/Login/LoginContainer';
+import ProfileContainer from './components/Profile/ProfileContainer';
+import OrderDetailsContainer from './components/Profile/Orders/Order/OrderDetailsContainer';
+import ProfileEditContainer from './components/ProfileEdit/ProfileEditContainer';
+import ProductEditContainer from './components/ProductEdit/ProductEditContainer';
+import ProductCreateContainer from './components/ProductCreate/ProductCreateContainer';
+import NewsDiscounts from './components/NewsDiscounts/NewsDiscounts';
+import StaticPages from './components/StaticPages/StaticPages';
 
 
 

@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 import { connect } from 'react-redux';
 import Login from './Login';
 import { setUser, login } from '../../redux/reducers/loginReducer';
-import { Redirect } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 
 class LoginContainer extends React.Component {
 

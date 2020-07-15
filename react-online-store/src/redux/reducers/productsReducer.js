@@ -1,4 +1,4 @@
-import { productsAPI, adminAPI } from "../../api/api";
+import { productsAPI, adminAPI } from '../../api/api';
 
 const SET_PRODUCTS = 'SET_PRODUCTS';
 const RESET_IS_READY = 'SET_IS_READY';

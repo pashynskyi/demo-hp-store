@@ -1,4 +1,4 @@
-import { authAPI } from "../../api/api";
+import { authAPI } from '../../api/api';
 
 const LOGIN_USER = 'LOGIN_USER';
 const LOGOUT_USER = 'LOGOUT_USER';

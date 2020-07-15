@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./ProductEdit.module.css";
-import { ProductEditReduxForm } from "./ProductEditReduxForm/ProductEditReduxForm";
-import { Container, Row, Col } from "react-bootstrap";
+import React from 'react';
+import styles from './ProductEdit.module.css';
+import { ProductEditReduxForm } from './ProductEditReduxForm/ProductEditReduxForm';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const ProductEdit = ({ currentProduct, onSubmit }) => {
   return (

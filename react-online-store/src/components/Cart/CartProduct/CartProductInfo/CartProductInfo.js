@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./CartProductInfo.module.css";
-import CounterButtonContainer from "../../../../common/Button/CounterButton/CounterButtonContainer";
+import React from 'react';
+import styles from './CartProductInfo.module.css';
+import CounterButtonContainer from '../../../../common/Button/CounterButton/CounterButtonContainer';
 
 
 const CartProductInfo = (props) => {

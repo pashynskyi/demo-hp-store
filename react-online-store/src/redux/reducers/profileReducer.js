@@ -1,4 +1,4 @@
-import { profileAPI } from "../../api/api";
+import { profileAPI } from '../../api/api';
 
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const CLEAR_USER_PROFILE = 'CLEAR_USER_PROFILE';

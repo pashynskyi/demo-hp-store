@@ -1,8 +1,8 @@
-import React from "react";
-import styles from "./SubtotalPrice.module.css";
-import { Button } from "react-bootstrap";
-import { Redirect } from "react-router-dom";
-import OrderResponseContainer from "../../../OrderResponse/OrderResponseContainer";
+import React from 'react';
+import styles from './SubtotalPrice.module.css';
+import { Button } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom';
+import OrderResponseContainer from '../../../OrderResponse/OrderResponseContainer';
 
 const SubtotalPrice = (props) => {
   const onСheckout = () => {

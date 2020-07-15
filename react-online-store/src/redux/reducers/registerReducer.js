@@ -1,4 +1,4 @@
-import { registerAPI } from "../../api/api";
+import { registerAPI } from '../../api/api';
 
 const REGISTER_USER = 'REGISTER_USER';
 

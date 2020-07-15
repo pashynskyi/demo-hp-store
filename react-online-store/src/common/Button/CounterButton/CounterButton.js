@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ButtonGroup } from "react-bootstrap";
+import { Button, ButtonGroup } from 'react-bootstrap';
 
 class CounterButton extends React.Component {
   state = {

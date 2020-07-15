@@ -1,12 +1,12 @@
-import React from "react";
-import styles from "./Products.module.css";
-import PortalMenTypes from "../MenHome/PortalMenTypes/PortalMenTypes";
-import Product from "./Product/Product";
+import React from 'react';
+import styles from './Products.module.css';
+import PortalMenTypes from '../MenHome/PortalMenTypes/PortalMenTypes';
+import Product from './Product/Product';
 import { Container, Row, Col } from 'react-bootstrap';
-import PortalWomenTypes from "../WomenHome/PortalWomenTypes/PortalWomenTypes";
-import SortContainer from "../Sort/SortContainer";
-import { NavLink } from "react-router-dom";
-import PaginatorContainer from "../../common/Paginator/PaginatorContainer";
+import PortalWomenTypes from '../WomenHome/PortalWomenTypes/PortalWomenTypes';
+import SortContainer from '../Sort/SortContainer';
+import { NavLink } from 'react-router-dom';
+import PaginatorContainer from '../../common/Paginator/PaginatorContainer';
 
 
 const Products = (props) => {

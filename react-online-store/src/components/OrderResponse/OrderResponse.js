@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
-import styles from "./OrderResponse.module.css"
-import { Button, Icon } from "semantic-ui-react";
+import React, { Fragment } from 'react';
+import styles from './OrderResponse.module.css'
+import { Button, Icon } from 'semantic-ui-react';
 
 const OrderResponse = ({ order, clearOrder, resetCart }) => {
   const onClearOrder = () => {

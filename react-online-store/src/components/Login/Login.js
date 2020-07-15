@@ -1,8 +1,8 @@
-import React from "react";
-import styles from "./Login.module.css";
-import { LoginReduxForm } from "./LoginReduxForm/LoginReduxForm";
-import { Container, Row, Col } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import styles from './Login.module.css';
+import { LoginReduxForm } from './LoginReduxForm/LoginReduxForm';
+import { Container, Row, Col } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 const Login = (props) => {
   return (

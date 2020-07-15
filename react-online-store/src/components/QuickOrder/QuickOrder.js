@@ -1,9 +1,9 @@
-import React from "react";
-import styles from "./QuickOrder.module.css";
-import { QuickOrderReduxForm } from "./QuickOrderReduxForm/QuickOrderReduxForm";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import { NavLink, Redirect } from "react-router-dom";
-import OrderResponseContainer from "../OrderResponse/OrderResponseContainer";
+import React from 'react';
+import styles from './QuickOrder.module.css';
+import { QuickOrderReduxForm } from './QuickOrderReduxForm/QuickOrderReduxForm';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import { NavLink, Redirect } from 'react-router-dom';
+import OrderResponseContainer from '../OrderResponse/OrderResponseContainer';
 
 const QuickOrder = (props) => {
   const data = props.selectedItems[0];

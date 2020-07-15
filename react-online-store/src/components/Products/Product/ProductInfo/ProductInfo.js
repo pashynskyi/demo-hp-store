@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./ProductInfo.module.css";
-import SelectSizeContainer from "../../../SelectSize/SelectSizeContainer";
-import ProductButtonContainer from "../../../../common/Button/ProductButton/ProductButtonContainer";
+import React from 'react';
+import styles from './ProductInfo.module.css';
+import SelectSizeContainer from '../../../SelectSize/SelectSizeContainer';
+import ProductButtonContainer from '../../../../common/Button/ProductButton/ProductButtonContainer';
 
 
 const ProductInfo = (props) => {

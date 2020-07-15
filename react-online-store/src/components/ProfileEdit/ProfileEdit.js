@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./ProfileEdit.module.css";
-import { ProfileEditReduxForm } from "./ProfileEditReduxForm/ProfileEditReduxForm";
-import { Container, Row, Col } from "react-bootstrap";
+import React from 'react';
+import styles from './ProfileEdit.module.css';
+import { ProfileEditReduxForm } from './ProfileEditReduxForm/ProfileEditReduxForm';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const ProfileEdit = ({ userProfile, onSubmit }) => {
   return (

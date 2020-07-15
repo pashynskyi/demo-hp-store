@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./OrderDetails.module.css";
-import { Table, Container, Row, Col } from "react-bootstrap";
-import { Redirect } from "react-router-dom";
+import React from 'react';
+import styles from './OrderDetails.module.css';
+import { Table, Container, Row, Col } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom';
 
 const OrderDetails = (props) => {
 

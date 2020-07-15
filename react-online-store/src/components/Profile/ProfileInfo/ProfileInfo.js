@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./ProfileInfo.module.css";
-import { Button } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import styles from './ProfileInfo.module.css';
+import { Button } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 
 const ProfileInfo = ({ userProfile, resetUser, clearUserProfile }) => {

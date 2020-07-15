@@ -1,9 +1,9 @@
-import React from "react";
-import { Route } from "react-router-dom";
-import AboutUs from "../AboutUs/AboutUs";
-import ContactUs from "../ContactUs/ContactUs";
-import Delivery from "../Delivery/Delivery";
-import Payment from "../Payment/Payment";
+import React from 'react';
+import { Route } from 'react-router-dom';
+import AboutUs from '../AboutUs/AboutUs';
+import ContactUs from '../ContactUs/ContactUs';
+import Delivery from '../Delivery/Delivery';
+import Payment from '../Payment/Payment';
 
 const StaticPages = () => {
   return (

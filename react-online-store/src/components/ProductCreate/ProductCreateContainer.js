@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { connect } from 'react-redux';
 import ProductCreate from './ProductCreate';
 import { createNewProduct } from './../../redux/reducers/productsReducer';

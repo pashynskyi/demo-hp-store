@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./PortalMenTypes.module.css";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import styles from './PortalMenTypes.module.css';
+import { NavLink } from 'react-router-dom';
 
 const PortalMenTypes = () => {
   return (

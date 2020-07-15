@@ -1,9 +1,9 @@
-import React from "react";
-import styles from "./ProductCreateReduxForm.module.css";
-import { reduxForm, Field } from "redux-form";
-import { required, maxLengthCreator, minValue } from "../../../utils/validators/validators";
-import { Input, Select } from "../../../common/FormsControls/FormsControls";
-import { Button } from "react-bootstrap";
+import React from 'react';
+import styles from './ProductCreateReduxForm.module.css';
+import { reduxForm, Field } from 'redux-form';
+import { required, maxLengthCreator, minValue } from '../../../utils/validators/validators';
+import { Input, Select } from '../../../common/FormsControls/FormsControls';
+import { Button } from 'react-bootstrap';
 
 const maxLength200 = maxLengthCreator(200);
 const maxLength150 = maxLengthCreator(150);

@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./ProductCreate.module.css";
-import { ProductCreateReduxForm } from "./ProductCreateReduxForm/ProductCreateReduxForm";
-import { Container, Row, Col } from "react-bootstrap";
+import React from 'react';
+import styles from './ProductCreate.module.css';
+import { ProductCreateReduxForm } from './ProductCreateReduxForm/ProductCreateReduxForm';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const ProductCreate = ({ onSubmit, productCreate }) => {
   return (

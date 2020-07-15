@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { connect } from 'react-redux';
 import ProfileEdit from './ProfileEdit';
 import { registerUser } from './../../redux/reducers/registerReducer';

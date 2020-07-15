@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { connect } from 'react-redux';
 import Products from './Products';
 import {
@@ -7,9 +7,9 @@ import {
   resetSize,
   deleteCurrentProduct,
   resetCurrentPage
-} from "../../redux/reducers/productsReducer";
-import { Spinner } from "react-bootstrap";
-import { helperRequestProducts } from "../../utils/helperRequestProducts";
+} from '../../redux/reducers/productsReducer';
+import { Spinner } from 'react-bootstrap';
+import { helperRequestProducts } from '../../utils/helperRequestProducts';
 
 class ProductsContainer extends React.Component {
 

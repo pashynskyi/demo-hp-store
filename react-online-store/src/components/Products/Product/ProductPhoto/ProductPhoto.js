@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./ProductPhoto.module.css";
-import ProductModal from "../../../ProductModal/ProductModal";
+import React from 'react';
+import styles from './ProductPhoto.module.css';
+import ProductModal from '../../../ProductModal/ProductModal';
 
 const ProductPhoto = (props) => {
     return (

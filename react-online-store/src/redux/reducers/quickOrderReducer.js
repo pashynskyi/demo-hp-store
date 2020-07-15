@@ -1,4 +1,4 @@
-import { orderAPI } from "../../api/api";
+import { orderAPI } from '../../api/api';
 
 const SET_ORDER = 'SET_ORDER';
 const CLEAR_ORDER = 'CLEAR_ORDER';

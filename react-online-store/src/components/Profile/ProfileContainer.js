@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 import { connect } from 'react-redux';
 import Profile from './Profile';
-import { Redirect } from "react-router-dom";
-import { setUserProfile, clearUserProfile, requestProfile, requestOrders, setOrderDetails } from "../../redux/reducers/profileReducer";
-import { resetUser } from "../../redux/reducers/loginReducer";
+import { Redirect } from 'react-router-dom';
+import { setUserProfile, clearUserProfile, requestProfile, requestOrders, setOrderDetails } from '../../redux/reducers/profileReducer';
+import { resetUser } from '../../redux/reducers/loginReducer';
 
 class ProfileContainer extends React.Component {
 

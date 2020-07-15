@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import { Button } from "react-bootstrap";
-import styles from "./ProductButton.module.css";
+import { Button } from 'react-bootstrap';
+import styles from './ProductButton.module.css';
 
 class ProductButton extends React.Component {
   state = {

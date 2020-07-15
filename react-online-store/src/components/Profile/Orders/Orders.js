@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./Orders.module.css";
-import { Table } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import styles from './Orders.module.css';
+import { Table } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 const Orders = ({ orders, setOrderDetails }) => {
  const onClickLink = (products) => {

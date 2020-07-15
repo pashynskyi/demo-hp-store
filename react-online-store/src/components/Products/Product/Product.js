@@ -1,8 +1,8 @@
-import React from "react";
-import styles from "./Product.module.css"
-import ProductPhoto from "./ProductPhoto/ProductPhoto";
-import ProductInfo from "./ProductInfo/ProductInfo";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import styles from './Product.module.css'
+import ProductPhoto from './ProductPhoto/ProductPhoto';
+import ProductInfo from './ProductInfo/ProductInfo';
+import { NavLink } from 'react-router-dom';
 
 const Product = ({ product, setCurrentProduct, role, deleteProduct }) => {
   const onSetProduct = () => {

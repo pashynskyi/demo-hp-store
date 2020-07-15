@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./KidsHome.module.css";
-import PortalList from "../PortalList/PortalList";
+import React from 'react';
+import styles from './KidsHome.module.css';
+import PortalList from '../PortalList/PortalList';
 
 const KidsHome = (props) => {
     return (

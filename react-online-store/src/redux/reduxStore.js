@@ -1,12 +1,12 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import productsReducer from "./reducers/productsReducer";
-import cartProductReducer from "./reducers/cartProductReducer";
-import quickOrderReducer from "./reducers/quickOrderReducer";
-import loginReducer from "./reducers/loginReducer";
-import profileReducer from "./reducers/profileReducer";
-import registerReducer from "./reducers/registerReducer";
-import { reducer as formReducer } from "redux-form";
-import thunkMiddleware from "redux-thunk";
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import productsReducer from './reducers/productsReducer';
+import cartProductReducer from './reducers/cartProductReducer';
+import quickOrderReducer from './reducers/quickOrderReducer';
+import loginReducer from './reducers/loginReducer';
+import profileReducer from './reducers/profileReducer';
+import registerReducer from './reducers/registerReducer';
+import { reducer as formReducer } from 'redux-form';
+import thunkMiddleware from 'redux-thunk';
 
 
 let reducers = combineReducers({

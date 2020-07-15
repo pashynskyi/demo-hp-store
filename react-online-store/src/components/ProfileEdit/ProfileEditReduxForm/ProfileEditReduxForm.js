@@ -1,9 +1,9 @@
-import React from "react";
-import styles from "./ProfileEditReduxForm.module.css";
-import { reduxForm, Field } from "redux-form";
-import { required, maxLengthCreator, phoneNumber } from "../../../utils/validators/validators";
-import { Input } from "../../../common/FormsControls/FormsControls";
-import { Button } from "react-bootstrap";
+import React from 'react';
+import styles from './ProfileEditReduxForm.module.css';
+import { reduxForm, Field } from 'redux-form';
+import { required, maxLengthCreator, phoneNumber } from '../../../utils/validators/validators';
+import { Input } from '../../../common/FormsControls/FormsControls';
+import { Button } from 'react-bootstrap';
 
 const maxLength100 = maxLengthCreator(100);
 const maxLength50 = maxLengthCreator(50);

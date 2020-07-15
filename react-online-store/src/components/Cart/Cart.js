@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./Cart.module.css";
-import { Container, Row, Col } from "react-bootstrap";
-import CartProductContainer from "./CartProduct/CartProductContainer";
+import React from 'react';
+import styles from './Cart.module.css';
+import { Container, Row, Col } from 'react-bootstrap';
+import CartProductContainer from './CartProduct/CartProductContainer';
 
 const Cart = (props) => {
   return (
