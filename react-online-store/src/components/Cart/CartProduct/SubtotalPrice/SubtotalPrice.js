@@ -5,9 +5,13 @@ import { Redirect } from "react-router-dom";
 import OrderResponseContainer from "../../../OrderResponse/OrderResponseContainer";
 
 const SubtotalPrice = (props) => {
-  const onClickBtn = () => {
+  const onСheckout = () => {
     props.orderProduct(props.totalPrice, props.totalCount, props.confirmedQuantityProducts);
     props.isAuth && props.postCheckout(props.token);
+  }
+
+  const onResetCart = () => {
+    props.resetCart();
   }
 
   // if ((props.selectedItems.length >= 1) && props.isAuth) {
@@ -25,7 +29,10 @@ const SubtotalPrice = (props) => {
       <div>ИТОГО:&nbsp;<span className={styles.totalPrice}>{props.totalPrice}&nbsp;грн</span></div>
       <div>Количество:&nbsp;<span>{props.totalCount}</span></div>
       {props.confirmedQuantityProducts.length >= 1 &&
-        <Button className={styles.cartBtn} variant="success" onClick={onClickBtn}>Оформить заказ</Button>
+        <div>
+          <Button className={styles.cartBtn} variant="success" onClick={onСheckout}>Оформить заказ</Button>
+          <Button className={styles.cartBtn} variant="danger" onClick={onResetCart}>Очистить корзину</Button>
+        </div>
       }
       <OrderResponseContainer />
     </div>

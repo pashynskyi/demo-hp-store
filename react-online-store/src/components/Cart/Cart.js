@@ -7,7 +7,6 @@ const Cart = (props) => {
   return (
     <section>
       <h2>Корзина</h2>
-      <div></div>
       <Container>
         <Row>
           <Col>

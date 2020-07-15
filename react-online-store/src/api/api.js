@@ -120,7 +120,6 @@ export const adminAPI = {
       });
   },
   deleteProduct(productId, token) {
-    debugger;
     return instance.delete(`seller/product/${productId}/delete`, principal(token))
       .then(response => {
         return response;
