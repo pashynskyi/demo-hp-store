@@ -16,15 +16,17 @@ const ProductInfo = (props) => {
         <div><b>Состав:&nbsp;</b><span>{props.productMaterial}</span></div>
       </div>
       <div className={styles.sizesContainer}>
-        <div className={styles.titleSize}>Выберите размер:</div>
+        <div className={styles.titleSize}>Размеры в наличии:</div>
         <div className={styles.rowSize}>
           <SelectSizeContainer splitProductSizes={splitProductSizes} />
         </div>
-        <NavLink to={`/collection/product/${props.productId}`}>
-          <Button>
-            Посмотреть
+        <div className={styles.btnContainer}>
+          <NavLink to={`/collection/product/${props.productId}`}>
+            <Button className={styles.productBtn} variant="secondary">
+              Посмотреть
           </Button>
-        </NavLink>
+          </NavLink>
+        </div>
         {/* <ProductButtonContainer
           productId={props.productId}
           productPrice={props.productPrice}

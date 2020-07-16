@@ -18,6 +18,12 @@ export const productsAPI = {
       .then(response => {
         return response.data;
       });
+  },
+  getSelectedProduct(productId) {
+    return instance.get(`collection/product/${productId}`)
+      .then(response => {
+        return response.data;
+      });
   }
 }
 
