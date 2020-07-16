@@ -19,7 +19,7 @@ import ProductEditContainer from './components/ProductEdit/ProductEditContainer'
 import ProductCreateContainer from './components/ProductCreate/ProductCreateContainer';
 import NewsDiscounts from './components/NewsDiscounts/NewsDiscounts';
 import StaticPages from './components/StaticPages/StaticPages';
-
+import ProductProfileContainer from './components/ProductProfile/ProductProfileContainer';
 
 
 const App = (props) => {
@@ -35,6 +35,8 @@ const App = (props) => {
         <Route path='/collection/men-home/jeans' component={ProductsContainer} />
         <Route path='/collection/men-home/shorts' component={ProductsContainer} />
         <Route path='/collection/men-home/jackets' component={ProductsContainer} />
+
+        <Route path='/collection/product/:id' component={ProductProfileContainer} />
 
         <Route exact path='/women-home' render={() => <WomenHome />} />
         <Route path='/collection/women-home/t-shirts' component={ProductsContainer} />

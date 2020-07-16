@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './ProductInfo.module.css';
 import SelectSizeContainer from '../../../SelectSize/SelectSizeContainer';
 import ProductButtonContainer from '../../../../common/Button/ProductButton/ProductButtonContainer';
+import { Button } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 
 const ProductInfo = (props) => {
@@ -18,14 +20,19 @@ const ProductInfo = (props) => {
         <div className={styles.rowSize}>
           <SelectSizeContainer splitProductSizes={splitProductSizes} />
         </div>
-        <ProductButtonContainer
+        <NavLink to={`/collection/product/${props.productId}`}>
+          <Button>
+            Посмотреть
+          </Button>
+        </NavLink>
+        {/* <ProductButtonContainer
           productId={props.productId}
           productPrice={props.productPrice}
           productDescription={props.productDescription}
           productMaterial={props.productMaterial}
           pictureUrl={props.pictureUrl}
           productStatus={props.productStatus}
-        />
+        /> */}
       </div>
     </div>
   );
