@@ -18,7 +18,7 @@ const Products = (props) => {
   let productElements = !props.isReady ? 'Загрузка...'
     : state.map((product) => (
       <Col className={styles.col} xs="12" sm="6" md="6" lg="4" xl="3" key={product.productId}>
-        <div className={styles.productContainer} onPointerLeave={onResetSize}>
+        <div className={styles.productContainer} onMouseLeave={onResetSize}>
           <Product
             product={product}
             setCurrentProduct={props.setCurrentProduct}

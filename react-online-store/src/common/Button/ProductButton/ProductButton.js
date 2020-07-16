@@ -43,7 +43,7 @@ class ProductButton extends React.Component {
       <Fragment>
         {((!this.state.editMode && !this.props.productSize) || this.props.productStatus === 0) &&
           <div onClick={this.activateEditMode}>
-            <Button disabled className={styles.productBtn} variant="success" onClick={() => this.onAddToCart()}>Добавить в корзину</Button>
+            <Button disabled className={styles.productBtn} variant="success">Добавить в корзину</Button>
           </div>
         }
         {(this.state.editMode && this.props.productStatus !== 0) &&
