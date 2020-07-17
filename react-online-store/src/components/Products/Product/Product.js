@@ -25,6 +25,7 @@ const Product = ({ product, setCurrentProduct, role, deleteProduct }) => {
         pictureUrl={product.pictureUrl}
         pictureUrl2={product.pictureUrl2}
         productStatus={product.productStatus}
+        productDiscount={product.productDiscount}
       />
       <ProductInfo
         productId={product.productId}
