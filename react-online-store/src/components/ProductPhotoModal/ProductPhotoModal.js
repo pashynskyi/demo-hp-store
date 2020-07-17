@@ -1,13 +1,13 @@
 import React from 'react';
 import { Image, Modal, Icon } from 'semantic-ui-react';
-import styles from './ProductModal.module.css';
+import styles from './ProductPhotoModal.module.css';
 
-const ProductModal = (props) => (
+const ProductPhotoModal = ({pictureUrl}) => (
   <Modal className={styles.modalContainer} size="tiny" trigger={<Icon className={styles.zoomIcon} name="zoom-in" size="huge"/>}>
     <Modal.Content image>
-      <Image wrapped size='big' src={props.pictureUrl} />
+      <Image wrapped size='big' src={pictureUrl} />
     </Modal.Content>
   </Modal>
 )
 
-export default ProductModal;
+export default ProductPhotoModal;

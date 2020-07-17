@@ -7,6 +7,8 @@ class ProductButton extends React.Component {
     editMode: false
   }
 
+  //Добавить цену со скидкой в корзину
+
   onAddToCart = () => {
     this.props.addToCart(
       this.props.productSize,
