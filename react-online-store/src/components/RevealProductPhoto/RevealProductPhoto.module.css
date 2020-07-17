@@ -1,0 +1,10 @@
+.photoContainer {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+img.productPhoto {
+  max-height: 310px !important;
+  width: auto !important;
+}
+

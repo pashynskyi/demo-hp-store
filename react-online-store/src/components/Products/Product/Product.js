@@ -21,7 +21,11 @@ const Product = ({ product, setCurrentProduct, role, deleteProduct }) => {
           <div className={styles.deteleProduct} onClick={onDeteteProduct} >Delete</div>
           <div>Количество:&nbsp;{product.productStock}</div>
         </div>}
-      <ProductPhoto pictureUrl={product.pictureUrl} productStatus={product.productStatus} />
+      <ProductPhoto
+        pictureUrl={product.pictureUrl}
+        pictureUrl2={product.pictureUrl2}
+        productStatus={product.productStatus}
+      />
       <ProductInfo
         productId={product.productId}
         productPrice={product.productPrice}
