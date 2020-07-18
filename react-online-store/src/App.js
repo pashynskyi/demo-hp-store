@@ -17,7 +17,7 @@ import OrderDetailsContainer from './components/Profile/Orders/Order/OrderDetail
 import ProfileEditContainer from './components/ProfileEdit/ProfileEditContainer';
 import ProductEditContainer from './components/ProductEdit/ProductEditContainer';
 import ProductCreateContainer from './components/ProductCreate/ProductCreateContainer';
-import NewsDiscounts from './components/NewsDiscounts/NewsDiscounts';
+import News from './components/News/News';
 import StaticPages from './components/StaticPages/StaticPages';
 import ProductProfileContainer from './components/ProductProfile/ProductProfileContainer';
 
@@ -56,7 +56,7 @@ const App = (props) => {
         <Route path='/productEdit' component={ProductEditContainer} />
         <Route path='/productCreate' component={ProductCreateContainer} />
 
-        <Route path='/news-discounts' render={() => <NewsDiscounts />} />
+        <Route path='/news' render={() => <News />} />
         
         <StaticPages />
       </main>

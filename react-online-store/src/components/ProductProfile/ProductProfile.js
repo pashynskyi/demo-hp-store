@@ -27,6 +27,7 @@ const ProductProfile = ({ selectedProduct }) => {
               productMaterial={selectedProduct.productMaterial}
               productShortInformation={selectedProduct.productShortInformation}
               productSizes={selectedProduct.productSizes}
+              productStatus={selectedProduct.productStatus}
             />
             <ProductButtonContainer
               productId={selectedProduct.productId}

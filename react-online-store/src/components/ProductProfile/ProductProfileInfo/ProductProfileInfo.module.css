@@ -7,6 +7,11 @@ div.productStock {
   margin-bottom: 15px;
 }
 
+div.stockZero {
+  color: red;
+  font-size: 16px;
+}
+
 div.discount {
   color: red;
   margin-bottom: 15px;

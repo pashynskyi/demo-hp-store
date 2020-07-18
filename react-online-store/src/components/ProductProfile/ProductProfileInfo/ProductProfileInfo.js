@@ -9,7 +9,12 @@ const ProductProfileInfo = (props) => {
       <h3 className={styles.productName}>
         {props.productDescription}
       </h3>
-      <div className={styles.productStock}>Есть в наличии</div>
+      {props.productStatus === 0 &&
+        <div className={`${styles.productStock} ${styles.stockZero}`}>Нету в наличии</div>
+      }
+      {props.productStatus !== 0 &&
+        <div className={styles.productStock}>Есть в наличии</div>
+      }
       {props.productDiscount !== 0 &&
         <div className={styles.discount}>Товар в акции! Скидка {props.productDiscount} %</div>
       }
