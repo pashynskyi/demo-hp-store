@@ -30,6 +30,8 @@ const Product = ({ product, setCurrentProduct, role, deleteProduct }) => {
       <ProductInfo
         productId={product.productId}
         productPrice={product.productPrice}
+        productFinalPrice={product.productFinalPrice}
+        productDiscount={product.productDiscount}
         productDescription={product.productDescription}
         productMaterial={product.productMaterial}
         productSizes={product.productSizes}

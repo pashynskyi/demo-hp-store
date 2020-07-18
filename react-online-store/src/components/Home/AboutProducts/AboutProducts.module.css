@@ -17,6 +17,9 @@ h2 {
   width: 75%;
   min-width: 40%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .photoContainer img {

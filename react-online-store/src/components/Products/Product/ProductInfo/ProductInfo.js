@@ -11,7 +11,12 @@ const ProductInfo = (props) => {
   return (
     <div className={styles.containerInfo}>
       <div className={styles.descriptionBox}>
-        <div className={styles.price}>{props.productPrice}&nbsp;грн</div>
+        <div className={styles.priceContainer}>
+          {props.productDiscount !== 0 &&
+            <div className={styles.oldPrice}>{props.productPrice}&nbsp;грн</div>
+          }
+          <div className={styles.newPrice}>{props.productFinalPrice}&nbsp;грн</div>
+        </div>
         <div className={styles.description}>{props.productDescription}</div>
         <div><b>Состав:&nbsp;</b><span>{props.productMaterial}</span></div>
       </div>

@@ -7,10 +7,21 @@
   margin-bottom: 40px;
 }
 
-.price {
+.priceContainer {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: 0px 30px;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+}
+
+.newPrice {
   text-align: center;
   color: red;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .sizesContainer {

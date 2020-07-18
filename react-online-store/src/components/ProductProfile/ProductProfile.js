@@ -23,6 +23,7 @@ const ProductProfile = ({ selectedProduct }) => {
               productDescription={selectedProduct.productDescription}
               productPrice={selectedProduct.productPrice}
               productFinalPrice={selectedProduct.productFinalPrice}
+              productDiscount={selectedProduct.productDiscount}
               productMaterial={selectedProduct.productMaterial}
               productShortInformation={selectedProduct.productShortInformation}
               productSizes={selectedProduct.productSizes}

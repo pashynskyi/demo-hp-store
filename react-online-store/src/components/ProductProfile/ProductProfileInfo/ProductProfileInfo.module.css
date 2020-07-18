@@ -7,10 +7,15 @@ div.productStock {
   margin-bottom: 15px;
 }
 
+div.discount {
+  color: red;
+  margin-bottom: 15px;
+}
+
 .priceContainer {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 15px;
+  margin: 0px 50px 15px 50px;
 }
 
 .oldPrice {
