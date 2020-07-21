@@ -1,0 +1,39 @@
+.row {
+  margin-bottom: 15px;
+  border-bottom: 1px solid black;
+}
+
+.pictureContainer {
+  max-width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.pictureContainer img {
+  width: 100%;
+}
+
+.infoContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.title {
+  text-align: center;
+}
+
+.infoContainer a {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 767px) {
+  .pictureContainer {
+    margin: auto;
+  }
+}

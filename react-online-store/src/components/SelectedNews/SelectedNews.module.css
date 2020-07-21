@@ -1,0 +1,17 @@
+.pictureContainer {
+  max-width: 700px;
+  background: aqua;
+  margin: auto;
+}
+
+.pictureContainer img {
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+}
+
+.subTitle {
+    margin-bottom: 20px;
+}

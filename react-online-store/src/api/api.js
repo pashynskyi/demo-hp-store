@@ -114,23 +114,37 @@ export const orderAPI = {
 export const adminAPI = {
   postProduct(product, token) {
     let productStatus = 1;
-    return instance.post('seller/product/new', { ...product, productStatus }, principal(token))
+    return instance.post('admin/product/new', { ...product, productStatus }, principal(token))
       .then(response => {
         return response;
       });
   },
   putProduct(product, token) {
-    return instance.put(`seller/product/${product.productId}/edit`, { ...product }, principal(token))
+    return instance.put(`admin/product/${product.productId}/edit`, { ...product }, principal(token))
       .then(response => {
         return response;
       });
   },
   deleteProduct(productId, token) {
-    return instance.delete(`seller/product/${productId}/delete`, principal(token))
+    return instance.delete(`admin/product/${productId}/delete`, principal(token))
       .then(response => {
         return response;
       });
   }
 }
 
+export const newsAPI = {
+  getNews() {
+    return instance.get('news')
+      .then(response => {
+        return response.data;
+      });
+  },
+  getSelectedNews(newsId) {
+    return instance.get(`news/${newsId}`)
+      .then(response => {
+        return response.data;
+      });
+  }
+}
 
