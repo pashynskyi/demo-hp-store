@@ -8,6 +8,7 @@ import {
   deleteCurrentProduct,
   resetCurrentPage
 } from '../../redux/reducers/productsReducer';
+import {resetSelectedProduct} from '../../redux/reducers/productProfileReducer';
 import { Spinner } from 'react-bootstrap';
 import { helperRequestProducts } from '../../utils/helperRequestProducts';
 
@@ -18,6 +19,7 @@ class ProductsContainer extends React.Component {
   }
 
   componentDidMount() {
+    this.props.resetSelectedProduct()
     if (this.props.currentPage !== 1) {
       helperRequestProducts(
         this.props.location.pathname,
@@ -93,5 +95,6 @@ export default connect(mapStateToProps,
     setCurrentProduct,
     resetSize,
     deleteCurrentProduct,
-    resetCurrentPage
+    resetCurrentPage,
+    resetSelectedProduct
   })(ProductsContainer);

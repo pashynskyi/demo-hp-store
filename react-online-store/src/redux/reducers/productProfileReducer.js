@@ -1,6 +1,7 @@
 import { productsAPI } from "../../api/api";
 
 const SET_SELECTED_PRODUCT = 'SET_SELECTED_PRODUCT';
+const RESET_SELECTED_PRODUCT = 'RESET_SELECTED_PRODUCT';
 
 let initialState = {
   selectedProduct: '',
@@ -15,12 +16,20 @@ const productProfileReducer = (state = initialState, action) => {
         selectedProduct: action.payload,
         isProductReady: true
       };
+      case RESET_SELECTED_PRODUCT:
+        debugger;
+        return {
+          ...state,
+          selectedProduct: '',
+          isProductReady: false
+        };
     default:
       return state;
   }
 }
 
 export const setSelectedProduct = (product) => ({ type: SET_SELECTED_PRODUCT, payload: product })
+export const resetSelectedProduct = () => ({type: RESET_SELECTED_PRODUCT})
 
 export const requestSelectedProduct = (productId) => {
   return (dispatch) => {
