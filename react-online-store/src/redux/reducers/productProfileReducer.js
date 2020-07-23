@@ -17,7 +17,6 @@ const productProfileReducer = (state = initialState, action) => {
         isProductReady: true
       };
       case RESET_SELECTED_PRODUCT:
-        debugger;
         return {
           ...state,
           selectedProduct: '',

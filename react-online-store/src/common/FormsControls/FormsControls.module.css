@@ -1,8 +1,14 @@
+.formControl.error textarea,
 .formControl.error select,
 .formControl.error input {
-    border: 2px solid red;
+  border: 2px solid red;
 }
 
 .formControl.error span {
-    color: red;
+  color: red;
+}
+
+textarea {
+  min-height: 100px;
+  max-height: 300px;
 }

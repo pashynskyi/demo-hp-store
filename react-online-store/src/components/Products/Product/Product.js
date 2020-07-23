@@ -9,7 +9,7 @@ const Product = ({ product, setCurrentProduct, role, deleteProduct }) => {
     setCurrentProduct(product)
   }
 
-  const onDeteteProduct = () => {
+  const onDeleteProduct = () => {
     deleteProduct(product.productId)
   }
 
@@ -18,7 +18,7 @@ const Product = ({ product, setCurrentProduct, role, deleteProduct }) => {
       {role === "ROLE_ADMIN" &&
         <div className={styles.containerEditProduct}>
           <NavLink to="/productEdit" onClick={onSetProduct} >Edit</NavLink>
-          <div className={styles.deteleProduct} onClick={onDeteteProduct} >Delete</div>
+          <div className={styles.deteleProduct} onClick={onDeleteProduct} >Delete</div>
           <div>Количество:&nbsp;{product.productStock}</div>
         </div>}
       <ProductPhoto

@@ -6,7 +6,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 const ProductEdit = ({ selectedProduct, onSubmit }) => {
   return (
     <div>
-      <h2>Редактирование товара</h2>
+      <h2>Edit product</h2>
       <Container>
         <Row>
           <Col>

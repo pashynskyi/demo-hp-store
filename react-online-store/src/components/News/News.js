@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './News.module.css';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col} from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
-const News = ({ news }) => {
+const News = ({ news, role }) => {
   console.log(news)
   const newsElements = news.map((news) => (
     <Row className={styles.row} key={news.newsId}>
@@ -15,10 +15,10 @@ const News = ({ news }) => {
       <Col xs="12" sm="12" md="6" >
         <div className={styles.infoContainer}>
           <h3 className={styles.title}>
-            {news.paragraph}
+            {news.title}
           </h3>
           <p>
-            {news.paragraphText}
+            {news.subtitle}
           </p>
           <NavLink to={`/news/${news.newsId}`} >
             ЧИТАТЬ ПОЛНУЮ СТАТЬЮ &gt;&gt;
@@ -28,11 +28,14 @@ const News = ({ news }) => {
     </Row>
   ));
   return (
-    <div>
-      <Container>
-        {newsElements}
-      </Container>
-    </div>
+    <Container>
+      {role === "ROLE_ADMIN" &&
+        <div className={styles.containerAddNews}>
+          <NavLink to="/newsCreate">Добавить новость</NavLink>
+        </div>
+      }
+      {newsElements}
+    </Container>
   )
 }
 

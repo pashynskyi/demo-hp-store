@@ -21,6 +21,8 @@ import NewsContainer from './components/News/NewsContainer';
 import StaticPages from './components/StaticPages/StaticPages';
 import ProductProfileContainer from './components/ProductProfile/ProductProfileContainer';
 import SelectedNewsContainer from './components/SelectedNews/SelectedNewsContainer';
+import NewsEditContainer from './components/NewsEdit/NewsEditContainer';
+import NewsCreateContainer from './components/NewsCreate/NewsCreateContainer';
 
 
 const App = (props) => {
@@ -59,6 +61,8 @@ const App = (props) => {
 
         <Route exact path='/news' render={() => <NewsContainer />} />
         <Route path='/news/:newsId' component={SelectedNewsContainer} />
+        <Route path='/newsEdit' component={NewsEditContainer} />
+        <Route path='/newsCreate' component={NewsCreateContainer} />
 
         <StaticPages />
       </main>

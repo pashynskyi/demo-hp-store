@@ -15,7 +15,7 @@ class NewsContainer extends React.Component {
   render() {
     return (
       !this.props.isNewsReady ? <Spinner animation="border" /> :
-        <News news={this.props.news}/>
+        <News news={this.props.news} role={this.props.role} />
     )
   }
 }
@@ -23,7 +23,8 @@ class NewsContainer extends React.Component {
 let mapStateToProps = (state) => {
   return {
     news: state.newsPage.news,
-    isNewsReady: state.newsPage.isNewsReady
+    isNewsReady: state.newsPage.isNewsReady,
+    role: state.loginPage.currentUser.role
   }
 }
 

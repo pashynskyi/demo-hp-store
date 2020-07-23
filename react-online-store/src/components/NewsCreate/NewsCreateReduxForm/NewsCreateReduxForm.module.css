@@ -1,0 +1,13 @@
+.fieldContainer {
+  margin-bottom: 10px;
+}
+
+.titleField {
+  font-size: 15px;
+}
+
+.field {
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+}

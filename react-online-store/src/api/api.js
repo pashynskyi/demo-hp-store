@@ -113,7 +113,7 @@ export const orderAPI = {
 
 export const adminAPI = {
   postProduct(product, token) {
-    let productStatus = 1;
+    const productStatus = 1;
     return instance.post('admin/product/new', { ...product, productStatus }, principal(token))
       .then(response => {
         return response;
@@ -130,7 +130,25 @@ export const adminAPI = {
       .then(response => {
         return response;
       });
-  }
+  },
+  postNews(news, token) {
+    return instance.post('admin/news/new', { ...news }, principal(token))
+      .then(response => {
+        return response;
+      });
+  },
+  putNews(news, token) {
+    return instance.put(`admin/news/${news.newsId}/edit`, { ...news }, principal(token))
+      .then(response => {
+        return response;
+      });
+  },
+  deleteNews(newsId, token) {
+    return instance.delete(`admin/news/${newsId}/delete`, principal(token))
+      .then(response => {
+        return response;
+      });
+  },
 }
 
 export const newsAPI = {

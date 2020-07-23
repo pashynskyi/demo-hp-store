@@ -32,6 +32,16 @@
   text-decoration: underline;
 }
 
+.containerAddNews {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+div.containerAddNews a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 767px) {
   .pictureContainer {
     margin: auto;

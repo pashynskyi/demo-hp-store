@@ -1,7 +1,22 @@
+.groupPhoto {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 50px;
+}
+
 .pictureContainer {
-  max-width: 700px;
-  background: aqua;
+  max-width: 300px;
+  max-height: 500px;
   margin: auto;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainPicture {
+  max-width: 700px;
 }
 
 .pictureContainer img {
@@ -13,5 +28,21 @@
 }
 
 .subTitle {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.containerEditNews {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.deteleNews:hover,
+.containerEditNews a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.deteleNews {
+  color: red;
 }

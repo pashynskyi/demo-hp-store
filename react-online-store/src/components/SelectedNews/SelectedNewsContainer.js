@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SelectedNews from './SelectedNews';
-import { requestSelectedNews } from './../../redux/reducers/newsReducer';
+import { requestSelectedNews, deleteSelectedNews } from './../../redux/reducers/newsReducer';
 import { Spinner } from 'react-bootstrap';
 
 class SelectedNewsContainer extends React.Component {
@@ -13,10 +13,20 @@ class SelectedNewsContainer extends React.Component {
     this.props.requestSelectedNews(this.newsId)
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.isSelectedNewsReady !== this.props.isSelectedNewsReady) {
+      this.props.requestSelectedNews(this.newsId)
+    }
+  }
+
   render() {
     return (
       !this.props.isSelectedNewsReady ? <Spinner animation="border" /> :
-        <SelectedNews selectedNews={this.props.selectedNews} />
+        <SelectedNews
+          selectedNews={this.props.selectedNews}
+          deleteSelectedNews={this.props.deleteSelectedNews}
+          role={this.props.role}
+        />
     )
   }
 }
@@ -24,8 +34,9 @@ class SelectedNewsContainer extends React.Component {
 let mapStateToProps = (state) => {
   return {
     selectedNews: state.newsPage.selectedNews,
-    isSelectedNewsReady: state.newsPage.isSelectedNewsReady
+    isSelectedNewsReady: state.newsPage.isSelectedNewsReady,
+    role: state.loginPage.currentUser.role
   }
 }
 
-export default connect(mapStateToProps, { requestSelectedNews })(SelectedNewsContainer);
+export default connect(mapStateToProps, { requestSelectedNews, deleteSelectedNews })(SelectedNewsContainer);
