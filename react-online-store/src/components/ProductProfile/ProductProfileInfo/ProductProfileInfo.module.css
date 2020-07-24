@@ -1,0 +1,54 @@
+.productName {
+  text-align: center;
+}
+
+div.productStock {
+  color: green;
+  margin-bottom: 15px;
+}
+
+div.stockZero {
+  color: red;
+  font-size: 16px;
+}
+
+div.discount {
+  color: red;
+  margin-bottom: 15px;
+}
+
+.priceContainer {
+  display: flex;
+  justify-content: space-around;
+  margin: 0px 50px 15px 50px;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+}
+
+.newPrice {
+  color: red;
+  font-size: 18px;
+}
+
+.materialContainer {
+  margin-bottom: 15px;
+}
+
+p.textContainer {
+  margin-bottom: 15px;
+}
+
+.sizeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 15px;
+}
+
+.rowSize {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

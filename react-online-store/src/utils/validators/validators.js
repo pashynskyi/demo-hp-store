@@ -14,4 +14,7 @@ export const phoneNumber = value =>
 export const minValue = min => value =>
   value && value < min ? `Must be at least ${min}` : undefined;
 
+  export const maxValue = max => value =>
+  value && value > max ? `Must be at least ${max}` : undefined;
+
 

@@ -1,0 +1,28 @@
+.row {
+  height: 100%;
+}
+
+div.productPhotosContainer {
+  height: 100%;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.productInfoContainer {
+  border-left: 1px solid gray;
+  padding: 10px;
+  text-align: center;
+}
+
+@media screen and (max-width: 991px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row .productInfoContainer {
+    max-width: 100%;
+    border: none;
+    border-top: 1px solid gray;
+  }
+}

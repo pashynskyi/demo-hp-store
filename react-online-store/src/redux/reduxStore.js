@@ -5,8 +5,10 @@ import quickOrderReducer from './reducers/quickOrderReducer';
 import loginReducer from './reducers/loginReducer';
 import profileReducer from './reducers/profileReducer';
 import registerReducer from './reducers/registerReducer';
+import productProfileReducer from './reducers/productProfileReducer';
 import { reducer as formReducer } from 'redux-form';
 import thunkMiddleware from 'redux-thunk';
+import newsReducer from './reducers/newsReducer';
 
 
 let reducers = combineReducers({
@@ -16,6 +18,8 @@ let reducers = combineReducers({
     loginPage: loginReducer,
     profilePage: profileReducer,
     registerPage: registerReducer,
+    productProfilePage: productProfileReducer,
+    newsPage: newsReducer, 
     form: formReducer
 });
 

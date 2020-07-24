@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ProductEdit from './ProductEdit';
 import { editCurrentProduct } from './../../redux/reducers/productsReducer';
+import { requestSelectedProduct } from './../../redux/reducers/productProfileReducer';
+import { Spinner } from 'react-bootstrap';
 
 class ProductEditContainer extends React.Component {
 
@@ -15,6 +17,10 @@ class ProductEditContainer extends React.Component {
     this.props.editCurrentProduct(productEditData, this.props.token)
   }
 
+  componentDidMount() {
+    this.props.requestSelectedProduct(this.props.currentProduct.productId);
+  }
+
   componentDidUpdate(prevProps) {
     if (prevProps.isReady !== this.props.isReady) {
       this.goBack()
@@ -22,17 +28,24 @@ class ProductEditContainer extends React.Component {
   }
 
   render() {
-    return <ProductEdit onSubmit={this.onSubmit} currentProduct={this.props.currentProduct} />
+    return (
+      !this.props.isProductReady ? <Spinner animation="border" /> :
+        <ProductEdit
+          onSubmit={this.onSubmit}
+          selectedProduct={this.props.selectedProduct}
+        />
+    )
   }
 }
 
 let mapStateToProps = (state) => {
   return {
     currentProduct: state.productsPage.currentProduct,
-    isAuth: state.loginPage.isAuth,
+    isReady: state.productsPage.isReady,
     token: state.loginPage.currentUser.token,
-    isReady: state.productsPage.isReady
+    selectedProduct: state.productProfilePage.selectedProduct,
+    isProductReady: state.productProfilePage.isProductReady
   }
 }
 
-export default connect(mapStateToProps, { editCurrentProduct })(ProductEditContainer);
+export default connect(mapStateToProps, { editCurrentProduct, requestSelectedProduct })(ProductEditContainer);

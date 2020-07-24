@@ -1,0 +1,40 @@
+.bgPhotoContainer {
+  width: 70%;
+  position: relative;
+}
+
+.bgPhotoContainer img {
+  width: 100%;
+}
+
+.smPhotosContainer {
+  width: 30%;
+}
+
+.smPhotoBox {
+  position: relative;
+  margin: 0px 0px 10px 10px;
+}
+
+.smPhotoBox img {
+  width: 100%;
+}
+
+.containerModal,
+.containerModal2 {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.bgPhotoContainer:hover .containerModal,
+.smPhotoBox:hover .containerModal2 {
+  opacity: 1;
+}

@@ -2,8 +2,8 @@ import * as axios from 'axios';
 
 const instance = axios.create({
   withCredentials: true,
-  baseURL: 'http://localhost:8000/'
-  // baseURL: 'https://hp-store-api.herokuapp.com/'
+  // baseURL: 'http://localhost:8000/'
+  baseURL: 'https://hp-store-api.herokuapp.com/'
   // baseURL: 'https://hp-store-test.herokuapp.com/'
 })
 
@@ -15,6 +15,12 @@ const principal = (token) => {
 export const productsAPI = {
   getProducts(categoryType, productType, currentPage, pageSize, sortBy) {
     return instance.get(`collection/${categoryType}/${productType}?page=${currentPage}&size=${pageSize}&sort=${sortBy}`)
+      .then(response => {
+        return response.data;
+      });
+  },
+  getSelectedProduct(productId) {
+    return instance.get(`collection/product/${productId}`)
       .then(response => {
         return response.data;
       });
@@ -107,24 +113,56 @@ export const orderAPI = {
 
 export const adminAPI = {
   postProduct(product, token) {
-    let productStatus = 1;
-    return instance.post('seller/product/new', { ...product, productStatus }, principal(token))
+    const productStatus = 1;
+    return instance.post('admin/product/new', { ...product, productStatus }, principal(token))
       .then(response => {
         return response;
       });
   },
   putProduct(product, token) {
-    return instance.put(`seller/product/${product.productId}/edit`, { ...product }, principal(token))
+    return instance.put(`admin/product/${product.productId}/edit`, { ...product }, principal(token))
       .then(response => {
         return response;
       });
   },
   deleteProduct(productId, token) {
-    return instance.delete(`seller/product/${productId}/delete`, principal(token))
+    return instance.delete(`admin/product/${productId}/delete`, principal(token))
       .then(response => {
         return response;
       });
-  }
+  },
+  postNews(news, token) {
+    return instance.post('admin/news/new', { ...news }, principal(token))
+      .then(response => {
+        return response;
+      });
+  },
+  putNews(news, token) {
+    return instance.put(`admin/news/${news.newsId}/edit`, { ...news }, principal(token))
+      .then(response => {
+        return response;
+      });
+  },
+  deleteNews(newsId, token) {
+    return instance.delete(`admin/news/${newsId}/delete`, principal(token))
+      .then(response => {
+        return response;
+      });
+  },
 }
 
+export const newsAPI = {
+  getNews() {
+    return instance.get('news')
+      .then(response => {
+        return response.data;
+      });
+  },
+  getSelectedNews(newsId) {
+    return instance.get(`news/${newsId}`)
+      .then(response => {
+        return response.data;
+      });
+  }
+}
 

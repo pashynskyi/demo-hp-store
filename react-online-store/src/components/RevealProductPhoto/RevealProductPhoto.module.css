@@ -1,0 +1,24 @@
+.photoContainer {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+img.productPhoto {
+  max-height: 310px !important;
+  width: auto !important;
+}
+
+.iconContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+}
+
+.discountNumber {
+  color: white;
+  position: absolute;
+  top: 17px;
+  right: 21px;
+  z-index: 5;
+}

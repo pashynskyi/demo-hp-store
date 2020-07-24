@@ -17,9 +17,12 @@ import OrderDetailsContainer from './components/Profile/Orders/Order/OrderDetail
 import ProfileEditContainer from './components/ProfileEdit/ProfileEditContainer';
 import ProductEditContainer from './components/ProductEdit/ProductEditContainer';
 import ProductCreateContainer from './components/ProductCreate/ProductCreateContainer';
-import NewsDiscounts from './components/NewsDiscounts/NewsDiscounts';
+import NewsContainer from './components/News/NewsContainer';
 import StaticPages from './components/StaticPages/StaticPages';
-
+import ProductProfileContainer from './components/ProductProfile/ProductProfileContainer';
+import SelectedNewsContainer from './components/SelectedNews/SelectedNewsContainer';
+import NewsEditContainer from './components/NewsEdit/NewsEditContainer';
+import NewsCreateContainer from './components/NewsCreate/NewsCreateContainer';
 
 
 const App = (props) => {
@@ -35,6 +38,8 @@ const App = (props) => {
         <Route path='/collection/men-home/jeans' component={ProductsContainer} />
         <Route path='/collection/men-home/shorts' component={ProductsContainer} />
         <Route path='/collection/men-home/jackets' component={ProductsContainer} />
+
+        <Route path='/collection/product/:id' component={ProductProfileContainer} />
 
         <Route exact path='/women-home' render={() => <WomenHome />} />
         <Route path='/collection/women-home/t-shirts' component={ProductsContainer} />
@@ -54,8 +59,11 @@ const App = (props) => {
         <Route path='/productEdit' component={ProductEditContainer} />
         <Route path='/productCreate' component={ProductCreateContainer} />
 
-        <Route path='/news-discounts' render={() => <NewsDiscounts />} />
-        
+        <Route exact path='/news' render={() => <NewsContainer />} />
+        <Route path='/news/:newsId' component={SelectedNewsContainer} />
+        <Route path='/newsEdit' component={NewsEditContainer} />
+        <Route path='/newsCreate' component={NewsCreateContainer} />
+
         <StaticPages />
       </main>
       <Footer />
