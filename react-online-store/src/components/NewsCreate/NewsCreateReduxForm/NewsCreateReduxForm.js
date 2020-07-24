@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './NewsCreateReduxForm.module.css';
 import { reduxForm, Field } from 'redux-form';
-import { required, maxLengthCreator, minValue, maxValue } from '../../../utils/validators/validators';
+import { required, maxLengthCreator } from '../../../utils/validators/validators';
 import { Input, Textarea } from '../../../common/FormsControls/FormsControls';
 import { Button } from 'react-bootstrap';
 

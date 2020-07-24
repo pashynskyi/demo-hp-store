@@ -4,7 +4,6 @@ import { Container, Row, Col} from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 const News = ({ news, role }) => {
-  console.log(news)
   const newsElements = news.map((news) => (
     <Row className={styles.row} key={news.newsId}>
       <Col xs="12" sm="12" md="6" >

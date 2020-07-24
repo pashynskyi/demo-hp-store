@@ -13,9 +13,6 @@ class ProductProfileContainer extends React.Component {
     this.props.requestSelectedProduct(this.productId)
   }
 
-  componentDidUpdate(prevProps) {
-  }
-
   render() {
     return (
       !this.props.isProductReady ? <Spinner animation="border" /> :

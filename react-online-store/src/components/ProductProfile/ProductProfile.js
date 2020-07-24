@@ -6,7 +6,6 @@ import ProductProfilePhotos from './ProductProfilePhotos/ProductProfilePhotos';
 import ProductProfileInfo from './ProductProfileInfo/ProductProfileInfo';
 
 const ProductProfile = ({ selectedProduct }) => {
-  console.log(selectedProduct);
   return (
     <div>
       <Container>

@@ -6,8 +6,6 @@ import { Spinner } from 'react-bootstrap';
 
 class NewsContainer extends React.Component {
 
-  
-
   componentDidMount() {
     this.props.requestNews()
   }
