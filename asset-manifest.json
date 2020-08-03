@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/demo-hp-store/static/css/main.4ea38243.chunk.css",
-    "main.js": "/demo-hp-store/static/js/main.da1b38f3.chunk.js",
-    "main.js.map": "/demo-hp-store/static/js/main.da1b38f3.chunk.js.map",
+    "main.js": "/demo-hp-store/static/js/main.e2a013fc.chunk.js",
+    "main.js.map": "/demo-hp-store/static/js/main.e2a013fc.chunk.js.map",
     "runtime-main.js": "/demo-hp-store/static/js/runtime-main.95cc686f.js",
     "runtime-main.js.map": "/demo-hp-store/static/js/runtime-main.95cc686f.js.map",
     "static/css/2.aad4ac02.chunk.css": "/demo-hp-store/static/css/2.aad4ac02.chunk.css",
     "static/js/2.08b7a167.chunk.js": "/demo-hp-store/static/js/2.08b7a167.chunk.js",
     "static/js/2.08b7a167.chunk.js.map": "/demo-hp-store/static/js/2.08b7a167.chunk.js.map",
     "index.html": "/demo-hp-store/index.html",
-    "precache-manifest.4d59b0a51d7f4908076fbb75ac218f43.js": "/demo-hp-store/precache-manifest.4d59b0a51d7f4908076fbb75ac218f43.js",
+    "precache-manifest.431424cdd435eedef41f174b18aea811.js": "/demo-hp-store/precache-manifest.431424cdd435eedef41f174b18aea811.js",
     "service-worker.js": "/demo-hp-store/service-worker.js",
     "static/css/2.aad4ac02.chunk.css.map": "/demo-hp-store/static/css/2.aad4ac02.chunk.css.map",
     "static/css/main.4ea38243.chunk.css.map": "/demo-hp-store/static/css/main.4ea38243.chunk.css.map",
@@ -26,6 +26,6 @@
     "static/css/2.aad4ac02.chunk.css",
     "static/js/2.08b7a167.chunk.js",
     "static/css/main.4ea38243.chunk.css",
-    "static/js/main.da1b38f3.chunk.js"
+    "static/js/main.e2a013fc.chunk.js"
   ]
 }
