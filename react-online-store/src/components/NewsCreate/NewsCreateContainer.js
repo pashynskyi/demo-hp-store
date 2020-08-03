@@ -11,8 +11,8 @@ class NewsCreateContainer extends React.Component {
     this.props.history.goBack();
   }
 
-  onSubmit = (NewsCreateData) => {
-    this.props.createNewNews(NewsCreateData, this.props.token)
+  onSubmit = (newsCreateData) => {
+    this.props.createNewNews(newsCreateData, this.props.token)
   }
 
   componentDidUpdate(prevProps) {

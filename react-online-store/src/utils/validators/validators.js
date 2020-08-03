@@ -12,7 +12,7 @@ export const phoneNumber = value =>
     : undefined;
 
 export const minValue = min => value =>
-  value && value < min ? `Must be at least ${min}` : undefined;
+  value && value < min ? `Must be more than ${min}` : undefined;
 
   export const maxValue = max => value =>
   value && value > max ? `Must be at least ${max}` : undefined;

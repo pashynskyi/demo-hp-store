@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Products from './Products';
+import Loader from '../../common/Loader/Loader';
 import {
   requestProducts,
   setCurrentProduct,
@@ -8,9 +9,9 @@ import {
   deleteCurrentProduct,
   resetCurrentPage
 } from '../../redux/reducers/productsReducer';
-import {resetSelectedProduct} from '../../redux/reducers/productProfileReducer';
-import { Spinner } from 'react-bootstrap';
+import { resetSelectedProduct } from '../../redux/reducers/productProfileReducer';
 import { helperRequestProducts } from '../../utils/helperRequestProducts';
+
 
 class ProductsContainer extends React.Component {
 
@@ -62,7 +63,7 @@ class ProductsContainer extends React.Component {
 
   render() {
     return (
-      !this.props.isReady ? <Spinner animation="border" /> :
+      !this.props.isReady ? <Loader animation="border" /> :
         <Products
           products={this.props.products}
           isReady={this.props.isReady}
